@@ -1,0 +1,6 @@
+Download virtual PC:
+http://www.microsoft.com/download/en/details.aspx?id=4580
+
+Installeren.
+Openen bestand WindowsXP.
+Wachtwoord: Password1

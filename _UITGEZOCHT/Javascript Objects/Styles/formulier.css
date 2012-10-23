@@ -1,0 +1,141 @@
+/* Deze css Word ingeladen in het Mailplus formulier */
+
+body {
+	font-family:Arial, Helvetica, Sans-Serif;
+	font-size:100%;
+	background-color:transparent;
+}
+
+h2 {font-size:1.0em;}
+
+h2.page-06  {
+	display:block;
+	width: 125px;
+	height: 23px;
+	margin-left: 24px;
+	margin-bottom: 37px;	
+	background:  url(http://www.sensorrollercoasterclass.nl/Images/title-bonusvraag.gif) no-repeat 0 0;
+}
+
+#mp-form {
+	float: left;
+	width: 400px;/*508*/
+	margin-left: 45px;
+	color: #248742;
+}
+
+table.mpFormTable {
+	width: 449px;
+	padding-left:0px;
+	color: #248742;
+}
+ 
+td.mpFormLabel {
+	font-size: 14px;
+	color: #248742;
+	padding: 5px 5px 5px 3px;
+	margin: 0px 0px 0px 0px;
+	vertical-align: top;
+	font-weight: normal;
+	width:150px;
+}
+ 
+td.mpSpacerCell {
+	font-size: 14px;
+	width:400px;	
+	padding: 0 25px 0 0;
+}
+
+td.mpFormField {
+	font-size: 14px;
+	padding: 3px 0px 5px 0px;
+	margin: 0px 10px 0px 10px;
+	vertical-align: top;
+	color: #248742;
+}
+
+td.mpFormField input {
+	font-size: 14px;
+	color: #248742;
+	width:240px;
+	display:block;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:5px;
+	height:18px;
+	border-top:solid 1px #238642;
+	border-left:solid 1px #238642;
+	border-right:solid 1px #59a471;
+	border-bottom:solid 1px #59a471;
+}
+ 
+.mpFormField select {
+	color: #248742;
+}
+ 
+.mpFormField textarea {
+	font-family:Arial, Helvetica, Sans-Serif;
+	resize: none;
+	font-size: 14px;
+	background-color: #FFFFFF;
+	width: 240px;
+	color: #000;
+	height: 65px;
+	padding-left:5px;
+	border-top:solid 1px #238642;
+	border-left:solid 1px #238642;
+	border-right:solid 1px #59a471;
+	border-bottom:solid 1px #59a471;
+}
+ 
+table.mpRadioButtonTable {
+	padding: 2px 0px 2px 0px;
+}
+ 
+td.mpRadioButtonInput input {
+	width:20px;
+	background:none;
+}
+ 
+.mpRadioButtonText {
+	color: #248742;
+}
+ 
+table.mpCheckBoxTable {
+	padding: 2px 0px 2px 0px;
+}
+ 
+td.mpCheckBoxInput input {
+	width:20px;
+	background:none;
+}
+ 
+.mpCheckBoxLabel {
+	color: #248742;
+}
+ 
+.mpFormDescription { 
+	padding: 0px 7px 0px 7px; 
+	font-size: 10px;
+	text-align: center;
+}
+ 
+.mpFormAnswer { 
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+}
+ 
+td.submitCell {
+	padding: 15px 5px 5px 5px;
+	text-align: left;
+}
+ 
+td.submitCell input {
+	float:right;
+	border:none;
+	height:54px;
+	width:209px;
+	cursor:pointer;
+	text-indent: -9999px;
+	background: url(http://www.sensorrollercoasterclass.nl/Images/btn-verzenden.png) no-repeat top left;
+}

@@ -1,0 +1,25 @@
+/* Start styles voor background image */
+html, body { overflow: hidden;}
+.bgwidth, .bgheight {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+}
+.bgwidth { width: 100%; }
+.bgheight { height: 100%; }
+
+#container {
+	padding: 20px 0 20px 0;
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	z-index: 6000;
+	overflow-y: auto;
+}
+/* End styles voor background image */
+

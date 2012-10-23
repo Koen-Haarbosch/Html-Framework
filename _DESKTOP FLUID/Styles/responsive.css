@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+	#column-center {
+		width: 75.87939698492462%; /* 755/995 */
+		margin-right:0;
+	}
+	#column-right {
+		float: right;
+		width: 71.85929648241206%;
+	}
+}

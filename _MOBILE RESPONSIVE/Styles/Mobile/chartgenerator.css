@@ -1,0 +1,76 @@
+/*----------------------------------------------------------------------------
+	Chart Generator
+	( Gelijk houden aan de desktop versie )
+	
+	Wat conflicten geeft met Desktop versie
+	- .block zit ook in chart generator
+	
+----------------------------------------------------------------------------*/
+
+/* reset .block a styles */
+div.chart-wrapper .block a {
+	width: auto;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+div.chart-wrapper .block {
+	float: none;
+	width: auto;
+	height: auto;
+	margin: 0;
+	background: none;
+}
+
+input.checkbox                      {display:inline;float:left;width:14px;}
+div.chart-wrapper					{width:720px;float:left;margin-bottom:10px;border:1px solid #ccc;}
+div.chart-left-pane					{width:490px;float:left;}
+div.chart-right-pane				{width:160px;float:right;}
+
+/* chart generatie block + tabel  */
+div.chart							{width:490px;float:left;}
+table.chart							{font-size:0.9em;font-style:normal;width:100%;padding:0px;margin:0;border-collapse:collapse;}
+table.chart tr						{line-height:20px;}
+table.chart td, table.chart th		{padding:4px;}
+
+
+/* chart toolbox voor jaren selectie */
+div.chart-toolbox								{width:160px;border:solid 1px #b5b4b4;float:right;margin:0 0 10px 0;}
+div.chart-toolbox h2							{background:#027ADB;color:#fff;width:155px;height:24px;display:block;font-size:120%;font-weight:bold;padding:6px 0 0 5px;border-bottom:solid 1px #b5b4b4;margin:0;}
+div.chart-toolbox ul.checkbox-list				{margin:0px;padding:4px;list-style:none;}
+div.chart-toolbox ul.checkbox-list li			{margin:2px 0;padding:5px 0 5px 0;list-style:none;clear:both;}
+div.chart-toolbox ul.checkbox-list li a			{text-decoration:none;color:#555555;width:136px;display:block;}
+div.chart-toolbox ul.checkbox-list li a:hover	{text-decoration:underline;color:#555555;width:136px;display:block;}
+div.chart-toolbox ul.checkbox-list li .checkbox	{position:relative;top:-2px;margin-right:7px;}
+
+/* chart toolbox voor buttons */
+div.chart-buttonbox							{width:160px;margin:10px auto;float:right;}
+div.chart-buttonbox ul						{margin:0;list-style:none;float:left;padding:0 0 0 25px;}
+div.chart-buttonbox ul li					{margin:0;padding:0 5px 0 0;list-style:none;width:30px;height:30px;float:left;}
+div.chart-buttonbox ul li a					{text-decoration:none;width:30px;height:30px;float:left;}
+.table-button								{background:url(../../../images/chartButtons/chartbuttons.png) 0px 0px no-repeat;}
+.table-button:hover							{background:url(../../../images/chartButtons/chartbuttons.png) 0px -30px no-repeat;}
+.linechart-button							{background:url(../../../images/chartButtons/chartbuttons.png) -30px 0px no-repeat;}
+.linechart-button:hover						{background:url(../../../images/chartButtons/chartbuttons.png) -30px -30px no-repeat;}
+.barchart-button							{background:url(../../../images/chartButtons/chartbuttons.png) -60px 0px no-repeat;}
+.barchart-button:hover						{background:url(../../../images/chartButtons/chartbuttons.png) -60px -30px no-repeat;}
+
+/* chart downloads voor downloads */
+div.chart-downloads							{width:160px;margin:10px auto;float:right;}
+div.chart-downloads ul						{margin:0;list-style:none;float:left;padding:0 0 0 27px;}
+div.chart-downloads ul li					{margin:0;padding:0 5px 0 0;list-style:none;width:30px;height:30px;float:left;margin-right:20px;}
+div.chart-downloads	a.pdf					{padding:3px 0 3px 20px;background:url(../../../images/chartButtons/icon-mini-pdf.gif) 0 0 no-repeat;}
+div.chart-downloads	a.xls					{padding:3px 0 3px 20px;background:url(../../../images/chartButtons/icon-mini-excel.gif) 0 0 no-repeat;}
+
+/* select data container */
+div.chart-categorybox						{width:100%;float:left;margin:10px 0 0 0;border-bottom:solid 1px #b5b4b4;}
+div.chart-categorybox h2					{width:485px;background:#027ADB;color:#fff;padding:0 0 0 5px;margin:0;height:25px;line-height:25px;float:left;border-left:solid 1px #b5b4b4;border-top:solid 1px #b5b4b4;border-right:solid 1px #b5b4b4;font-size:120%;font-weight:bold;}
+div.chart-categorybox h3					{width:490px;padding:0;margin:0;background:#f3f4f6;float:left;border-left:solid 1px #b5b4b4;border-top:solid 1px #b5b4b4;border-right:solid 1px #b5b4b4;color:#555;font-size:100%;}
+div.chart-categorybox h3 a					{width:475px;height:25px;line-height:25px;color:#555;text-decoration:none;display:block;padding: 0 0 0 15px;background:url(../../../images/icons/arrows.png) 4px -19px no-repeat;}
+div.chart-categorybox div.cat-container		{width:100%;margin:0;padding:0;overflow:hidden;clear: both;background:#fff;border-left: 1px solid #b5b4b4;border-right: 1px solid #b5b4b4;}
+div.chart-categorybox div.cat-container div	{float: left;width: 90%; padding:5px;}
+div.chart-categorybox input.radio			{margin-top:0px;}
+div.chart-categorybox div.cat-container .checkbox	{position:relative;top:-2px;margin-right:7px;}
+
+/*--[end: Chart Generator]---------------------------------------------------------*/

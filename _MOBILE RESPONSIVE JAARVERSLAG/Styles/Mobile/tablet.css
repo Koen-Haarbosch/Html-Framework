@@ -1,0 +1,43 @@
+
+/*	RESPONSIVE VIEW 2
+	Tablet Portrait : > 480 and < 800px.
+-----------------------------------------------------------------*/
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+/* Show/Hide specific article content */
+.sh-tablet-p {display:block !important;}
+.sh-tablet-l {display:none;}
+.sh-mobile-p {display:none;}
+.sh-mobile-l {display:none;}
+
+#sub-header,
+#wrapper {
+	width: 760px !important;
+}
+
+#column-center { padding: 0 0 0 15px !important; }
+
+#column-right { width: 490px; }
+
+    /*----------------------------------------------------------------------------
+        Boekenplank
+    ----------------------------------------------------------------------------*/
+    div.shelf-item {
+        width: 25%;
+    }
+
+    div.shelf-item a { border-right: solid 1px #cbcbcb; }
+
+	/* Hide border on each last shelf-item + last item */
+	div.shelf-item:nth-child(4n) a,
+    div.shelf-item:last-child a { border:none; }
+
+    /*--[end: Boekenplank ]---------------------------------------------------------*/
+
+
+
+} /* end Media Screen: Tablet Portrait / Mobile Landscape  */
+
+
+
+

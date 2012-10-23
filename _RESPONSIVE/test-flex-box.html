@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<style type="text/css"> 
+.box {
+  /* basic styling */
+  width: 350px;
+  height: 95px;
+  border: 1px solid #555;
+  font: 14px Arial;
+
+  /* flexbox setup */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+
+  display: box;
+  box-orient: horizontal;
+}
+
+.box > div {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+
+  -moz-transition: width 0.7s ease-out;
+  -o-transition: width 0.7s ease-out;
+  -webkit-transition: width 0.7s ease-out;
+  transition: width 0.7s ease-out;
+}
+
+/* our colors */
+.box > div:nth-child(1){ background : #FCC; }
+.box > div:nth-child(2){ background : #CFC; }
+.box > div:nth-child(3){ background : #CCF; }
+
+.box > div:hover { 
+  width: 200px;
+}?
+
+</style>
+</head>
+<body>
+
+
+<div id="flexbox">
+  <p>child 1</p>
+  <p>child 2</p>
+  <p>child 3</p>
+</div>
+
+</body>
+</html>
+

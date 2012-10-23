@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Geolocation API Demo</title>
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
+
+
+</head>
+<body>
+
+<div id="location">
+    <div id="user_distance">
+    You're around
+    <strong id="distance"></strong>
+    away.
+</div>
+
+<div id="geolocating">
+	Locating you ...
+</div>
+
+<!--
+<div id="location">
+    <h3>Adres</h3>
+    <span id="street"></span><br />
+    <span id="streetNumber"></span><br />
+    <span id="country"></span><br />
+</div>
+-->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+// taken from: http://majx.org/
+// http://breakthebit.org/post/10512237123/using-html5-geolocation-api-to-get-the-distance-of-the
+
+// Get latitude and longitute vis Google maps:
+// http://www.gorissen.info/Pierre/maps/googleMapLocation.php
+
+// location NS Den Bosch
+// var current_location = {latitude: 51.700545, longitude:  5.319271}
+
+// location Rosmalen
+var current_location = {latitude: 51.722987, longitude:  5.350342}
+
+var Geolocation={
+	
+	rad:function(a){return a*Math.PI/180},
+
+	haversine:function(a,b){
+	var c=6371,
+	d=this.rad(b.latitude-a.latitude),
+	e=this.rad(b.longitude-a.longitude),
+	
+	f=Math.sin(d/2)*Math.sin(d/2)+
+		Math.cos(this.rad(a.latitude))*Math.cos(this.rad(b.latitude))*Math.sin(e/2)*Math.sin(e/2),
+	g=2*Math.atan2(Math.sqrt(f),Math.sqrt(1-f)),
+	h=c*g;
+	
+	// use Math.round to get value in km
+	// return Math.round(h)
+	
+	// use just h to get detailed distance
+	return(h)
+   },
+
+	distance_from:function(a){
+	Geolocation.display_location();
+	var b=Geolocation.haversine(a.coords,current_location);
+	
+	/*
+	$("#street").text(a.address.street);
+	$("#streetNumber").text(a.address.streetNumber);
+	$("#country").text(a.address.country);
+	*/
+	
+	// Afstand tot word meegegeven
+	var setKm = 0.1; // is binnen straal van 100m
+	b&&b>setKm?$("#distance").text(b+" km"):$("#user_distance").html("<strong>You're close!</strong> Watch my toes!");
+	
+   },
+
+	display_location:function(){
+		$("#user_distance").show(),
+		$("#geolocating").hide()
+   }
+};
+
+$(function(){
+
+	/*
+	navigator.geolocation?(navigator.geolocation.getCurrentPosition(Geolocation.distance_from,Geolocation.display_location),					
+	navigator.geolocation.watchPosition(Geolocation.distance_from)):Geolocation.display_location()
+	*/
+	
+	if ( navigator.geolocation ) { // Check that the browser supports geolocation.
+	  // Request current position and provide callbacks.
+	  navigator.geolocation.getCurrentPosition(Geolocation.distance_from, Geolocation.display_location)
+	
+	  // Keep watching the position and call callbacks on change.
+	  navigator.geolocation.watchPosition(Geolocation.distance_from)
+	} else {
+	  // Fallback gracefully if geolocation isn't working.
+	  Geolocation.display_location()
+	}
+
+})
+</script>
+
+
+</body>
+</html>

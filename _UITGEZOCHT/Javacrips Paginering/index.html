@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+<div id="content">
+    <p>1Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Vestibulum consectetur ipsum sit amet urna euismod imperdiet aliquam urna laoreet.</p>
+    <p>Curabitur a ipsum ut elit porttitor egestas non vitae libero.</p>
+    <p>Pellentesque ac sem ac sem tincidunt euismod.</p>
+</div>
+
+<div class="photobook">
+                
+    <div id="vrijdag" class="day-photobook">
+        
+                <!-- html to repeat for each photo -->
+                <a class="link" rel="vrijdag" href="Images/Photobook/vr/Chaka Khan - NSJ.jpg" title="Chaka Khan - NSJ.jpg">
+                    <span class="img"><span><img alt="" src="" /></span></span>
+                    <span class="photo-title"></span>
+                    <span class="photographer">Fotograaf: </span>
+                </a>
+                <!-- end repeat -->
+                                
+        </div>
+        <div id="pagination-vrijdag" class="pagination"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="Scripts/paging-v2.js"></script>
+<!--<script type="text/javascript" src="Scripts/global.js"></script>-->
+
+
+<script type="text/javascript">
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+		   
+	// basic init
+	photobook.init();
+	//fbPaging.init({ 'itemNavSelector' : 'h2' });
+
+	/*
+	$("#content").fbPaging({
+		items: 4, 
+		next: "Volgende", 
+		previous: "Vorige"}
+	);
+	*/
+	
+});
+
+	
+</script>
+
+
+</body>
+</html>

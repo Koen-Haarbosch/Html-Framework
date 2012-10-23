@@ -1,0 +1,270 @@
+/*----------------------------------------------------------------------------
+	Yahoo Reset (updated: 17-01-2011)
+	Latest: http://developer.yahoo.com/yui/reset/
+----------------------------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+/*--[end: CSS Reset]----------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Basic
+----------------------------------------------------------------------------*/
+
+body {
+	width: 100%;
+	padding:0;
+	margin:0;
+	background: #fff;
+	font:62.5% Verdana, Arial, Helvetica, Sans-Serif;
+	color: #000;
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+a {text-decoration: none; color: #1E4371 ; } 
+a:hover {text-decoration: underline;} 
+
+#wrapper {
+	float: left;
+	width: 100%;
+}
+
+/*----------------------------------------------------------------------------
+	Font-size
+----------------------------------------------------------------------------*/
+
+#nav, #content, #footer { font-size: 1.2em; }
+
+h1{
+	font-size:1.3em;
+	color:#1E4371 ;
+}	
+h2{font-size:1.6em;}	
+h3{
+	font-size:1.1em;
+	color:#1E4371 ;
+}
+h4{font-size:1.2em;}
+h5{font-size:1.0em;}
+h6{font-size:0.8em;}
+
+/*--[end: Font-size]---------------------------------------------------------*/
+	
+/*----------------------------------------------------------------------------
+	Header
+----------------------------------------------------------------------------*/
+
+#header {
+	float: left; 
+	width: 100%;
+	text-align:center;
+}
+
+#logo {
+	float: left;
+	height:75px;
+	width: 100%;
+}
+
+#yellow-bar {  
+	float: left;
+	width: 100%;
+	height: 30px;
+	margin: 7px 0 0 0;
+	background: #fad23d;
+}
+
+#yellow-light-bar {  
+	float: left;
+	width: 100%;
+	height: 10px;
+	margin: 0 0 7px 0;
+	background: #fef1bc;
+}
+
+/*----------------------------------------------------------------------------
+	Navigation
+----------------------------------------------------------------------------*/
+
+#nav {
+	float: left; 
+	width: 100%;
+}
+#nav ul { 
+	float: left; 
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+#nav ul li { 
+	float: left; 
+	width: 100%;	
+}
+/* Main */
+#nav h3, h1 {
+	float: left;
+	display: block;
+	position: relative;
+	width: 100%;
+	font-weight:bold;
+	padding: 6px 0 6px 0;
+	background: #fef1bd;
+}
+#nav h3 span, h1 span {
+	padding-left: 7px;
+	padding-right: 2px;
+}
+
+/* Sub nav */
+#nav ul li ul li span { 
+	float: left;
+	width: 100%;
+	color: #1E4371;
+	padding: 6px 0 2px 0;
+	background: url(../Images/new/arrow-links.gif) no-repeat 9px 11px;
+}
+#nav ul li ul li span a { 
+	padding-left: 20px;
+}
+#nav ul li ul li a:hover { 
+	color: #4089D9;
+}
+a#back {
+	float: left;
+	padding: 7px 15px 7px 15px;
+	margin: 7px;
+	color: #fff;
+	background: #144273;
+}
+a#back:hover {
+	background: #000;
+}
+
+/*----------------------------------------------------------------------------
+	Content
+----------------------------------------------------------------------------*/
+
+#content {
+	float: left; 
+	width: 100%;
+	padding: 10px 0 10px 0;
+	line-height: 1.4em;
+}
+
+/*----------------------------------------------------------------------------
+	Footer
+----------------------------------------------------------------------------*/
+
+#footer {
+	float: left; 
+	width: 100%; 
+	padding: 0 0 40px 0;
+}
+
+#sitewide-menu { 
+	float: left; 
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+#sitewide-menu li { 
+	float: left;
+	width: 100%;
+}
+#sitewide-menu li span {
+	float: left;
+	width: 100%;
+	color: #1E4371;
+	font-weight: bold;
+	padding: 6px 0 2px 0;
+	background: url(../Images/new/arrow-links.gif) no-repeat 9px 11px;
+}
+#sitewide-menu li span a { 
+	padding-left: 20px;
+}
+
+
+
+/*----------------------------------------------------------------------------
+	Basic Content
+----------------------------------------------------------------------------*/
+
+#content li {
+	margin:0 0 .5em 2em;
+	padding:0;
+	display:list-item;
+	list-style-position:outside;	
+}
+#content ul li { list-style: disc; }
+#content ul li ul li { list-style: circle; }
+#content ol li { list-style:decimal; }
+#content ul ul, #content ol ol {margin:5px 0 0 0;}
+
+#content strong { font-weight: bold;}
+#content a { color: #F60;}
+#content h1 {margin-bottom:.5em;}	
+#content h2 {margin-bottom:.5142em;padding-top:.2em;}	
+#content h3 {margin-bottom:.7em;padding-top:.3em;}
+#content h4 {margin-bottom:.6em;}
+#content h5,#content h6 {margin-bottom:.5em;}
+
+#content p, #content blockquote, #content ul, #content ol, #content dl, #content form, #content table, #content pre{ line-height:inherit; margin:0 0 1.5em 0; }
+#content p {margin-left: 10px; margin-right: 10px;}
+
+#content table{width:100%;border-collapse:collapse;}
+#content th, #content td{text-align:left; padding:.5em 1em;line-height:1.5em;}		
+#content th{background:#eee;}
+#content td{border-bottom:1px solid #eee;}
+#content caption{font-style:italic;color:#777;margin:.5em 0;}	
+
+#content pre, #content code, #content samp, #content kbd, #content var{font:100% mono-space,monospace;}
+#content blockquote, #content em{ font-style:italic;}
+
+/*--[end: Columns (content)]------------------------------------------------*/
+
+
+
+/* Style for addbox */
+
+html { -webkit-text-size-adjust:none; }
+
+/* EVENT TYPE COLORS */
+#addToHomeScreen { -webkit-background-clip: padding-box; -webkit-border-radius: 8px; -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.5); -webkit-box-sizing: border-box; -webkit-user-select: none; background-image: -webkit-gradient(linear,0 0,0 100%,color-stop(0,#fff),color-stop(0.02,#eee),color-stop(0.98,#ccc),color-stop(1,#a3a3a3)); border: 1px solid #505050; color: #333; font-family: helvetica; font-size: 13px; line-height: 130%; padding: 10px; text-align: left; text-shadow: 0 1px 0 rgba(255,255,255,0.75); width: 235px; z-index: 9999; }
+#addToHomeScreen.wide { width: 250px }
+#addToHomeScreen .arrow { -webkit-border-bottom-right-radius: 2px; -webkit-box-shadow: inset -1px -1px 0 #a9a9a9; -webkit-transform: rotateZ(45deg); background-image: -webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(204,204,204,0)),color-stop(0.4,rgba(204,204,204,0)),color-stop(0.4,#ccc)); border-color: #505050; border-style: solid; border-width: 0 1px 1px 0; bottom: -9px; height: 16px; left: 50%; margin-left: -8px; position: absolute; width: 16px; }
+#addToHomeScreen.ipad .arrow { -webkit-box-shadow: inset -1px -1px 0 #fff; -webkit-transform: rotateZ(-135deg); background-image: -webkit-gradient(linear,0 0,100% 100%,color-stop(0,rgba(238,238,238,0)),color-stop(0.4,rgba(238,238,238,0)),color-stop(0.4,#eee)); bottom: auto; left: 31px; top: -9px; }
+#addToHomeScreen .close { -webkit-border-radius: 3px; -webkit-box-shadow: 0 1px 0 #fff; -webkit-box-sizing: border-box; background: rgba(0,0,0,0.12); color: #707070; font-size: 14px; font-size: 14px; height: 16px; line-height: 14px; position: absolute; right: 6px; text-align: center; text-indent: 1px; top: 6px; width: 16px; }
+/* + icon for iOS < 4.2 */
+#addToHomeScreen .plus {font-weight:bold;font-size:1.3em;}
+/* The 'share' icon, displayed only on iOS >= 4.2 */
+#addToHomeScreen .share {display:inline-block;width:18px;height:15px;background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAQAAABDj1eZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUdJREFUKFNtkLtLw1AYxS/qJLhXVKr2ZRulUNtiqgSb3CziICI6ucTFVYcOnaQOFRwUnNTRwUWXgpP/QdHNUEQUHGxofYBTlRs83iZNjKTncOGe7/vx3QchXUWn6FL3jhfKUdCCr5zuifV5oDiHQM+c+CIhiiCSWNu08iq9oHXKLAiqrgR4UXqlOEYZt++ExEL0wW7+OW0G10muLv9gmqfe5FAWKmTMYQYiFL7PYwyLOD8lSjNh2gdnPzMII4QUBxc4OothbAF7GCBKQ0YbSWyPQsIhqvetS+y0ygGMo/KFZfviDvR4AhwgZU9dGYnA0J/6ndc15i3ouYIMcVVUcEXIoOxCeRCfwP8sXBSdjtpUv/1QW+K16kCCIUC4id9Fa0JtkluwVkSfqPL6RwfSDA0aNlx7k/bWgViB7bMS2/1vk5sdsZLN/ALSuL3tylO4RAAAAABJRU5ErkJggg==);background-size:18px 15px;text-indent:-9999em;overflow:hidden;}
+#addToHomeScreen .touchIcon {display:block;float:left;-webkit-border-radius:8px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5),inset 0 0 2px rgba(255,255,255,0.9);background-repeat:none;width:44px; height:44px;-webkit-background-size:44px 44px;margin:0 10px 5px 0;border:1px solid #333;-webkit-background-clip:padding-box;}
+#addToHomeScreen.ipad .share {background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAeCAQAAADu6HTYAAADPElEQVR4Xq3TX2gcRRzA8e/M7mVv2+TSNpc/TZtrY6jUGqgaSAmEChKLrYK0YH0RFC2CSCkEfCghiKU04J8qNigq6os+iQV98MHWFwVBrQQRWs21lBw5cw3NNb1/udu72RGG5Y77IzXW77D7sAwf5scyYoL6BGXSDKFZwaGpLvIUaeoCkvX1MmsM0Ny6oRSQYOLuIS+YZOpfQdqslpUxcZrzTVAz4qPwW2O3CeIwC/RSzeY6Ow1QhUrkr+YOWfEKDkEP8Rij7CHKJmrFSDHBdwGEE5wiGChPN+PnT8VdRtEIl1d4gRj/1EVe5ZSBKGh8iqQpo/Fo5+3C/gz0MYg4zgwbqday1/Q4B8BGQ45d/Hi54lakCrU5obOcidJpu1+Lg9whjabyaOYLnrIBFFaRD+xe2ybMDWY66GmP/WA9cGfGp0CWhy0wkMN8inepFiH2rV1j0NQSNQbFLRQnS8/8YSDBBpadfv4CYDub2fmeHDNAsL1MBWUel0iA+Xik6eHcyvD3vAMSU1TGuA/YRS+dD7ovCQN43GKRFCU20Kd3V/avDVVyAZ5niTEuLA5/zBGWg9EEEhfJKN200Tat8CmRAQb9+wv7soPlHt2tQorsz1uPbr0HTY4sJwrH47zJZwABBAKLMBoQXepwgTwdHCo+fXMkQ4lrxEmQ5AaXipPqDY9V2vn09tgvTPI71EEGYxM+/uMJLJ4svpgaWGKOi/xKgmqLSUGSUd5f2vIVJ/CgBaTIUsZ7ZBsn0+NzfMOXLFCXQyTcybN6ep5ZZgUOHn7jpfUpsZshdugPGf+E5zjbyHTSRyQ8xfRPPM/s63RHeuknSoT22mjmmnAOIMkUZ6D1xSfPPAfd1WFKM3sO2CMaHx8M1NjnXKHaAGGkOW0C02WeYHUz4qMtx+w5gUDS8NckYe5lHsMYwCZEPyEEmjLDZFmAS7CDviMdxyTkMNVBKEmYLvbiQQBIBBbCQG04bGQvFWz6CfsCQLWCigILFwcfkGYBiOpbYuOizTAyYyDdCtrGaRG1LCkIgMYEFhI0WqQZoSlbGRyHKe4qOx7iv2bVQW9dp4dlM/x6kmwnWQcd/Q3FCqwTEiT5s+6D5v/pb0SSHyg7uhMWAAAAAElFTkSuQmCC);position:relative;top:2px;}
+/* End - Style for addbox */

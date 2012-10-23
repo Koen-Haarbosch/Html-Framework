@@ -1,0 +1,143 @@
+
+/*	RESPONSIVE VIEW 2
+	Tablet Portrait : > 480 and < 800px.
+-----------------------------------------------------------------*/
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+/* Show/Hide specific article content */
+.sh-tablet-p {display:block !important;}
+.sh-tablet-l {display:none;}
+.sh-mobile-p {display:none;}
+.sh-mobile-l {display:none;}
+
+#wrapper {
+	width: 760px !important;
+}
+#wrapper2 {
+	width: 735px !important;
+}
+/*----------------------------------------------------------------------------
+	Header
+----------------------------------------------------------------------------*/
+#logo {
+	margin-top: 8px;
+}
+
+/*--[end: Header]---------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Column Center
+----------------------------------------------------------------------------*/
+#column-center {
+	
+	width: 510px;
+	padding: 0 0 0 15px !important;
+}
+
+body.continued #column-center {
+	width: 504px;
+    margin: 0 0 0 20px;
+	padding: 0!important;	
+}
+
+/*----------------------------------------------------------------------------
+	Visual
+----------------------------------------------------------------------------*/
+
+body.continued #visual {
+	width: 514px;
+	height: 130px;
+	margin: 0 0 10px 0;
+	overflow: hidden;
+	background:url(../../Images/Mobile/visual-vervolg.jpg) no-repeat 0 0;	
+}
+
+/*--[end: Visual]------------------------------------------------*/
+
+#column-right { width: 490px; }
+	
+/*----------------------------------------------------------------------------
+	Navigation
+----------------------------------------------------------------------------*/
+
+#nav {
+	float: right;
+	width: 550px;
+	margin-top: 10px;
+	margin-right:0;
+}
+ul.horizontal li:last-child span {
+	display: none;
+}
+ul.horizontal li:last-child a {
+	padding-right: 0;
+}
+
+/*--[end: Navigation ]---------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Search Form 
+----------------------------------------------------------------------------*/
+
+#search {
+	margin-top:5px;
+	
+}
+
+/*--[end: Search Form]------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Blocks
+----------------------------------------------------------------------------*/
+
+#blocks {
+	float: left;
+	width: 735px;
+}
+
+#blocks-bottom {
+	width: 735px;
+}
+
+.block {
+	width: 238px;
+}
+
+#blocks .block:first-child { margin-left:0; }
+
+.block#business-cases {
+	height: 200px;
+}
+
+/* Related content */
+#related-content {
+	width: 235px
+}
+
+/*--[end: Blocks]------------------------------------------------*/
+
+/*----------------------------------------------------------------------------
+	Content Panes
+----------------------------------------------------------------------------*/
+.pane {
+	width: 504px;
+}
+
+/*----------------------------------------------------------------------------
+	Footer
+----------------------------------------------------------------------------*/
+#footer {
+	width: 735px;
+}
+
+/*--[end: Footer]---------------------------------------------------------*/
+
+
+} /* end Media Screen: Tablet Portrait / Mobile Landscape  */
+
+
+
+

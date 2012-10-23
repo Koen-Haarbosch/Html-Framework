@@ -1,0 +1,305 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	/*----------------------------------------------------------------------------
+		Yahoo Reset (updated: 17-01-2011)
+		Latest: http://developer.yahoo.com/yui/reset/
+	----------------------------------------------------------------------------*/
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		margin:0;
+		padding:0;
+	}
+	table {
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	fieldset,img { 
+		border:0;
+	}
+	address,caption,cite,code,dfn,em,/*strong,*/th,var {
+		font-style:normal;
+		font-weight:normal;
+	}
+	ol,ul {
+		list-style:none;
+	}
+	caption,th {
+		text-align:left;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-size:100%;
+		font-weight:normal;
+	}
+	q:before,q:after {
+		content:'';
+	}
+	abbr,acronym { border:0;
+	}
+	/*--[end: CSS Reset]----------------------------------------------------------*/
+	
+
+	
+	/* =============================================================================
+	   HTML5 display definitions
+	   ========================================================================== */
+	
+	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+	audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+	audio:not([controls]) { display: none; }
+	[hidden] { display: none; }
+	
+	/* apply a natural box layout model to all elements */
+	* { 	
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		box-sizing: border-box;         /* Opera/IE 8+ */
+	}
+	/* .unborderbox { box-sizing: content-box; } */
+	
+
+	/* ----------------------------------------------------------- Set Fluid width for media content */ 
+	img,
+	embed,
+	object,
+	video {
+		max-width: 100%;
+	}
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+	
+	a:hover, 
+	a:active { 
+		outline: none; 
+	}
+	
+	a, 
+	a:active, 
+	a:visited { 
+		color:#000; 
+		text-decoration: underline; 
+	}
+	
+	a:hover { 
+		color:#000; 
+		text-decoration: none; 
+	}
+	
+	html { 
+		overflow-y: scroll;
+	}
+	
+	body {
+		font:62.5% Helvetica, Arial, Sans-Serif;
+		background: #FFFFFF;
+	}
+	
+	.clear { 
+		clear: both; 
+		height: 1px; 
+		font-size: 1px; 
+		border: none; 
+		background: transparent;
+	}
+	
+	#wrapper {
+		width: 90%; /* 995px */
+		margin: 0 auto 0 auto; 
+		text-align: left;
+	}
+	
+	
+	/*----------------------------------------------------------------------------
+		Font-size
+	----------------------------------------------------------------------------*/
+	
+	header, nav, #column-left, #column-center, #column-right, footer, #tooltip { font-size: 1.2em; }
+	
+	h1{font-size:2em;}	
+	h2{font-size:1.8em;}	
+	h3{font-size:1.6em;}
+	h4{font-size:1.4em;}
+	h5{font-size:1.2em;}
+	h6{font-size:1.0em;}
+	/*--[end: Font-size]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Header
+	----------------------------------------------------------------------------*/
+	header {
+		float: left;
+		width: 100%; /* 995/995 */
+		margin: 1.005025125628141% /* 10/995 */ 0 0.5025125628140704% /* 5/995 */ 0;
+		background: #ccddee;
+	}
+	header h1 {
+		float: left;	
+	}
+	
+		/*----------------------------------------------------------------------------
+			Site Wide Menu
+		----------------------------------------------------------------------------*/
+		ul#site-wide-nav {
+			float: right;
+		}
+		ul#site-wide-nav li {
+			float:left;
+			padding: 0 0 0 1.005025125628141% /* 10/995 */;
+		}
+		ul#site-wide-nav li a {
+			color: #000;
+		}
+		/*--[end: Site Wide Menu]---------------------------------------------------------*/
+	
+	
+	/*--[end: Header]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Navigation
+	----------------------------------------------------------------------------*/
+	
+	nav {
+		float: left;
+		width: 100%; /* 995/995 */
+		background: #eeddaa;
+	}
+		/* Mainmenu */
+		
+		
+		ul.horizontal {
+			position:relative;
+			width: 100%;
+			z-index: 999;
+		}
+			ul.horizontal li {
+				float:left;
+				position:relative;
+				padding: 1.005025125628141% 2.010050251256281% 1.005025125628141% 0;
+			}
+			ul.horizontal li a {
+				color: #ff6600;
+				text-decoration: none;
+			}
+			ul.horizontal li a:hover {
+				color: #999;
+				text-decoration: underline;
+			}
+			ul.horizontal li a.active {
+				color: #900;	
+			}
+			ul.horizontal li:hover ul, ul.horizontal li.hover ul {
+				display:block;
+			}
+			
+			
+			
+			
+			
+		/* Submenu */
+		
+		
+		ul.horizontal ul{
+			display:none;
+			position:absolute;
+			top:30px;
+			left:0px;
+			width: 125%;  /* ? */
+		}
+			ul.horizontal ul li {
+				width: 125%;  /* ? */
+				background:#fff;
+			}
+			
+			
+	/*--[end: Navigation]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Columns
+	----------------------------------------------------------------------------*/
+	
+	#column-container{
+		float: left;
+		width: 100%; /* 995/995 */
+		margin: 2.010050251256281% 0 0 0;  /* 20/995 */
+	}
+		#column-left {
+			float: left;
+			width: 20.10050251256281%; /* 200/995 */
+			background: #eeddaa;
+		}
+		#column-center {
+			float: left;
+			width: 45.7286432160804%; /* 455/995 */
+			color: #333333;
+			margin: 0 4.020100502512563% 0 4.020100502512563%;  /* 40/995 */
+		}
+		
+		
+		#column-right {
+			float: left;
+			width: 26.13065326633166%; /* 260/995 */
+			background: #ffaaee;
+		}
+		
+		
+	/*--[end: Columns]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Footer
+	----------------------------------------------------------------------------*/
+	
+	#footer {
+		float: left;
+		width: 100%; /* 995/995 */
+		margin: 3.015075376884422% /* 30/995 */ 0 2.010050251256281% /* 20/995 */ 0;
+		background: #ee00ff;
+	}
+	
+	/*--[end: Footer]---------------------------------------------------------*/
+	
+	
+	/*--[end: Base CSS]---------------------------------------------------------*/
+	
+	
+
+
+
+
+} /*--[end: @media screen ]------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------
+	Print Styles
+----------------------------------------------------------------------------*/
+
+@media print {
+	
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  
+  /* Hide Stuff */
+	header, nav, #column-left, #column-right, .paging, footer {
+		display: none !important;
+	}
+
+	
+} /*--[end: @media print ]------------------------------------------------*/
+

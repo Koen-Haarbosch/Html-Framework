@@ -1,0 +1,80 @@
+mercurial
+
+http://mercurial.selenic.com/downloads/
+
+Download hier: TortoiseHg 2.2.1 with Mercurial 2.0.1 - x64 Windows
+(of een andere versie indien nodig)
+
+
+
+
+tortoisehg
+
+http://tortoisehg.bitbucket.org/
+
+Clone url: https://bitsquad@bitbucket.org/digibeuk/alegria-magento-skin
+
+
+Maak een map aan locaal: Magento
+Maak daarin een map aan van het project: Alegria Webshop
+
+Rechtsklik op de map van het project en kies tortoisehg > Clone
+Vul bij source de 'Clone url' in en kies 'Clone'. 
+Vul wachtwoord in als daarom gevraagt word.
+
+Alle benodigde mappen zijn nu binnengehaald.
+
+
+Add PHTML to Dreamwaver
+http://www.webdesign-gm.co.uk/news/web-design/magento-phtml-files-in-dreamweaver.html
+
+
+Pad naar user map in Windows 7
+(kies Organize > Folder & search options, om alle mappen te tonen)
+thuis: C:\Users\Koen\AppData\Roaming\Adobe\Dreamweaver CS4\en_US\Configuration
+
+
+
+De werkwijze van DigitalBits is dat ze als ze beginnen met werken 'Pullen' (= als get latest version).
+En aan het einde van iedere dag werken 'Pushen' (= als check in). 
+
+Wil je wijzigingen Pushen dan moet je eerst de locale versie Committen. > Hg Commit...  
+( Als je commit leg je veranderingen vast in een changeset, deze changesets push je naar de bibucket repo. )
+
+Zonder te committen valt er dus niks te pushen :)
+
+Daarna kun je Pushen > TortoiseHg > Synchronize
+
+
+Wil je wijzigingen zien dan moet je nog wel handmatig uploaden naar de FTP.
+Wat je nu nog niet hebt is een programma die ook meteen ftp't. --> zou kunnen met een programmatje als : Google op : ftp rsync windows
+
+In Dreamweaver kun je ook naast de local een remote view instellen die je koppeld aan de FTP.
+vink deze 2 opties daarbij aan: Maintain synchronization information en automaticly update files ...
+Als je van remote een file opent vraagt hij of je de local versie wil overschrijven met de remote versie.
+Als je dat doet blijft je local versie ook de laatste versie en hoe je niet de FTP leeg te halen.
+Je kunt de local versie dan meteen pushen.
+
+
+
+
+In de /app en /skin mappen staan alleen de bestanden die de /base map overrulen.
+Mis je bestanden hierin, dan worden die nog gebruikt uit de /base map.
+Je kunt die benodigde bestanden gewoon uit de base map in je eigen /app of /skin map zetten.
+De /base map vind je op de FTP.
+Zodra die daar staan worden die gebruikt ipv die uit de base map.
+
+
+De xml bestanden worden vooral gebruikt om te bepalen welke controls in welke blokken getoond worden.
+page.xml is de basis van alle pagina's.
+
+
+
+Je kunt in de site ook aanzetten dat je ziet welke blokken waar geladen worden en hoe die heten.
+Dit doe je in de Magento backend:
+System > Configuration > Ontwikkelaar > Zet Scope op Main Website >
+Kies debuggen > Hints en zet op Ja
+
+
+Om je eigen attributen in het Facetmenu weer te geven kies je op de Shop > Display settings > Is anchor zet je op ja
+

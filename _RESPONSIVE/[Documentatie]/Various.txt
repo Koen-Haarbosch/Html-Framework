@@ -1,0 +1,26 @@
+Alle responsive artikelen van smashing:
+http://www.smashingmagazine.com/tag/responsive/
+
+
+Toont de browser resolutie en de media query die op dat moment gebruikt word:
+http://seesparkbox.com/foundry/media_query_bookmarklet
+
+Content Prototyping: De content vormt de basis van je website.
+De content bepaald in een responsive website waar de media querys gebruikt moeten worden.
+http://uxdesign.smashingmagazine.com/2011/09/26/content-prototyping-in-responsive-web-design/
+
+
+The responsive designer workflow
+http://www.lukew.com/ff/entry.asp?1353
+
+
+Voorbeelden van Media Queries
+http://mediaqueri.es/
+
+
+Fluid/ responsive images	
+http://unstoppablerobotninja.com/entry/fluid-images/
+
+
+Overzicht van beproefde? media queries
+http://www.stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/

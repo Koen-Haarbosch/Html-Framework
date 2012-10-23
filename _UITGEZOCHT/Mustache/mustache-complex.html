@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQueryMustache</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+	<script src="Scripts/mustache.js"></script>
+    
+    <script id="templateTest" type="x-tmpl-mustache">
+
+        <div id="Test">
+
+            {{#Sections}}
+                <h3>{{SectionId}} - {{SectionName}}</h3>
+                <ul>
+					{{#Questions}}
+						<li>{{QuestionId}} - {{QuestionText}}</li>
+					{{/Questions}}
+				</ul>
+            {{/Sections}}
+
+        </div>
+
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
+    var data = 
+    {
+        Sections: 
+        [
+            {
+                SectionId: 1,
+                SectionName: 'Section One',
+                Questions: [
+                    {
+		        QuestionId: 1,
+		        QuestionText: 'Question one in section one?'
+		    },
+		    {
+		        QuestionId: 2,
+		        QuestionText: 'Question two in section one?'
+		    }
+		]
+	    },
+	    {
+	        SectionId: 2,
+			SectionName: 'Section Two',
+			Questions: [
+				{
+					QuestionId: 1,
+					QuestionText: 'Question one in section two?'
+				}
+			]
+	    }
+	]		
+    };
+        
+    $(function () {
+
+		var template = $('#templateTest').html();
+		var html = Mustache.to_html(template, data);
+	
+	
+		$("body").html(html);
+
+
+    });
+
+    </script>
+    
+    <style>
+		#Test { background: #f1f1f1; }
+	</style>
+</head>
+<body>
+
+</body>
+</html>

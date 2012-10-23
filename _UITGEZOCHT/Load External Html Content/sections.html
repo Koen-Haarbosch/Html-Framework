@@ -1,0 +1,47 @@
+<div id="section_home">
+	<h2>Home</h2>
+	<p>
+		Lorem Ipsum is simply <a href="">dummy</a> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</p>
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and <a href="">typesetting industry</a>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	</p>
+</div>
+
+<div id="section_clients">
+	<h2>News</h2>
+	    <!-- "Video For Everybody" v0.4.2 by Kroc Camen of Camen Design <camendesign.com/code/video_for_everybody>
+     =================================================================================================================== -->
+<!-- first try HTML5 playback: if serving as XML, expand `controls` to `controls="controls"` and autoplay likewise       -->
+<!-- warning: playback does not work on iPad/iPhone if you include the poster attribute! fixed in iOS4                   -->
+<video width="640" height="360" controls autoplay>
+	<!-- MP4 must be first for iPad! -->
+
+	<source src="video.mp4"  type="video/mp4"  /><!-- WebKit video    -->
+	<source src="video.webm" type="video/webm" /><!-- WebM/VP8/Vorbis -->
+	<source src="video.ogv"  type="video/ogg"  /><!-- Firefox / Opera -->
+	<!-- fallback to Flash: -->
+	<object width="640" height="360" type="application/x-shockwave-flash" data="player.swf">
+		<!-- Firefox uses the `data` attribute above, IE/Safari uses the param below -->
+		<param name="movie" value="_player.swf" />
+		<param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=poster.jpg&amp;file=video.mp4" />
+		<!-- fallback image -->
+
+		<img src="poster.jpg" width="640" height="360" alt="Big Buck Bunny"
+		     title="No video playback capabilities, please download the video below" />
+	</object>
+</video>
+<!-- you *must* offer a download link as they may be able to play the file locally. customise this bit all you want -->
+<p>	<strong>Download Video:</strong>
+	Closed Format: <a href="video.mp4">"MP4"</a>
+	Open Format: <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv">"OGG"</a> /
+	            <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm">"WebM"</a>
+
+</p>
+<!-- =================================================================================================================== -->
+
+</div>
+
+<div id="section_work">
+	Tekst
+</div>

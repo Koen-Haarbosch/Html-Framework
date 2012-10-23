@@ -1,0 +1,76 @@
+/* START FACETBASE TOOLBOX  nog checken welke  wij willen gebruiken --------------------------------------------------------*/
+
+/* toolbox */
+.center                 {margin: auto auto; }
+.center-txt             {text-align: center; }
+.center-page            {margin: 0 auto; overflow: hidden; }
+.clear                  {clear: both; display: block; }
+.clear-right            {clear: right; }
+.clear-left             {clear: left; }
+.no-clear               {clear: none; display: inline; }
+.intro-txt              {margin-top: 1em; font-size: 145%; line-height: 1.5em; }
+.big-txt                {font-size: 126%; }
+.bigger-txt             {font-size: 116%; }
+.big-nav *              {font-size: 110%; }
+.normal-txt             {font-size: 100%; }
+.small-txt              {font-size: 96%; }
+.xsmall-txt             {font-size: 80%; }
+.bold                   {font-weight: bold; }
+.italic                 {font-style: italic; }
+.underline              {text-decoration: underline; }
+.line-height-normal     {line-height: normal; }
+.left                   {float: left;}
+.left-img               {margin: 8px 24px 8px 0; float: left; }
+.left-txt               {text-align: left; }
+.line                   {margin: 1em 0; width: 100%; border-top: 2px #E9E9E5 solid; float: left; }
+.padding                {padding: 20px; }
+.padding-small          {padding: 10px; }
+.padding-xsmall         {padding: 4px; }
+.padding-small-content  {padding: 0px; }
+.no-margin              {margin: 0; }
+.no-margin-bott         {margin-bottom: 0; }
+.no-padding             {padding: 0 !important; }
+.no-pad-bott            {padding-bottom: 0; }
+.no-border              {border: none !important; }
+.no-block               {display: inline !important; width: auto !important; }
+.no-background          {background: none !important; }
+.no-underline           {text-decoration: none !important; }
+.nobullet               {list-style: none; list-style-image: none; }
+.nofloat                {float: none; }
+.right                  {float: right; }
+.right-img              {float: right; margin: 8px 0 8px 24px; }
+.right-txt              {text-align: right; }
+
+.mtop                   {margin-top: 10px; }
+.mbott                  {margin-bottom: 10px !important; }
+.mbott-double           {margin-bottom: 20px !important; }
+.mleft                  {margin-left: 10px; }
+.mright                 {margin-right: 10px; }
+.mstop                  {margin-top: 5px; }
+.msbott                 {margin-bottom: 5px !important; }
+.msleft                 {margin-left: 5px; }
+.msright                {margin-right: 5px; }
+
+.ptop                   {padding-top: 10px; }
+.pbott                  {padding-bottom: 10px; }
+.pbott-double           {padding-bottom: 20px; }
+.pleft                  {padding-left: 10px; }
+.pright                 {padding-right: 10px; }
+.pstop                  {padding-top: 5px; }
+.psbott                 {padding-bottom: 5px; }
+.psleft                 {padding-left: 5px; }
+.psright                {padding-right: 5px; }
+
+.spacer-left            {margin-left: 22px; }
+.spacer-right           {margin-right: 22px; }
+.date                   {margin: 0.4em 0 0.2em 0; clear: both; display: block; }
+.block                  {display: block; }
+.wrap                   {width: auto; }
+.no-wrap                {white-space: nowrap }
+.hide                   {display: none; }
+.noscript               {display: none; }
+.auto                   {width: auto; }
+.fillout                {width: 100%; }
+.overflow-hidden        {overflow: hidden !important; }
+
+/* END FACETBASE TOOLBOX --------------------------------------------------------*/

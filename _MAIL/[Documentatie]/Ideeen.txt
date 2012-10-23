@@ -1,0 +1,72 @@
+Punt van Richard:
+
+Ik heb steeds line-heigt issues in Hotmail.
+Hij pakte dit helemaal niet op en duwde alles uit elkaar.
+Wat werkt:
+
+.ExternalClass * {line-height: 100%}  
+
+
+
+
+
+PUNTEN NAAR AANLEIDING VAN http://htmlemailboilerplate.com/
+
+Using the xHTML doctype seems best when sending HTML email. More info/Reference:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+Word hier iets van weggegooid door mailplus:
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Your Message Subject or Title</title>
+<style type="text/css">
+
+</style>
+
+
+
+
+
+
+PUNTEN NAAR AANLEIDING VAN DE ASPACTS TEMPLATE:
+
+- PNG images worden iig ondersteund in Outlook 2007, Gmail, Hotmail en Yahoo
+
+- Background image gebruiken die overal zichtbaar is.
+Zet de background met de background attribute op de body en op de eerste <td> van de <table> met 100% width.
+De background image vult wel altijd zowel horizontaal als verticaal uit. Dus het is belangrijk je image goed te maken.
+Een oplossing is een hele hoge image met een deel wat ook echt horizontaal kan repeaten.
+Vergeet op beide ook niet het bgcolor attribute mee te geven als fall back.
+Zorg er ook voor dat de background image horizontaal niet hoeft te lijnen met een deel in de email. Outlook plaatst namelijk altijd een 15 pixel margin boven de hoofd tabel. Ik weet niet precies waar deze margin vandaan komt en of het wel een margin is.
+
+
+- Op body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" zetten.
+En in Css body {margin:0;padding:0}
+
+- Alle <td>'s standaard deze attributes meegegeven: cellpadding="0" cellspacing="0" align="left" border="0" valign="top"
+Waarden alleen wijzigen indien nodig.
+
+- Alle <a> tags ook altijd inline styles meegeven: style="font-family: Arial, Verdana, Helvetica, sans-serif; color: #ffffff; font-size: 11px; text-decoration: underline"
+
+- Alle <td>'s waar alleen een image in staat moeten deze inline styles meekrijgen: style="line-height:0px; padding:0px;"
+Ook de image zelf die erin staat deze style meegeven: style="display:block;"
+
+- Lege <td>'s die gebruikt worden om een hoogte of breedte mee aan te geven dienen een placeholder image te bevatten.
+De placeholder is een transparante 1px bij 1px gif image.
+
+- Geef images altijd de juiste height en width mee in de html.
+- Geef de <td> waar alleen een image instaat precies dezelfde height en width mee als de image die erin staat.
+
+
+- Gebruik in de content en titels geen paragraph (<p>) en header (vb. h2).
+Header tags erven in Hotmail de styles van Hotmail zelf over.
+De content gewoon opmaken met <br />
+
+
+Algemeen:
+- Test of je template overeind blijft als je alle styles tussen <style></style> weghaald.
+Dan valt hij dus terug op de inline styles.
+- Test ook omgekeerd. Dus als alle inline styles weg zijn of hij dan overeind blijft met alleen de styles in <style></style>
+- Test als locaal je template goed lijkt te zijn in alle browsers deze ook in ieder geval in de volgende email clients: Outlook,
+Hotmail, Yahoo, Gmail

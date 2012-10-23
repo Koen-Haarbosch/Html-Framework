@@ -1,0 +1,28 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+	 
+/* Devices between 480-1024px */
+@media screen and (min-width:481px) and (max-width:1024px) {
+  /* styles go here */
+}
+ 
+/* Devices 480px & below */
+@media screen and (max-width:480px) {
+  /* styles go here */
+}
+
+
+
+
+
+<!-- Orientation styles for devices w/ max width of 1024px  -->
+
+@media only screen and (max-device-width:1024px) and (orientation:portrait) {
+  /* styles go here */
+}
+
+@media only screen and (max-device-width:1024px) and (orientation:landscape) {
+  /* styles go here */
+}

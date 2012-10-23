@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+
+	html, body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		margin:0;
+		padding:0;
+	}
+
+	html, body { border: 0px;width: 100%;height: 100%;background: #fff;font-size: 12pt;}
+	a, a:visited { color: #000 !important; text-decoration: underline; background: none; }
+
+	#header, #nav, #column-left, #column-right, #paging, #footer {
+		display: none !important;
+	}
+	#wrapper, #column-container, #column-center {
+		width: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		float: none !important;
+		color: #000000;
+		background: none;
+	}
+	
+	/* a:after { content: " (" attr(href) ")"; }  Displays url after link */
+	/* abbr:after { content: " (" attr(title) ")"; } Displays title after abbr */
+	/* pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }    */
+	/*	img { page-break-inside: avoid; } */
+	/* @page { margin: 0.5cm; } */
+	/*	p, h2, h3 { orphans: 3; widows: 3; } Set min text lines before page break and before page start */
+	/*	h2, h3{ page-break-after: avoid; } */
+	
+	/*----------------------------------------------------------------------------
+		Basic Content
+	----------------------------------------------------------------------------*/
+	
+	
+	#column-center li {
+		margin:0 0 .5em 2em;
+		padding:0;
+		display:list-item;
+		list-style-position:outside;	
+	}
+	#column-center ul li { list-style: disc; }
+	#column-center ul li ul li { list-style: circle; }
+	#column-center ol li { list-style:decimal; }
+	#column-center ul ul, #column-center ol ol {margin:5px 0 0 0;}
+	
+	#column-center strong { font-weight: bold;}
+	#column-center a { color: #F60;}
+	#column-center h1 {margin-bottom:.5em;}	
+	#column-center h2 {margin-bottom:.5142em;padding-top:.2em;}	
+	#column-center h3 {margin-bottom:.7em;padding-top:.3em;}
+	#column-center h4 {margin-bottom:.6em;}
+	#column-center h5,#column-center h6 {margin-bottom:.5em;}
+	
+	#column-center p, #column-center blockquote, #column-center ul, #column-center ol, #column-center dl, #column-center form, #column-center table, #column-center pre{ line-height:inherit; margin:0 0 1.5em 0; }
+	
+	#column-center table{width:100%;border-collapse:collapse;}
+	#column-center th, #column-center td{padding:.5em 1em;line-height:1.5em;}		
+	#column-center th{background:#eee;}
+	#column-center td{border-bottom:1px solid #eee;}
+	#column-center caption{font-style:italic;color:#777;margin:.5em 0;}	
+	
+	#column-center pre, #column-center code, #column-center samp, #column-center kbd, #column-center var{font:100% mono-space,monospace;}
+	#column-center blockquote, #column-center em{ font-style:italic;}
+
+	
+
+

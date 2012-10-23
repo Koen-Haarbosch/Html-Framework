@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<style type="text/css"> 
+
+.exampleborderradius {
+    background-color: #EEEEEE;
+    border-radius: 15px 15px 15px 15px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+	
+	box-shadow: 3px 3px 5px #888;
+	/* niet meer nodig voor de nieuwste browsers van safari en firefox
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	*/
+}
+
+
+.exampleborderradius2 {
+    background-color: #EEEEEE;
+	border: solid 10px #cc0000;
+    border-radius: 15px 15px 15px 15px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+	
+	-moz-box-shadow: inset 0 0 5px #000; /* Nog wel nodig */
+	-webkit-box-shadow: inset 0 0 5px #000; /* Nog wel nodig */
+	box-shadow: inner 0 0 5px #000;
+}
+
+.gradient-bg {
+   /* fallback/image non-cover color */
+   background-color: #1a82f7; 
+
+   /* fallback image
+   background-image: url(images/fallback-gradient.png);  */
+
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#ffcc00));
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, #ffffff, #ffcc00); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, #ffffff, #ffcc00);
+
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, #ffffff, #ffcc00);
+
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, #ffffff, #ffcc00);
+}
+	
+</style>
+</head>
+<body>
+
+
+<a href="test-multiple-bg.html">Next</a>
+
+
+
+http://css-tricks.com/5700-css3-gradients/
+
+<div class="exampleborderradius gradient-bg">
+	Tekst
+</div>
+
+
+<div class="exampleborderradius2 gradient-bg">
+	Tekst
+</div>
+
+
+
+</body>
+</html>
+

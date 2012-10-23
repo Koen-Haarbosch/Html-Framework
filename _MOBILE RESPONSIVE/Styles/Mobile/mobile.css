@@ -1,0 +1,308 @@
+/*	RESPONSIVE VIEW 3
+	Mobile landscape: 480px : between 321 & 480 pixels
+-----------------------------------------------------------------*/
+
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+
+/* Show/Hide specific article content */
+.sh-tablet-p {display:none;}
+.sh-tablet-l {display:none;}
+.sh-mobile-p {display:block !important;}
+.sh-mobile-l {display:none;}
+
+#wrapper {
+	width: 320px;
+}
+#wrapper2 {
+	width: 310px;
+	padding: 0 5px 0 5px;
+	border: none;
+}
+
+/*----------------------------------------------------------------------------
+	Header
+----------------------------------------------------------------------------*/
+#header {
+	height: 50px;
+    margin-bottom:0;
+}
+#logo {
+	float: left;
+	width: 122px;
+	margin: 7px 0 0 0;
+}
+/*--[end: Header]---------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Navigation
+----------------------------------------------------------------------------*/
+
+#nav {
+	float: right;
+	width: 150px;
+	margin: 25px 0 0 0;
+}
+/* Mainmenu */
+	ul.horizontal {
+		float: right;
+		position:relative;
+		z-index: 999;
+	}
+		ul.horizontal li {
+			display:none;
+		}
+		ul.horizontal li:nth-last-child(2) {
+			display:block;
+		}
+		ul.horizontal li:nth-last-child(2) span {
+			display:none;
+		}
+		ul.horizontal li a {
+			padding: 10px 1px 10px 10px;		
+			background: url(../../Images/Mobile/arrow-block-link.gif) no-repeat 0 15px;
+		}
+
+		
+/*--[end: Navigation]---------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Search Form 
+----------------------------------------------------------------------------*/
+
+#search {
+	float: right;
+	width: 310px;
+	margin: 0 0 10px 0;
+}
+#search input {
+	width: 265px;
+}
+
+/*--[end: Search Form]------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Visual
+----------------------------------------------------------------------------*/
+#visual {
+	width: 310px;
+	height: 88px;
+	
+	background:url(../../Images/Mobile/visual-mobile.jpg) no-repeat 0 0;
+}
+
+body.continued #visual {
+	width: 310px;
+	height: 88px;
+	left: 0;
+}
+/*--[end: Visual]------------------------------------------------*/
+
+/*----------------------------------------------------------------------------
+	Blocks
+----------------------------------------------------------------------------*/
+
+#blocks {
+	display: none;
+}
+
+#blocks-bottom {
+	float: left;
+	width: 310px;
+	padding-bottom: 10px;
+}
+
+.block {
+	width: 300px;
+	height: auto;
+}
+
+#blocks-bottom .block { width: 310px; margin:0; }
+
+#blocks-bottom .block h2 { width: 300px;}
+#blocks-bottom .block h2.active {
+	background: #043292 url(../../Images/Mobile/bg-block-header-v2-active.gif) no-repeat right top;
+}
+
+.block span {
+	width: 310px;
+	cursor: pointer;
+}
+
+#blocks-bottom .block span { width: 300px; }
+
+/*--[end: Blocks]------------------------------------------------*/
+
+
+#column-left, #randstad-bar { 
+	display: none;
+}
+ul.vertical {
+	display: block;
+	position: absolute;
+	z-index:999;
+	top: 0px;
+	left: 50px;
+	
+	/*box-shadow: 3px 3px 5px #ccc;*/
+
+	border: solid 1px #ccc;
+}
+
+/*----------------------------------------------------------------------------
+	Column Center
+----------------------------------------------------------------------------*/
+body.continued #column-center {
+	width: 310px;
+	margin: 0;
+}
+
+/*----------------------------------------------------------------------------
+	Basic Paging
+----------------------------------------------------------------------------*/
+.paging {
+	border-bottom: dashed 1px #b0b0b0;
+}
+
+.paging.top-paging {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 15px;
+	border-top:none;
+}
+
+
+/*--[end: Basic Paging]------------------------------------------------*/
+
+#show-facet { 
+	display:block;
+	float: left;
+	width: 25px;
+	height: 21px;
+	cursor:pointer;
+	margin: 5px 0 0 2px;
+	background:url(../../Images/Mobile/sprite.png) no-repeat -10px -690px;
+}
+
+
+/*----------------------------------------------------------------------------
+		Lightbox 
+	----------------------------------------------------------------------------*/
+	
+	#lightbox {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 5000px;
+		background:url(../../Images/Mobile/bg-lightbox.png) repeat 0 0;
+		z-index: 900;
+	}
+	/*
+	#lightbox-cont {
+		width: 800px;
+		height: 500px;
+		margin: 100px auto 0 auto; 
+		background: #f1f1f1;
+	}
+	
+	a#close-lightbox {
+		float: right;
+	}
+	*/
+	
+	/*--[end: Lightbox]---------------------------------------------------------*/
+	
+/*----------------------------------------------------------------------------
+	Paging 2 - Based on basic paging
+----------------------------------------------------------------------------*/
+.paging-2.top-paging a.previous {
+	float: right;
+	padding-right: 15px;
+}
+.paging.paging-2.top-paging a.next {
+	padding-left: 15px;
+	margin-right: 3px;
+}
+/*--[end: Paging 2]------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Extra Page Info
+----------------------------------------------------------------------------*/
+.extra {
+	float: left;
+	width: 100%;
+	color: #999;
+	padding-left: 15px;
+	margin: 0 0 14px 0;
+}
+
+#page-tools {
+	padding-left: 0;	
+	margin-top: 15px;
+}
+
+/*--[end: Extra Page Info]------------------------------------------------*/
+
+.page-tools, #business-cases, #related-content, #downloads {
+	display: none;	
+}
+
+/*----------------------------------------------------------------------------
+	Content Panes
+----------------------------------------------------------------------------*/
+#container {	
+	/* left: -310px; */
+}
+
+.pane {
+	width: 310px;
+}
+
+/*----------------------------------------------------------------------------
+	Lists
+	Basic Datalist styles
+----------------------------------------------------------------------------*/
+
+
+#results a.list h2 {
+	padding: 0 0 0 15px;
+	background: url(../../Images/Mobile/block-facet-btn.gif) no-repeat 0 7px;
+}
+#results a.list p {
+	width: 95%;
+	padding: 0 0 0 5%;
+}
+
+/*--[end: Lists]------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------
+	Footer
+----------------------------------------------------------------------------*/
+#footer {
+	width: 320px;
+}
+
+#footer span {
+	margin-left: 5px;
+}
+/*----------------------------------------------------------------------------
+	Site Wide Menu
+----------------------------------------------------------------------------*/
+
+ul#site-wide-nav {
+	display: none;
+}
+
+/*--[end: Site Wide Menu]---------------------------------------------------------*/
+
+/*--[end: Footer]---------------------------------------------------------*/
+
+
+
+} /* end Media Screen: Tablet Portrait / Mobile Landscape  */

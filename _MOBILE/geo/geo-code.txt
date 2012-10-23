@@ -1,0 +1,42 @@
+var Geolocation={
+	
+	rad:function(a){return a*Math.PI/180},
+
+	haversine:function(a,b){
+	var c=6371,
+	d=this.rad(b.latitude-a.latitude),
+	e=this.rad(b.longitude-a.longitude),
+	
+	f=Math.sin(d/2)*Math.sin(d/2)+
+		Math.cos(this.rad(a.latitude))*Math.cos(this.rad(b.latitude))*Math.sin(e/2)*Math.sin(e/2),
+	g=2*Math.atan2(Math.sqrt(f),Math.sqrt(1-f)),
+	h=c*g;
+
+	return Math.round(h)
+   },
+
+	distance_from:function(a){
+	Geolocation.display_location();
+	var b=Geolocation.haversine(a.coords,current_location);
+	b&&b>0?$("#distance").text(b+" km"):$("#user_distance").html("<strong>You're close!</strong> Watch my toes!")
+   },
+
+	display_location:function(){
+	$("#user_distance").show(),
+	$("#geolocating").hide()
+   }
+};
+
+$(function(){
+	
+	function a(){
+		
+		$("#map").slideDown(),
+		$(this).unbind("mouseover")}navigator.geolocation?(navigator.geolocation.getCurrentPosition(Geolocation.distance_from,Geolocation.display_location),navigator.geolocation.watchPosition(Geolocation.distance_from)):Geolocation.display_location(),
+		$("#location").mouseover(a),
+
+		$("#location_hide").click(function(){return $("#map").slideUp(),
+		$("#location").mouseover(a),!1});var b=!1;$(document).scroll(function(){$(this).scrollTop()>=75?b||(b=!0,$("#side").css({position:"fixed",top:"25px"})):b&&(b=!1,$("#side").css({position:"absolute",top:"100px"}))
+	})
+
+})

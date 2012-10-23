@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+<div id="content">
+    <p>1Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Vestibulum consectetur ipsum sit amet urna euismod imperdiet aliquam urna laoreet.</p>
+    <p>Curabitur a ipsum ut elit porttitor egestas non vitae libero.</p>
+    <p>Pellentesque ac sem ac sem tincidunt euismod.</p>
+    <p>2Duis hendrerit purus vitae nibh tincidunt bibendum.</p>
+    <p>Nullam in nisi sit amet velit placerat laoreet.</p>
+    <p>Nulla sed purus et tellus convallis scelerisque.</p>
+    <p>Nam at justo ut ante consectetur faucibus.</p>
+    <p>Proin dapibus nisi a quam interdum lobortis.</p>
+    <p>Nunc ornare nisi sed mi vehicula eu luctus mauris interdum.</p>
+    <p>Mauris auctor suscipit tellus, at sodales nisi blandit sed.</p>
+</div>
+
+
+<div id="pagination-vrijdag" class="pagination"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="Scripts/paging.js"></script>
+<!--<script type="text/javascript" src="Scripts/global.js"></script>-->
+
+
+<script type="text/javascript">
+
+	// ------------------------------------------------------------------------------------------------
+	// Document Ready
+	// ------------------------------------------------------------------------------------------------
+	$(function() { 
+        //paging('vrijdag');
+		
+		paging.init();
+		
+	});
+	
+	
+	function go_to_page(page_num, getDay){
+	
+	    //get the number of items shown per page
+	    var show_per_page = parseInt($('#show_per_page').val());
+
+	    //get the element number where to start the slice from
+	    start_from = page_num * show_per_page;
+
+	    //get the element number where to end the slice
+	    end_on = start_from + show_per_page;
+
+	    //hide all children elements of content div, get specific items and show them
+	    $('#' + getDay + '-cont').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+
+	    /*get the page link that has longdesc attribute of the current page and add active_page class to it
+	    and remove that class from previously active page link*/
+	    $('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+
+	    //update the current page input field
+	    $('#current_page').val(page_num);
+    }
+
+
+function paging(day){
+    //how much items per page to show
+	var show_per_page = 12;
+	var $container = $('#' + day + '-cont');
+	//getting the amount of elements inside content div
+	var number_of_items = $container.children().size();
+	//calculate the number of pages we are going to have
+	var number_of_pages = Math.ceil(number_of_items/show_per_page);
+    
+	//set the value of our hidden input fields
+	$('#current_page').val(0);
+	$('#show_per_page').val(show_per_page);
+
+	//now when we got all we need for the navigation let's make it '
+
+	/*
+	what are we going to have in the navigation?
+		- link to previous page
+		- links to specific pages
+		- link to next page
+	*/
+	var navigation_html = '<a class="inactive previous previous-' + day +'">Vorige</a>';
+	var current_link = 0;
+    console.log(number_of_pages);
+    if(number_of_pages === 1){
+	    navigation_html += '<a class="next inactive next-' + day +'">Next</a>';
+	} else {
+	    navigation_html += '<a class="next next-' + day +'">Next</a>';
+	}
+	
+	//navigation_html += '<a class="next next-' + day +'">Volgende</a>';
+	
+	$('#pagination-' + day).html(navigation_html);
+
+	//add active_page class to the first page link
+	$('.pagination-' + day + ' .page_link:first').addClass('active_page');
+
+	//hide all the elements inside content div
+	$container.children().css('display', 'none');
+
+	//and show the first n (show_per_page) elements
+	$container.children().slice(0, show_per_page).css('display', 'block');
+	
+                // Handle click on previous button
+	            $(".previous-" + day).live("click", function(){ 
+	            
+            	    if($(this).hasClass('inactive')){
+            	        return
+            	    } else {
+            	    
+            	        $('.pagination a').removeClass('inactive');
+
+	                    cur = parseInt($('#current_page').val());
+	                    new_page = cur - 1;
+                    	
+	                    if(cur !== 0){
+		                    go_to_page(new_page, day);
+	                    } 
+                    	
+	                    if(cur === 1){
+	                        $(this).addClass('inactive');
+	                    }
+            	    }
+            	    
+                    
+	            }); 
+            	
+            	// Handle click on next button
+	            $(".next-" + day).live("click", function(){ 
+	            
+            	    if($(this).hasClass('inactive')){
+            	        return
+            	    } else {
+            	        $('.pagination a').removeClass('inactive');
+
+	                    cur = parseInt($('#current_page').val());
+                        new_page = cur + 1;
+
+                        if(cur !== (number_of_pages - 1)){
+                            go_to_page(new_page, day);
+                        } 
+                        if(cur === (number_of_pages -2)){
+                            $(this).addClass('inactive');
+                        }
+            	    }
+	                
+                    
+	            });  
+            	
+
+}   
+
+	
+</script>
+
+
+</body>
+</html>

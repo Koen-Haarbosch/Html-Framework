@@ -1,0 +1,20 @@
+Wat moet je doen om de tests te doen op de testomgeving:
+
+- In de test omgeving moet je een productlijst definieren
+	Let er ook op dat de startdatum van het produkt de datum is dat je de test uitvoerd.
+- Tevens moet je de produktlijst-benadering activeren (zie 3.2 in iDeal_Basic_NL_v2.3.pdf)
+- Dan moet je 6 test forms klaarzetten voor de verschillende tests, alleen het aantal en totaal bedrag verschillen hierin.
+  De gegevens in de forms moeten exact gelijk zijn aan die van het produkt in de produktlijst
+  De validUntil moet gewoon ergens in de toekomst liggen.
+  De tests doe je op de test omgeving met dezelfde merchantID.
+- Als deze tests gedaan zijn kan het een tijdje duren tot je de omgeving kunt activeren.
+  Het activeren doe je in de live omgeving.
+- Zorg dat je ook een productlijst aanmaakt in de live omgeging.
+
+
+- In de live omgeving maak je nogmaals een product aan.
+- De action url van het formulier moet aangepast worden als je naar de live omgeving wilt connecten.
+	https://idealtest.secure-ing.com/ideal/mpiPayInitIng.do
+  
+  
+

@@ -1,0 +1,55 @@
+Dit is als eerste gebruikt in www.nachtnetbrabant.nl.
+
+De techniek achter deze control is gebaseerd op: http://twipho.net/
+
+Het idee is:
+Je haalt alle berichten op van Twitter die #nachtnetbrabant in het bericht hebben.
+Daarnaast geef je in dezelfde zoekactie een aantal url's op van Tiwtter Image diensten.
+Zo haal je dus alle Twitter berichten met #nachtnetbrabant op die ook een foto bevatten.
+(als een bericht begint met #nachtnetbrabant word deze niet meegenomen. Als #nachtnetbrabant ergens in het bericht staat of aan het einde wel. Waarom dit is is niet duidelijk)
+
+De in deze site gebruikte Image Diensten zijn:
+(door Koen uitgebreid naar 6 ipv 3 bij http://twipho.net/)
+
+http://moby.to/
+http://twitgoo.com/
+http://plixi.com/
+http://twitpic.com/
+http://img.ly/
+http://yfrog.com/
+http://www.yfrog.com/
+
+
+
+
+De zoek query is door Joris van Aspacts zo aangepast dat deze 1x per minuut gebeurd.
+Het resultaat van deze zoekactie word steeds opgeslagen in een .json bestand op de server.
+Dit is zo gemaakt omdat je anders heel snel over het max. aantal request naar de Twitter api gaat.
+
+De code van Joris staat in de map Data in het nachtnet project.
+In web.config staan nog een paar variabelen:
+<add key="strTwitterServiceUrl" value="http://search.twitter.com/search.json?lang=nl&amp;q=yfrog.com OR twitpic.com OR img.ly OR moby.to OR twitgoo.com OR plixi.com + %23nachtnetbrabant&amp;rpp=50&amp;callback=?"/>
+<add key="strContentPath" value="D:\Inetpub\Websites (test)\BitSquad\nachtnetbrabant.nl\_content"/>
+
+Het javascript is door Koen uitgebried zodat deze alle dubbele image url's (bijv. door retweets) verwijderd.
+Tevens word er d.m.v. een getRandumNumber() functie voor gezorgt dat er nooit dezelfde afbeeldingen getoond worden.
+(Dit werk alleen als alle afbeeldingen gelijktijdig worden ververst, wat niet het geval is bij nachtnet)
+
+Voor het verversen word gebruik gemaakt van een jQuery timer: jquery.timers.js
+Voor het flip box effect word jquery.flip.js gebruikt.
+
+
+
+
+De Html Javascipt communicatie is als volgt opgezet:
+<div id="results"> word gevuld met alle unieke image links.
+
+Met getRandumNumber() word steeds 6 unieke nummer gepakt uit het aantal afbeeldingen in <div id="results">
+En deze worden gekopieerd naar 1 van de <div class="flip">.
+
+Mochten er geen afbeeldingen gevonden zijn, dan is <div id="results"> leeg.
+Dan worden er afbeeldingen gehaald uit <div id="results_alt">.
+Hierin staan 9 vaste afbeeldingen.
+
+
+

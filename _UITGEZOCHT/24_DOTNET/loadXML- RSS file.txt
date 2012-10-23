@@ -1,0 +1,123 @@
+Gebruikt in nachtnetbrabant.nl
+
+
+In html plaatsen:
+<%# strRSS %>
+
+
+Boven in code plaatsen: 
+Public strRSS As String
+
+
+
+
+
+
+Public Function ProcessXML(ByVal gekozenStad)
+
+        Dim rawData As String = _
+                    "<rss>" & _
+                    "  <channel>" & _
+                    "  <item>" & _
+                    "    <title>ant[ART]ica - Preview van festival in 2010, Theater De NWE Vorst, Tilburg, 2009-11-04 20:30:00.0</title>" & _
+                    "    <link>http://nl.sitestat.com/uib/uitinbrabant/s?agenda.rss&amp;ns_type=clickin&amp;ns_url=%5Bhttp://www.uitinbrabant.nl/uib/uib/site/agenda/detail/A_39109451.html%5D</link>" & _
+                    "    <description>ant[ART]ica is een nieuw internationaal festival dat in september 2010 in Tilburg zal plaatsvinden. Het is een tweejaarlijks onderzoeksstation voor theater en dans en brengt (jonge) makers samen, die in de doorstart van hun werking zitten en waarvoor de internationale component van groeiend belang is. Een festival dus dat goed past bij De Vorst. In november presenteert Ant[ART]ica een preview. Het totale programma wordt tzt bekend gemaakt</description>" & _
+                    "  </item>" & _
+                    "  <item>" & _
+                    "    <title>ant[ART]ica - Preview van festival in 2010, Theater De NWE Vorst, Breda, 2009-11-04 20:30:00.0</title>" & _
+                    "    <link>http://www.google.nl</link>" & _
+                    "    <description>ant[ART]ica is een nieuw internationaal festival dat in september 2010 in Tilburg zal plaatsvinden. Het is een tweejaarlijks onderzoeksstation voor theater en dans en brengt (jonge) makers samen, die in de doorstart van hun werking zitten en waarvoor de internationale component van groeiend belang is. Een festival dus dat goed past bij De Vorst. In november presenteert Ant[ART]ica een preview. Het totale programma wordt tzt bekend gemaakt</description>" & _
+                    "  </item>" & _
+                    "  </channel>" & _
+                    "</rss>"
+
+
+        Dim xmlDoc As New XmlDocument
+        Dim productNodes As XmlNodeList
+        Dim productNode As XmlNode
+        Dim baseDataNodes As XmlNodeList
+        Dim bFirstInRow As Boolean
+
+        'Use Load to load an xml file
+        xmlDoc.Load("http://www.uitinbrabant.nl/exportservice/get/nachtnet")
+
+        'Use LoadXml to load an xml string 
+        'xmlDoc.LoadXml(rawData)
+
+        productNodes = xmlDoc.GetElementsByTagName("item")
+
+        Dim Counter As Integer = 0
+        Dim divSet As Integer = 0
+
+        For Each productNode In productNodes
+
+            baseDataNodes = productNode.ChildNodes
+            bFirstInRow = True
+
+            'html opbouwen in label
+            'na eerste 8 items de rest in een div zetten die verborgen worden
+            If (Counter = 8 And divSet = 0) Then
+                strRSS = strRSS & "<div id=""foldout"" style=""display: none;"">"
+                divSet = 1
+            End If
+
+            For Each baseDataNode As XmlNode In baseDataNodes
+                If (bFirstInRow) Then
+                    bFirstInRow = False
+                Else
+                    'strRSS = strRSS & ", "
+                End If
+
+                Dim strStadInXML As String
+                'tempTitle wordt gebruikt om titel tijdelijk op te slaan en bij het uitlezen van de volgende node "link" weer in te voegen
+                Dim tempTitle As String
+
+                If (baseDataNode.Name = "title") Then
+
+                    'titel ontleden, string splitten op komma's
+                    Dim strTitle As String = baseDataNode.InnerText
+
+                    Dim arrTitle As Array
+                    arrTitle = Split(strTitle, ",")
+                    strStadInXML = arrTitle(2)
+                    'Spaties verwijderen
+                    strStadInXML = strStadInXML.Replace(" ", "")
+
+                    'Uitzonderingen in naamgeving den bosch
+                    If (gekozenStad = "Den Bosch") Then
+                        gekozenStad = "DenBosch"
+                    End If
+
+                    If (strStadInXML = "'s-hertogenbosch") Then
+                        strStadInXML = "DenBosch"
+                    End If
+
+                    'Kijken of rss item aan gekozen stad voldoet
+                    If (strStadInXML = gekozenStad Or gekozenStad = "alle") Then
+                        Counter = Counter + 1
+                        tempTitle = arrTitle(0) & "<br />" & arrTitle(3)
+                    Else
+                        'niets doen
+                    End If
+
+                ElseIf (baseDataNode.Name = "link") Then
+                    If (strStadInXML = gekozenStad Or gekozenStad = "alle") Then
+                        strRSS = strRSS & "<a href=""" & baseDataNode.InnerText & """ target=""_blank"">" & tempTitle & "</a>"
+                    Else
+                        'niets doen
+                    End If
+
+                ElseIf (baseDataNode.Name = "description") Then
+                    'geen description tonen
+                    'strRSS = strRSS & "<dd>" & baseDataNode.InnerText & "</dd>"
+                End If
+            Next
+        Next
+
+        'sluiten foldout div
+        If (divSet = 1) Then
+            strRSS = strRSS & "</div>"
+        End If
+
+
+    End Function

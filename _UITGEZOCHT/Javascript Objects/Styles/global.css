@@ -1,0 +1,585 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	/*----------------------------------------------------------------------------
+		Yahoo Reset (updated: 17-01-2011)
+		Latest: http://developer.yahoo.com/yui/reset/
+	----------------------------------------------------------------------------*/
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		margin:0;
+		padding:0;
+	}
+	table {
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	fieldset,img { 
+		border:0;
+	}
+	address,caption,cite,code,dfn,em,strong,th,var {
+		font-style:normal;
+		font-weight:normal;
+	}
+	ol,ul {
+		list-style:none;
+	}
+	caption,th {
+		text-align:left;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-size:100%;
+		font-weight:normal;
+	}
+	q:before,q:after {
+		content:'';
+	}
+	abbr,acronym { border:0;
+	}
+	/*--[end: CSS Reset]----------------------------------------------------------*/
+	
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+	
+	a:hover, a:active { outline: none; }
+	a, a:active, a:visited { color:#248742; text-decoration: underline; }
+	a:hover { color:#248742; text-decoration: none; }
+	
+	/* html { overflow-y: scroll; } */
+	
+	body {
+		font:62.5% Arial, Helvetica, Sans-Serif;
+		background: #FFFFFF;
+	}
+	
+	.clear { clear: both; height: 1px; font-size: 1px; border: none; background: transparent; }
+	
+	#wrapper {
+		width: 922px;
+		margin: 0 auto 0 auto; 
+		text-align: left;
+	}
+	
+	
+	/*----------------------------------------------------------------------------
+		Font-size
+	----------------------------------------------------------------------------*/
+	
+	#header, #nav, #column-left, #column-right, #column-right, #footer, #tooltip, #frame-middle { font-size: 1.4em; }
+	
+	h1{font-size:2em;}	
+	h2{font-size:1.6em;}	
+	h3{font-size:1.6em;}
+	h4{font-size:1.4em;}
+	h5{font-size:1.2em;}
+	h6{font-size:1.0em;}
+	
+	/*--[end: Font-size]---------------------------------------------------------*/
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		Lightbox Video Player
+	----------------------------------------------------------------------------*/
+	
+	#lightbox {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url(../Images/bg-transp.png) repeat 0 0;
+		z-index: 2000;
+		display: none;
+	}
+	#lightbox-container {
+		width: 791px;
+		height: 562px;
+		padding: 17px 0 0 33px;
+		margin: 135px auto 0 auto; 
+		text-align: left;
+		background: url(../Images/bg-video-player-v2.png) repeat 0 0;
+		position:relative;
+	}
+	span#close-video {
+		float: right;
+		position:relative;
+		width: 45px;
+		height: 68px;
+		left: -14px;
+		top: -75px;
+		cursor: pointer;
+		z-index: 1500;
+		background:url(../Images/btn-close-popup.png) no-repeat top right;	
+	}
+	
+	#lightbox-cont {
+		width: 800px;
+		margin:15px auto 0 auto;
+		padding:0;
+		z-index: 10000;
+	}
+	
+	#movie-player {
+		position:relative;
+		top:-55px;
+	}
+	#lightbox-container .desc {
+		position:absolute;
+		left:35px;
+		bottom:48px;
+	}
+	
+	#btn-answer {
+		display:block;
+		position:absolute;
+		width: 244px;
+		height: 70px;
+		cursor: pointer;
+		right:10px;
+		bottom:13px;
+		background:url(../Images/btn-beantwoord.png) no-repeat top left;
+	}
+		
+	/*--[end: Lightbox Video Player]---------------------------------------------------------*/
+
+
+	/*----------------------------------------------------------------------------
+		Header
+	----------------------------------------------------------------------------*/
+	#header {
+		float: left;
+		position: relative;
+		width: 922px;
+		height: 87px;
+	}
+	#header img {
+		float: left;	
+		margin: 33px 0 0 15px;
+	}	
+	
+	#header span#btn-home {
+		position: absolute;
+		width: 143px;
+		height: 75px;
+		z-index:999;
+		background:url(../Images/btn-home.png) no-repeat top right;
+		right: 13px;
+		bottom:-81px;
+		cursor: pointer;
+	}
+	/*--[end: Header]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Columns
+	----------------------------------------------------------------------------*/
+	
+	#frame-container {
+		float: left;
+		width: 922px;
+		background: url(../Images/bg-frame.png) repeat-y 0 0;
+	}
+	.actie #frame-container {
+			background: url(../Images/bg-frame.png) repeat-y 0 0;
+	}
+	
+	#column-container{
+		float: left;
+		width: 922px;
+		background:  url(../Images/main-frame-v2.png) no-repeat 0 0;
+	}
+		
+		#column-right {
+			float: left;
+			display: inline;
+			margin-left: 414px;
+			width: 508px;
+			min-height: 539px;
+		}
+		
+	/*--[end: Columns]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Footer
+	----------------------------------------------------------------------------*/
+	
+	#footer {
+		float: left;
+		width: 922px;
+		height: 86px;
+		background: url(../Images/footer-v2.png) no-repeat 0 0;
+	}
+	
+	/*--[end: Footer]---------------------------------------------------------*/
+	
+	
+	/*--[end: Base CSS]---------------------------------------------------------*/
+	
+		
+	
+	/*----------------------------------------------------------------------------
+		Column-Right / Pages
+	----------------------------------------------------------------------------*/
+	
+	.page {
+		float: left;
+		width: 508px;
+		padding: 50px 0 0 0;
+		color: #248742;
+		line-height: 1.2em;
+	}
+	
+	#start-video-1, #start-video-2, #start-video-3 { cursor:pointer; margin: 0 0 5px 1px;}
+	
+	.page p {
+		margin-left: 53px;
+	}
+	
+	.page form {
+		float: left;
+		width: 500px;
+		margin-left: 53px;
+	}
+	
+	.page h2 {
+		display:block;
+		width: 125px;
+		height: 29px;
+		font-weight: bold;
+		margin-left: 33px;
+	 	margin-bottom: 37px;	
+	}
+	
+	#page-03 h2 {
+		background:  url(../Images/title-vraag1.gif) no-repeat 0 0;
+	}
+	
+	#page-04 h2 {
+		background:  url(../Images/title-vraag2.gif) no-repeat 0 0;
+	}
+	
+	#page-05 h2 {
+		background:  url(../Images/title-vraag3.gif) no-repeat 0 0;
+	}
+	
+	#page-06 h2 {
+		background:  url(../Images/title-bonusvraag.gif) no-repeat 0 0;
+	}
+	
+	.page form p {
+		margin-left: 0;
+		margin-top: 12px;
+	}
+	
+	.page p.message { 
+		color: #cc0000; 
+		font-weight: bold;
+		padding-top: 7px;
+	}
+	
+	.page label {
+		display:block;
+		margin-top: 3px;
+	}
+	.page-nav {
+		position: relative;	
+	}
+	
+	#start-text {
+		float:right;
+		width: 299px;
+		height: 231px;
+		padding: 100px 98px 0 98px;
+		margin-top: 45px;
+		margin-right: 10px;
+		color: #fff;
+		line-height: 1.2em;
+		background: url(../Images/bg-start-text-v2.png) no-repeat 0 0;
+	}
+	
+	.btn-start {
+		float: right;
+		width: 206px;
+		height: 71px;
+		margin-right: 10px;
+		background: url(../Images/btn-start.png) no-repeat 0 0;
+	}
+	
+	.btn-actievoorwaarden {
+		display:block;
+		position: absolute;
+		width: 184px;
+		height: 69px;
+		left: 442px;
+		top: 1px;
+		background: url(../Images/btn-actievoorwaarden.png) no-repeat 0 0;
+	}
+
+	.btn-prev {
+		display:block;
+		position: absolute;
+		width: 131px;
+		height: 68px;
+		left: 434px;
+		top: 1px;
+		background: url(../Images/btn-prev.png) no-repeat 0 0;
+	}
+
+	.btn-next {
+		display:block;
+		position: absolute;
+		width: 206px;
+		height: 70px;
+		left: 705px;
+		background: url(../Images/btn-next.png) no-repeat 0 0;
+	}
+
+
+	/*--[end: Column-Right / Pages]---------------------------------------------------------*/
+	
+	
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		iFrame
+	----------------------------------------------------------------------------*/
+	
+	#formIframe {
+		width: 508px;
+		height: 655px;
+	}
+	
+	/*--[end: iFrame]---------------------------------------------------------*/
+	
+	
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		Bedankt pagina
+	----------------------------------------------------------------------------*/
+	
+	#score {
+		float: left;
+		margin: 68px 0 0 35px;
+		color: #248742;
+		font-size: 1.4em;
+	}
+	#score strong { font-weight: bold; }
+	#score p { 
+		float: left;
+		width: 495px;
+		margin: 25px 0 60px 0 
+		
+	}
+	span.score {
+		float: left;
+		width: 495px;
+		margin: 5px 0 0 0;
+	}
+	span.score p {
+		float: left;	
+		width: 495px;
+		margin: 20px 0 60px 0;
+	}
+	span.goed { color: #339900;}
+	span.fout { color: #cc0000;}
+	
+	.jullie-antwoord, .juiste-antwoord { width: 15px; margin: 0 20px 0 20px;}
+	
+	#btn img {
+		float: left;
+		margin: 0 0 0 2px;
+	}
+	
+
+	/*--[end: Page 7 : Score]---------------------------------------------------------*/
+	
+	
+	
+	
+		
+	/*----------------------------------------------------------------------------
+		Actievoorwaarden
+	----------------------------------------------------------------------------*/
+
+	#frame-header {
+		float: left;
+		width: 922px;
+		height: 76px;
+		background: url(../Images/actievoorwaarden-header.png) no-repeat 0 0;
+	}
+	
+	#frame-middle {
+		float: left;
+		width: 810px;
+		padding:0 60px 0 50px;
+		line-height:1.3em;
+		background: url(../Images/actievoorwaarden-middle.png) repeat-y 0 0;
+	}
+	
+	#frame-footer {
+		float: left;
+		width: 922px;
+		height: 88px;
+		background: url(../Images/actievoorwaarden-footer.png) no-repeat 0 0;
+	}
+	
+	a.btn-back {
+		float: right;
+		width: 104px;
+		height: 36px;
+		margin: 4px 42px 0 0;
+	}
+
+	#frame-middle .roman {
+		list-style: upper-roman;
+		margin:20px 0 5px 0px;
+		font-weight:bold;
+	}
+		
+	#frame-middle ul{
+		list-style:decimal;
+		margin:0 0 10px 18px;
+	}
+		
+	#frame-middle ul li {
+		padding:0 0 0 10px;
+	}
+		
+	#frame-middle ul li ul {
+		list-style:lower-alpha;
+		margin:0 0 0 18px;
+	}
+	
+	#frame-middle span {
+		margin:0 0 0 28px;
+	}
+	
+	/*--[end: Actievoorwaarden]---------------------------------------------------------*/
+	
+	
+	
+
+
+
+} /*--[end: @media screen ]------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------
+	Print Styles
+----------------------------------------------------------------------------*/
+
+@media print {
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+
+	html, body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
+
+	html, body { border: 0px;width: 100%;height: 100%;background: #fff;font: 12pt Verdana, Arial, Helvetica, "Lucida Grande", sans-serif;}
+	a, a:visited { color: #000 !important; text-decoration: underline; background: none; }
+
+	#header, #footer {
+		display: none !important;
+	}
+	#wrapper, #frame-container, #column-container, #column-right {
+		width: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		float: none !important;
+		color: #000000;
+		background: none;
+	}
+	
+	#formIframe {
+		width: 508px;
+		height: 630px;
+	}
+	
+	/*----------------------------------------------------------------------------
+		Bedankt pagina
+	----------------------------------------------------------------------------*/
+	
+	#score strong { font-weight: bold; }
+	#score p { 
+		float: left;
+		width: 495px;
+		margin: 25px 0 60px 0 
+		
+	}
+	span.score {
+		float: left;
+		width: 495px;
+		margin: 5px 0 0 0;
+	}
+	span.score p {
+		float: left;	
+		width: 495px;
+		margin: 20px 0 60px 0;
+	}
+	span.goed { font-weight:bold; color: #339900;}
+	span.fout { font-weight:bold; color: #cc0000;}
+	
+	.jullie-antwoord, .juiste-antwoord { width: 15px; margin: 0 20px 0 20px;}
+	
+	#btn {
+		display: none;
+	}
+	
+
+	/*--[end: Page 7 : Score]---------------------------------------------------------*/
+	
+	
+		
+	/*----------------------------------------------------------------------------
+		Actievoorwaarden
+	----------------------------------------------------------------------------*/
+	
+	#frame-middle .roman {
+		list-style: upper-roman;
+		margin:20px 0 5px 0px;
+		font-weight:bold;
+	}
+		
+	#frame-middle ul{
+		list-style:decimal;
+		margin:0 0 10px 18px;
+	}
+		
+	#frame-middle ul li {
+		padding:0 0 0 10px;
+	}
+		
+	#frame-middle ul li ul {
+		list-style:lower-alpha;
+		margin:0 0 0 18px;
+	}
+	
+	#frame-middle span {
+		margin:0 0 0 28px;
+	}
+	
+	/*--[end: Actievoorwaarden]---------------------------------------------------------*/
+
+	
+} /*--[end: @media print ]------------------------------------------------*/
+

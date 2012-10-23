@@ -1,0 +1,124 @@
+/*	RESPONSIVE VIEW 3
+	Mobile landscape: 480px : between 321 & 480 pixels
+-----------------------------------------------------------------*/
+
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+
+/* Show/Hide specific article content */
+.sh-tablet-p {display:none;}
+.sh-tablet-l {display:none;}
+.sh-mobile-p {display:block !important;}
+.sh-mobile-l {display:none;}
+
+	#sub-header,
+	#wrapper {
+		width: 320px;
+	}
+
+	#sub-header {
+		padding: 0 15px;
+        box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box;
+	}
+
+	/*----------------------------------------------------------------------------
+		Column Left
+	----------------------------------------------------------------------------*/
+	
+	#column-left {
+		width: 100%;
+		padding: 0 15px 0 15px;
+        box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box;
+	}
+
+    #left-nav ul {display:none;}
+    body.continued #left-nav select { display: block; }
+
+
+        /*----------------------------------------------------------------------------
+            Column Left Blocks : overall styles
+        ----------------------------------------------------------------------------*/
+        /*--[end: Column Left Blocks : overall styles ]---------------------------------------------------------*/
+
+
+        body.continued #home-nav {
+            position:relative;
+            width: 32px;
+            height: 55px;
+        }
+
+        body.continued #home-nav a {
+            position: absolute;
+            bottom: 15px;
+            padding-left: 0;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+
+        #left-nav select {
+            width: 100%;
+        }
+        body.continued #left-nav ul {
+            display: none;
+       }
+
+	
+	/*----------------------------------------------------------------------------
+		Column Center
+	----------------------------------------------------------------------------*/
+
+	#column-center {
+		width: 100%;
+        padding: 0 15px;
+	}
+	
+        #video-home video {
+            height:225px;
+        }
+
+        #downloads-home {display:none;}
+
+        body.continued #column-center {
+            width: 460px;
+        }
+
+        /*----------------------------------------------------------------------------
+            Content Panes
+        ----------------------------------------------------------------------------*/
+        #pane-container {
+            padding: 0 15px;
+        }
+        #container {}
+        .pane {
+            width: 460px;
+        }
+
+        /*--[end: Content Panes]------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------------------
+	Column Right
+----------------------------------------------------------------------------*/
+
+#column-right {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box;
+	float: left;
+}
+
+    /*----------------------------------------------------------------------------
+        Column Right Blocks : overall styles
+    ----------------------------------------------------------------------------*/
+
+    .right-block {
+        width: 100%;
+        box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box;
+    }
+
+    /*--[end: Column Right Blocks : overall styles]------------------------------------------------*/
+
+
+
+} /* end Media Screen: Tablet Portrait / Mobile Landscape  */

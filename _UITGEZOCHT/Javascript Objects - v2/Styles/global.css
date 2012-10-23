@@ -1,0 +1,91 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	/*----------------------------------------------------------------------------
+		Yahoo Reset (updated: 17-01-2011)
+		Latest: http://developer.yahoo.com/yui/reset/
+	----------------------------------------------------------------------------*/
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		margin:0;
+		padding:0;
+	}
+	table {
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	fieldset,img { 
+		border:0;
+	}
+	address,caption,cite,code,dfn,em,strong,th,var {
+		font-style:normal;
+		font-weight:normal;
+	}
+	ol,ul {
+		list-style:none;
+	}
+	caption,th {
+		text-align:left;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-size:100%;
+		font-weight:normal;
+	}
+	q:before,q:after {
+		content:'';
+	}
+	abbr,acronym { border:0;
+	}
+	/*--[end: CSS Reset]----------------------------------------------------------*/
+	
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+	
+	a:hover, a:active { outline: none; }
+	a, a:active, a:visited { color:#248742; text-decoration: underline; }
+	a:hover { color:#248742; text-decoration: none; }
+	
+	/* html { overflow-y: scroll; } */
+	
+	body {
+		font:62.5% Arial, Helvetica, Sans-Serif;
+		background: #FFFFFF;
+	}
+	
+	.clear { clear: both; height: 1px; font-size: 1px; border: none; background: transparent; }
+	
+	#wrapper {
+		width: 922px;
+		margin: 0 auto 0 auto; 
+		text-align: left;
+	}
+	
+	
+	/*----------------------------------------------------------------------------
+		Font-size
+	----------------------------------------------------------------------------*/
+	
+	.page { font-size: 1.4em; }
+	
+	h1{font-size:2em;}	
+	h2{font-size:1.6em;}	
+	h3{font-size:1.6em;}
+	h4{font-size:1.4em;}
+	h5{font-size:1.2em;}
+	h6{font-size:1.0em;}
+	
+	/*--[end: Font-size]---------------------------------------------------------*/
+	.page{ display:none;}
+	.page.current {display:block;background: #ccc;}
+	
+	.page-nav span {cursor: pointer;}
+	
+	#page-02 { background: #f1f1f1; }
+	
+
+} /*--[end: @media screen ]------------------------------------------------*/

@@ -1,0 +1,6 @@
+
+
+Chris Coyier heeft deze oplossing opgenomen op zijn eigen website:
+Zie: jQuery Method op http://css-tricks.com/perfect-full-page-background-image/
+
+Hij heeft de code iets compacter herschreven.

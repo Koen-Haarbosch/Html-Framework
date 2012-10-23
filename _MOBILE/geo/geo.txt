@@ -1,0 +1,18 @@
+http://jquery-howto.blogspot.com/2009/04/get-geographical-location-geolocation.html
+http://www.ibm.com/developerworks/library/x-html5mobile1/index.html
+
+http://stackoverflow.com/questions/5260423/torad-javascript-function-throwing-error
+
+http://code.google.com/apis/gears/api_geolocation.html
+
+http://dev.w3.org/geo/api/spec-source.html
+
+circle tekenen in Maps	
+http://stackoverflow.com/questions/6669037/how-to-best-display-html5-geolocation-accuracy-on-a-google-map
+
+
+
+
+http://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
+http://en.wikipedia.org/wiki/Haversine_formula
+http://breakthebit.org/post/10512237123/using-html5-geolocation-api-to-get-the-distance-of-the

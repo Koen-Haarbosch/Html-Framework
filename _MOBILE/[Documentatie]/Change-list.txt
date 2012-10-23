@@ -1,0 +1,4 @@
+In dit bestand zullen alle wijzigingen bijgehouden worden die aan de template gedaan worden.
+Zowel bugfixes als toevoegingen.
+
+- 

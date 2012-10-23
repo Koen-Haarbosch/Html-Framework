@@ -1,0 +1,36 @@
+UITGEZOCHT VOOR
+Nachtnet brabant Nightgame
+
+
+BASIS BRON
+De basis van deze code is afkomstig van:
+http://breakthebit.org/post/10512237123/using-html5-geolocation-api-to-get-the-distance-of-the
+
+
+WAT DOET HET
+De code berekend de afstand van jouw positie t.o.v. een vast ingesteld punt.
+Deze afstand word gebruikt als straal.
+Ben je binnen een straal van 100m van het vastgestelde punt van krijg je een melding.
+watchPosition zou ervoor moeten zorgen dat dit ook realtime werkt zonder de pagina te refreshen.
+Dit bleek bij een test niet altijd realtime te veranderen. Dat kan te maken hebben met de afwijking van de aftanden die rond de 80 meter zit.
+
+VERDER
+Ik ben bezig geweest met het tonen van straat en adres, maar ben daar niet verder op door gegaan.
+
+
+LINKS ZOEKTOCHT
+Links die gevonden zijn tijdens het zoeken:
+http://jquery-howto.blogspot.com/2009/04/get-geographical-location-geolocation.html
+http://www.ibm.com/developerworks/library/x-html5mobile1/index.html
+
+http://stackoverflow.com/questions/5260423/torad-javascript-function-throwing-error
+
+http://code.google.com/apis/gears/api_geolocation.html
+
+http://dev.w3.org/geo/api/spec-source.html
+
+circle tekenen in Maps	
+http://stackoverflow.com/questions/6669037/how-to-best-display-html5-geolocation-accuracy-on-a-google-map
+http://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
+http://en.wikipedia.org/wiki/Haversine_formula
+http://breakthebit.org/post/10512237123/using-html5-geolocation-api-to-get-the-distance-of-the

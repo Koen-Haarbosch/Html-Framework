@@ -1,0 +1,11 @@
+#noFlash {
+	background: #C9E394;
+	text-align: center;
+	padding: 20px;
+	border: solid 3px #FFFFFF;
+}
+
+#noFlash img {
+	border: solid 1px #666666;
+	margin: 20px 0;
+}

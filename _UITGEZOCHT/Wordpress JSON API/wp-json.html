@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+	//http://wordpress.org/extend/plugins/json-api/other_notes/
+
+	$(document).ready(function(){
+		  
+		//$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_recent_posts",function(data){
+		$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_recent_posts&include=title,url",function(data){ // use include/exclude to filter the fields that are send back in json feed
+		//$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_post&id=65",function(data){
+		//$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_page_index",function(data){
+		//$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_page_index&custom_fields=Koenveld",function(data){ // Custom fields ophalen
+		//$.getJSON("http://test.bitsquad.nl/wordpress/?json=get_search_results&search=concert",function(data){ // Zoekresultaten terug krijgen van aangegeven zoekterm
+																										 
+			console.log(data);
+			
+			$.each(data.posts, function(i,item){ // set data.posts to data.pages if you use pages
+										
+				//var div_data = "<div><a href='"+item.url+"'>"+item.title+"</a></div><p>"+item.custom_fields.Koenveld+"</p>"; // Use with custom fields
+				
+				var div_data = "<div><a href='"+item.url+"'>"+item.title+"</a></div><p>"+item.content+"</p>";
+
+				$(div_data).appendTo("#showjson");
+			});
+			/*
+
+		}
+		
+		);
+		
+
+	});
+});
+
+</script>
+
+<div id="showjson"></div>
+
+</body>
+</html>

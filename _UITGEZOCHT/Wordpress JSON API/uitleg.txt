@@ -1,0 +1,2 @@
+- Werkt alleen als bestand online staat op dezelfde server als waar de feed staat
+- 

@@ -1,0 +1,36 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+/*----------------------------------------------------------------------------
+	Contains all styles for non-global elements
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	
+	aside {
+		width: 100%; /* 260 */
+		
+		
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		
+		box-shadow: 3px 3px 3px rgba(0,0,0, 0.3);
+	
+		padding: 7.692307692307692%; /* 20/260 * 100 */
+		margin: 0 0 7.692307692307692% 0;
+		border: solid 1px #666;
+		background: #f1f1f1;		
+	}
+	.lt-ie8 aside, .lt-ie7 aside {
+		
+		/* 	IE7 polyfill : http://html5please.com/#box-sizing 
+			box-sizing: border-box; *behavior: url(/scripts/boxsizing.htc);
+			AddType text/x-component .htc
+		*/
+		
+		box-sizing: border-box; behavior: url(Scripts/boxsizing.htc);
+	}
+
+
+} /*--[end: @media screen ]------------------------------------------------*/

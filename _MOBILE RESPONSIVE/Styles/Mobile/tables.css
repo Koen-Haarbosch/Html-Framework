@@ -1,0 +1,137 @@
+/*----------------------------------------------------------------------------
+	Tabellen
+	( Overnemen van de Desktop versie )
+	
+	Let er wel op 
+----------------------------------------------------------------------------*/
+
+
+/* Clear all space. cellpadding="0" cellspacing="0" are in html */
+table, tr, th, td { margin: 0; padding: 0; border: 0;}
+
+/* Overrule table generic from Frondend/global_screen.css */
+.main			{width: 99%; margin: 0; border-collapse: collapse; }
+.main thead td	{padding: 0; color: #000; font-size: 100%;}
+.main td		{padding: 0; border: none; }
+.main caption	{display: none;}
+
+/* -------------------------------------------------------------------- Table Rollover / Onclick */
+
+/* Rollover kleur rijen tr.hi td, td.hi {background-color: #f1f1f1;} */
+/* Onclick kleur rijen  tr.hi_def td, td.hi_def {background-color: #f1f1f1;} */
+
+/* -------------------------------------------------------------------- Table Main */
+
+/*
+Let op!
+Standaard type info from global_screen.css:
+font: 0.70em/1.6em Verdana, Arial, Helvetica, "Lucida Grande", sans-serif;color:#000000;
+*/
+
+.main {
+	font-style:normal;
+	width:99%;
+	padding:0;
+	margin: 20px 0 20px 0;
+	border-collapse:collapse;
+	/*width:675px;*/
+}
+
+.main tr {line-height:20px;}
+.main th {font-weight:normal;padding-right:5px;}
+.main td {font-weight:normal;padding-right:5px;}
+
+/* -------------------------------------------------------------------- Header Rows */
+
+tr.rh1          {}
+tr.rh2          {}
+tr.rh3          {}
+
+th.rh1kh1       {font-weight:bold;color:#0070c0;text-align:left;border-bottom:solid 3px #0070c0;vertical-align:top;background:#FFF;}
+th.rh2kh1       {color:#0070c0;text-align:left;border-bottom:solid 0px #000;vertical-align:top;background:#FFF;}
+th.rh3kh1       {color:#0070c0;text-align:left;border-bottom:solid 2px #0070c0;vertical-align:top;background:#FFF;}
+
+th.rh1k01		{font-weight:bold;color:#0070c0;text-align:right;border-bottom:solid 3px #0070c0;vertical-align:top;background:#FFF;width:20%;}
+th.rh1k02		{font-weight:bold;color:#0070c0;text-align:right;border-bottom:solid 3px #0070c0;vertical-align:top;background:#FFF;width:10%;}
+th.rh1k03		{font-weight:bold;color:#0070c0;text-align:right;border-bottom:solid 3px #0070c0;vertical-align:top;background:#FFF;width:8%;}
+th.rh1k04		{font-weight:bold;color:#0070c0;text-align:right;border-bottom:solid 3px #0070c0;vertical-align:top;background:#FFF;width:8%;}
+th.rh2k01		{color:#0070c0;text-align:right;border-bottom:solid 0px #000;vertical-align:top;background:#FFF;width:10%;}
+th.rh2k02		{color:#0070c0;text-align:right;border-bottom:solid 0px #000;vertical-align:top;background:#dbe5f1;width:10%;}
+th.rh2k03		{color:#0070c0;text-align:right;border-bottom:solid 0px #000;vertical-align:top;background:#FFF;width:8%;}
+th.rh2k04		{color:#0070c0;text-align:right;border-bottom:solid 0px #000;vertical-align:top;background:#dbe5f1;width:8%;}
+th.rh3k01		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;background:#FFF;width:10%;}
+th.rh3k02		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;background:#dbe5f1;width:10%;}
+th.rh3k03		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;background:#FFF;width:8%;}
+th.rh3k04		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;background:#dbe5f1;width:8%;}
+
+
+/* -------------------------------------------------------------------- Left Column */
+
+td.kh1          {color:#0070c0;text-align:left;border-bottom:solid 1px #0070c0;vertical-align:top;}
+td.kh2          {color:#0070c0;text-align:left;border-bottom:solid 1px #0070c0;vertical-align:top;}
+
+td.r01kh1       {color:#0070c0;text-align:left;border-bottom:solid 2px #0070c0;vertical-align:top;}
+td.r02kh1       {color:#0070c0;text-align:left;border-bottom:solid 2px #0070c0;vertical-align:top;font-weight:bold;}
+td.r03kh1       {color:#0070c0;text-align:left;border-bottom:solid 1px #0070c0;vertical-align:top;font-weight:bold;}
+td.r04kh1       {color:#0070c0;text-align:left;border-bottom:solid 1px #0070c0;vertical-align:top;font-style:italic;}
+
+/* -------------------------------------------------------------------- Body */
+/* op rij niveau			- special 1				= r01 */
+/* op kolom niveau			- special 1				= k01 */
+/* op cel niveau			- special 1				= c01 */
+/* op rij & kolom niveau	- special 1 + special 1 = r01c01k01 */
+
+td.k01			{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;}
+td.k02			{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;background:#dbe5f1;}
+td.k03			{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:8%;}
+td.k04			{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:18%;background:#dbe5f1;}
+
+td.r01k01		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:10%;}
+td.r01k02		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:10%;background:#dbe5f1;}
+td.r01k03		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:8%;}
+td.r01k04		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:8%;background:#dbe5f1;}
+
+td.r02k01		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:10%;font-weight:bold;}
+td.r02k02		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:10%;background:#dbe5f1;font-weight:bold;}
+td.r02k03		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:8%;font-weight:bold;}
+td.r02k04		{color:#0070c0;text-align:right;border-bottom:solid 2px #0070c0;vertical-align:top;width:8%;background:#dbe5f1;font-weight:bold;}
+
+td.r03k01		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;font-weight:bold;}
+td.r03k02		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;background:#dbe5f1;font-weight:bold;}
+td.r03k03		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:8%;font-weight:bold;}
+td.r03k04		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:8%;background:#dbe5f1;font-weight:bold;}
+
+td.r04k01		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;font-style:italic;}
+td.r04k02		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:10%;background:#dbe5f1;font-style:italic;}
+td.r04k03		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:8%;font-style:italic;}
+td.r04k04		{color:#0070c0;text-align:right;border-bottom:solid 1px #0070c0;vertical-align:top;width:8%;background:#dbe5f1;font-style:italic;}
+
+/* special op cel niveau */
+
+th.c01rh1k01,	
+th.c01rh2k01,	
+th.c01rh3k01,	
+th.c01rh1k03,	
+th.c01rh2k03,	
+th.c01rh3k03	{color:#0070c0;text-align:center;border-bottom:solid 1px #0070c0;vertical-align:top;}	
+
+th.c01rh1k02,	
+th.c01rh2k02,	
+th.c01rh3k02,	
+th.c01rh1k04,	
+th.c01rh2k04,	
+th.c01rh3k04	{color:#0070c0;text-align:center;border-bottom:solid 1px #0070c0;vertical-align:top;background:#FFF;}
+
+th.c03rh1k01,	
+th.c03rh2k01,	
+th.c03rh3k01,
+th.c03rh1k03,
+th.c03rh2k03,
+th.c03rh3k03	{color:#0070c0;text-align:right;border-bottom:solid 0px #0070c0;vertical-align:top;background:#fff;font-weight:bold;}
+
+th.c03rh1k02,	
+th.c03rh2k02,	
+th.c03rh3k02,	
+th.c03rh1k04,	
+th.c03rh2k04,	
+th.c03rh3k04	{color:#0070c0;text-align:right;border-bottom:solid 0px #0070c0;vertical-align:top;background:#dbe5f1;font-weight:bold;}

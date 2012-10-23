@@ -1,0 +1,213 @@
+h1 {
+    color: #2C1C16;
+    font: bold 1.75em/1.1429 'Proxima Nova Bold',sans-serif;
+    margin: 0.8571em 0 0;
+}
+h2 {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #BCB3A6;
+    border-style: solid;
+    border-width: 2px 0 1px;
+    color: #D06F1C;
+    font: bold 1.25em/1.2 'Proxima Nova Condensed Bold','Arial Narrow',sans-serif;
+    margin: 2em 0 0;
+    padding: 0.6111em 0 0.6667em;
+    text-transform: uppercase;
+}
+h3 {
+    color: #2C1C16;
+    font: bold 1.125em/1.1111 'Proxima Nova Bold',sans-serif;
+    margin: 1.1111em 0 0;
+}
+h4, h5, h6 {
+    color: #3C2C26;
+    font: bold 1em/1 'Proxima Nova Bold',sans-serif;
+    margin: 0.75em 0 -0.25em;
+}
+p, pre, ol, ul, dl, figure, figcaption, table, fieldset {
+    margin: 0.75em 0;
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #BCB3A6 -moz-use-text-color -moz-use-text-color;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 2px 0 0;
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+ul ul, ul ol {
+    margin-top: 0;
+}
+li, dd {
+    margin-left: 1.5em;
+}
+dt {
+    font-family: 'Proxima Nova Bold',sans-serif;
+    font-weight: bold;
+}
+figcaption, caption {
+    caption-side: bottom;
+    color: #666666;
+    font-family: 'Proxima Nova Regular',sans-serif;
+    font-size: 0.875em;
+    line-height: 1.1429;
+    margin: 0.8571em 0;
+    text-align: left;
+}
+a {
+    color: #660033;
+    font-family: 'Proxima Nova Bold',sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    border-bottom: 1px solid #C9A3A9;
+    color: #882255;
+}
+:lang(en-gb) > q {
+    quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+small {
+    font-size: 0.875em;
+    line-height: 1.1429;
+}
+abbr {
+    letter-spacing: 1px;
+}
+abbr[title]:hover {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    cursor: help;
+}
+time {
+    color: #666666;
+    font-family: 'Proxima Nova Regular',sans-serif;
+    font-size: 0.75em;
+    line-height: 1.3334em;
+    text-transform: uppercase;
+}
+code, samp {
+    font: 0.875em/90% Menlo,Monaco,'Courier New',Courier,monospace;
+}
+code {
+    color: #336699;
+}
+kbd {
+    background-color: #DCD6C6;
+    border: 1px solid #CCC6B6;
+    border-radius: 4px 4px 4px 4px;
+    color: #666666;
+    font: 0.875em/90% sans-serif;
+    margin: 0 0.25em;
+    padding: 0.1429em 0.4286em;
+}
+sub {
+    font-size: smaller;
+    line-height: 90%;
+    vertical-align: sub;
+}
+sup {
+    font-size: smaller;
+    line-height: 90%;
+    vertical-align: super;
+}
+mark, ins {
+
+    background-color: #FFFFCC;
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td, th {
+    border-bottom: 1px solid #BCB3A6;
+    padding: 0.25em 1em 0.1875em 0;
+    text-align: left;
+}
+th {
+    border-bottom-color: #BCB3A6;
+    color: #222222;
+    font: bold 0.875em/1.1429 'Proxima Nova Bold',sans-serif;
+    padding: 0.5714em 0 0.5em;
+}
+td {
+    vertical-align: top;
+}
+.field {
+    border: 1px solid #BCB3A6;
+    font: 1em/1.5 sans-serif;
+    padding: 0.25em;
+    width: 50%;
+}
+label {
+    display: block;
+    float: left;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0.25em 0;
+    width: 20%;
+}
+label.check {
+    float: none;
+    font-weight: normal;
+    margin-left: 20%;
+}
+fieldset div {
+    margin: 0.75em 0;
+}
+fieldset abbr[title="Required"] {
+    border-bottom: 0 none;
+    color: #990000;
+    font: 1.5em/0.1 sans-serif;
+}
+fieldset em {
+    color: #666666;
+    display: block;
+    font-family: sans-serif;
+    font-size: 0.875em;
+    font-style: normal;
+    line-height: 1.1429;
+    margin: 0.25em 0 0.25em 20%;
+}
+fieldset.options {
+    clear: left;
+}
+fieldset.options ul {
+    list-style: none outside none;
+    margin: 0.25em 0 0.25em 20%;
+}
+fieldset.options li {
+    margin-left: 0;
+}
+fieldset.options ul label {
+    float: none;
+    font-weight: normal;
+    width: auto;
+}

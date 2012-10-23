@@ -1,0 +1,171 @@
+Hieronder kunnen ideeen worden aangedragen voor het verbetering van het Framework.
+Koen zal deze van tijd tot tijd nalopen en eventueel doorvoeren.
+De doorgevoerde punten komen in de Change-list.txt te staan.
+
+Onderstaande punten zijn toegevoegd op de daarop aangegeven data (nieuwste punten bovenaan):
+
+Koen (3-7-2012)
+- Check : http://pea.rs/
+
+Koen (5-7-2012)
+- Fadein/Fadeout variant op photo-fade-loop-and-click.html uit Elan Wonen toevoegen
+- Countdown uit NHC toevoegen
+- <video> caroussel HOV website toevoegen
+
+Koen (1-6-2012)
+- *:after, *:before	 toevoegen in:
+
+	/* apply a natural box layout model to all elements */
+	*,
+	*:after,
+	*:before {  	
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		box-sizing: border-box;         /* Opera/IE 8+ */
+	}
+
+
+Koen (4-5-2012)
+- Slider uit Orde van Advocaten jaarverslag toevoegen. Deze is incl. inzoomen foto en overgang van zwartwit naar kleur.
+
+Koen (3-5-2012)
+- Toevoegen Nachtnet blok om Twitter foto's met speciale # uit te lezen
+- Toevoegen delen code Jazz in Duketown mobiel: tijd uitlezen, table sorting, QR code verwijzen naar url en deze doorsturen naar podium
+
+Koen (27-4-2012)
+- Accordean Boskalis
+
+					<dl class="accordeon">
+									
+						<dt>
+							<h2 class="specialheading"><a>Titel</a></h2>
+							<p>Korte beschrijving</p>
+							<span class="read-more">Lees verder</span>
+						</dt> 
+						<dd>
+							Totale tekst
+						</dd> 
+										
+						<dt>
+							<h2 class="specialheading"><a>Titel</a></h2>
+							<p>Korte beschrijving</p>
+							<span class="read-more">Lees verder</span>
+						</dt> 
+						<dd>
+							Totale tekst
+						</dd> 
+					
+						<dt>
+							<h2 class="specialheading"><a>Titel</a></h2>
+							<p>Korte beschrijving</p>
+							<span class="read-more">Lees verder</span>
+						</dt> 
+						<dd>
+							Totale tekst
+						</dd> 
+					
+					</dl> 
+
+Koen (26-4-2012)
+- Uit Jazz in Duketown site fotoboek halen
+- Uit Jazz in Duketown javascript paginering halen, ombouwen naar Object
+- Uit Dommel project implementatie SWF Object 2.2 halen
+
+Koen (13-4-2011)
+- Uit project Dommel panorama slider en html5 video Projekktor in Framework toevoegen.
+
+Koen (9-3-2012)
+- display:inline-block toevoegen aan de <a> in paging om zo automatisch te centreren: zie html Staedion Verkoop
+
+Koen (5-3-2012)
+- attachments erft nu nog de list style over van de hoger gedefinieerde list style op algemene content
+
+Koen (10-02-2012)
+- Suckerfish js uitbreiden met active class. Zodat als je op submenu staat class active op hoofdelement blijft staan. (zie Bi Select)
+- #attachment vervangen door .attachments, dan kan deze lijst op meerder plekken op een pagina voorkomen.
+
+Koen (19-01-2012)
+- Toevoegen : Fancybox voorbeeld, jQuery Lightbox voorbeeld.
+- Toevoegen : Tabmenu, zoals gemaakt in Staedion
+- Toevoegen : Wordpress Breadcrumb Trail Plugin
+
+Koen (19-10-2011)
+- Make a lightbox only with appending code with javascript
+
+Koen (10-10-2011)
+- Simpele versie maken van photo-fade-loop-and-click.html, zonder de clicks
+
+Koen (05-10-2011)
+- Moet deel print css ook opgesplits worden in Library, of zorg je er gewoon voor dat print css altijd alles bevat?
+- Regelmatig een mailing doen waarin vermeld staat welke dingen gewijzigt zijn, of tips geven voor...
+
+Koen (03-10-2011)
+- opzet ombouwen met box-size. Zodat alleen breedte van kolommen met vaste breedte ingesteld hoeven te worden.
+- standaard formulier opmaak toevoegen
+- index-total.html/ elements-total.js maken, met daarin alle elementen op 1 pagina. Zou goed zijn om in 1 blik te kunnen zijn wat er allemaal als is.
+  Hierbij dan linken/verwijzen naar de verschillende [Library]
+  Dit is ook goed te gebruiken om het print css deel testen
+  DAN IS WEL WEER DUBBEL ONDERHOUD NODIG	
+  Is dit dynamisch samen te stellen?
+
+Koen (29-09-2011)
+- http://neosmart.de/social-media/fb-wall als Facebook plugin gebruiken, als dat al niet degene is die we gebruiken.
+- Basic Error page HTML/ CSS
+- Checken : /Styles/toolbox.css
+- Easyslider ombouwen zodat de bolletjes onderin kleine teaser images worden, zoals bedacht bij MN. Eventueel deze ook weer tot slider te maken, omdat ze anders te veel ruimte in nemen.
+- Voorbeeld jQuery Cookies erin zetten
+- check/ update print css deel. op alle nieuwe onderdelen. Of aan ieder stukje css in labraby ook zijn eigen deel voor print.css toevoegen.
+
+
+
+Koen (10-5-2011)
+-js om knop actief te houden als je op submenu staat.
+	$("#menu ul>li>a, #menu ul>li>ul").mouseover(function(){
+               $(this).parent().addClass("active");
+	});
+	$("#menu ul>li>a, #menu ul>li>ul").mouseout(function(){
+               $(this).parent().removeClass("active");
+	});
+	
+	is opgelost met:
+	// Suckerfish
+    $("ul.horizontal li").hover(
+        function() { $(this).addClass("hover"); },
+        function() { $(this).removeClass("hover"); }
+    );
+
+
+Koen (20-4-2011)
+- Extra functionaliteit voor easyslider (zie BB):
+	// Set random photo as first photo (= last photo in list)
+    var listLenght = $(".slider-home ul li").size();
+    var randomnumber = Math.floor(Math.random() * listLenght);
+    $(".slider-home ul li:eq("+randomnumber+")").prependTo(".slider-home ul");
+
+
+Koen (23-03-2011)
+- Een simpele variant maken van de template. Misschien alleen een simpele html en css variant met het hoogst nodige. 
+En niet een copy van het geheel, zoals nu.
+
+
+Koen (13-04-2011)
+-.paging ipv #paging: dan kan hij vaker voorkomen op 1 pagina.
+- sitemap: specifieker aanroepen : dan is hij ook te stijlen zonder dat hij de basis stijles overneemt.
+- accordeon opgebouwd al list door Richard erin
+
+
+Richard (28-03-2011)
+-Width van div's binnen header/footer/nav/column-container op 100%? 	-->	Werkt niet fijn als je padding/margin gaat gebruiken. Of bekijken of dat met flex-box opgelost kan worden
+-Strong weghalen uit reset
+-mappen in kleine letters	--> Omdat we nu alles in kleine letter doen, dan hoef je daar geen rekening meer mee te houden
+- Standaard een class op de body als je ingelogd hebt/ of niet
+
+
+
+
+
+
+
+
+
+

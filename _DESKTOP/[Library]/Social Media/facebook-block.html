@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+<link rel="stylesheet" href="../../Styles/elements.css" media="all" />
+
+<style>
+
+    /* Start copy */
+	    
+		#facebook-feed ul,
+		#facebook-feed ul li {list-style:none; display:block; padding:0px; margin:0;}
+		#facebook-feed ul li {margin:10px 0 0 0;}
+		#facebook-feed ul li:first-child {margin:0;}
+			
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+	
+/*------------------------------------------- 
+FACEBOOK: get latest feed(s)
+Change number of messages by changing the limit number in the json url
+------------------------------------------- */
+function fbFetch() {
+	//Set Url of JSON data from the facebook graph api. make sure callback is set with a '?' to overcome the cross domain problems with JSON
+	var url = "http://graph.facebook.com/158205760906290/feed?limit=2&callback=?";
+	//Use jQuery getJSON method to fetch the data from the url and then create our unordered list with the relevant data.
+	$.getJSON(url, function (json) {
+		var html = "<ul>";
+		var fbContent;
+		//loop through and within data array's retrieve the message variable.
+		$.each(json.data, function (i, fb) {
+			if (fb.message) {
+				fbContent = fb.message;
+			} else if (fb.description) {
+				fbContent = fb.description + '<br />';
+				if (fb.link) fbContent + '<a href="' + fb.link + '" target="_blank">Meer..</a>';
+			} else if (fb.name) {
+				fbContent = fb.name;
+			}
+			html += "<li>" + fbContent + "</li>";
+		});
+		html += "</ul>";
+		
+		//A little animation once fetched
+		$('#facebook-feed').append(html);
+	});
+}; // end: fbFetch.function
+/*--[end: FACEBOOK-feed]--------------------------- */
+	
+	
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+
+	/* Start copy */
+	
+	/*------------------------------------------- 
+    FACEBOOK: get latest Facebook feed
+    ------------------------------------------- */
+    fbFetch();
+    /*--[end: FACEBOOK-feed]--------------------------- */
+	
+	/* End copy */
+
+});
+
+</script>
+
+<!-- Additional Comments
+
+	Er waren wat problemen in het begin, omdat bepaalde content niet getoond werd.
+    Bijv. youtube video's. Daar zijn toen door Richard nog wat uitzonderingen op geprogrammeerd.
+
+	Used in:
+    - Melkfabriek Hilverum
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div id="socialmedia">
+        
+            <!-- FACEBOOK FEED -->
+            <div id="facebook-feed">
+                
+            </div> 
+        
+        </div>
+        
+        <!-- End copy -->
+
+</div>         
+
+

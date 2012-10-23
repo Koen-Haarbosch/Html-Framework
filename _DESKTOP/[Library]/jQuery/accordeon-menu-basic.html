@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+<link rel="stylesheet" href="../../Styles/elements.css" media="all" />
+
+<style>
+
+    /* Start copy */
+	
+	.accordeon dt { 
+		float: left;
+		width: 100%;
+		margin-top:3px;
+		padding:5px 0 5px 15px;
+		color:#000;
+		text-align: left;
+		background: #f1f1f1 url(../../Images/arrow-right.gif) no-repeat 5px 10px;
+		cursor:pointer;
+	}
+	.accordeon dt:hover, .accordeon dt.active { 
+		background: #666 url(../../Images/arrow-right.gif) no-repeat 5px 10px;
+	}
+	.accordeon dd { 
+		float: left;
+		width: 100%;
+		padding:5px;
+		background: #fff;
+	}
+
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script>
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+
+
+	/* Start copy */
+	
+		//----------------------------------------------------------
+		// ACCORDEON
+		//----------------------------------------------------------
+		$('.accordeon dd').hide();
+		$('.accordeon dd:first').show();
+		 
+		$('.accordeon dt').click(function() {
+						
+			$('.accordeon dt').removeClass('active');
+			$('.accordeon dd').slideUp('normal');
+	   
+			if($(this).next().is(':hidden') == true) {
+				$(this).addClass('active');
+				$(this).next().slideDown('normal');
+			 } 
+			  
+		 });
+	
+	/* End copy */
+	
+});
+
+	
+</script>
+
+<!-- Additional Comments
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- Accordeon -->
+
+                <dl class="accordeon">
+                    <dt class="active">The America’s</dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    <dt>Africa</dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    <dt>Middle East</dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    <dt>Pacific Rim</dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd>
+                </dl> 
+        
+        <!-- End copy -->
+
+</div>         
+
+

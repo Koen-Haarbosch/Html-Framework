@@ -1,0 +1,36 @@
+
+
+
+Mobile Boiletplate
+http://stuffandnonsense.co.uk/projects/320andup/
+http://html5boilerplate.com/mobile/
+
+
+
+MOBILE DETECTION
+http://detectmobilebrowser.com/
+http://stackoverflow.com/questions/3514784/best-way-to-detect-handheld-device-in-jquery
+
+
+
+http://www.designyourway.net/blog/resources/30-efficient-jquery-lightbox-plugins/
+
+
+SHARE THIS sharethis.com
+
+HTML 5 Video
+http://www.smashingmagazine.com/2011/03/11/syncing-content-with-html5-video/
+
+
+
+QR code maken
+http://keremerkan.net/qr-code-and-2d-code-generator/
+
+
+Hier wat linkjes naar een photoshop favicon plug-in en de tutorial
+
+Tutorial info:
+http://www.photoshopsupport.com/tutorials/jennifer/favicon.html
+
+Download:
+http://www.telegraphics.com.au/sw/

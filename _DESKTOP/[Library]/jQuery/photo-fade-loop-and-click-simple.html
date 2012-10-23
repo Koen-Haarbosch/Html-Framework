@@ -1,0 +1,152 @@
+
+<style>
+
+    /* Start copy */
+
+	div.homevisual {
+		float:left;
+		position:relative;
+		overflow: visible;
+		width:600px;
+		height:288px;
+	}
+	
+	#links {
+		position:absolute; 
+		width:100%; 
+		top:139px; 
+		left:200px; 
+		z-index:100; 
+	}
+	#links a {
+		float: left; 
+		width:40px;
+		height:40px; 
+		line-height: 40px;
+		color:#777777;
+		text-align: center;
+		text-decoration: none;
+		background: #fff;
+	}
+	#links a.active, #links a:hover {
+		color: #cc0000; 
+	}
+	
+	#photos img {
+		position:absolute; 
+		top:0px; 
+		left:0px;
+		z-index:90; 
+	}
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+
+function forceClick () {
+	// Check if next sibling is available, else show first
+	if($('#links a.active').next().length == 0) {
+		$('#links a:first').click();
+	}
+	else { 
+		$('#links a.active').next().click();
+	}
+}
+	
+$(function() {
+
+
+	/* Start copy */
+	
+	// ------------------------------------------------------------------------------------------------
+	// Photo Fade onClick : with auto loop
+	// ------------------------------------------------------------------------------------------------
+
+	$("#links a").click(function () {								 
+
+		// if clicked link is already the active link, exit function
+		if($(this).hasClass('active')){ 
+			return false;
+		}
+
+		var nextActive = $(this).attr("class");
+
+		// fadeIn nextActive with speed 400
+		$("#photos img." + nextActive).fadeIn(300);
+		
+		// wait 400 and fadeOut active
+		$("#photos img.active").delay(200).fadeOut();
+
+		$("#photos img").removeClass("active");
+		 // set new active
+		$("#photos img." + nextActive).addClass("active");
+
+		$("#links a").removeClass("active");
+		 // set 'active' to clicked link
+		 $(this).addClass("active");                   
+		
+		clearInterval(setTimer); // clear Timer
+		setIntervalTimer(); // start Timer again, so it starts with 0 again
+		
+		return false;
+	});
+
+	function setIntervalTimer(){
+		setTimer = setInterval( "forceClick()", 3000 );
+	} 
+	
+	// start Timer
+	setIntervalTimer();
+
+	// end: Photo Fade onClick
+	
+	/* End copy */
+	
+});
+
+	
+</script>
+
+<!-- Additional Comments
+
+	More info:
+    Basis is gemaakt door Richard, aangevult/ uitgebouwd door Koen
+    Gebruikt in Lefier Jaarverslag 2010
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div class="homevisual">
+                            
+            <div id="links">
+                <a href="#" class="show01 active">1</a>
+                <a href="#" class="show02">2</a>
+                <a href="#" class="show03">3</a>
+                <a href="#" class="show04">4</a>
+            </div>
+    
+            <div id="photos">
+                <img class="show01 active" src="Images/01.jpg" width="600px" height="288px" alt="" />
+                <img class="show02" style="display:none;" src="Images/02.jpg" width="600px" height="288px" alt="" />
+                <img class="show03" style="display:none;" src="Images/03.jpg"  width="600px" height="288px" alt="" />
+                <img class="show04" style="display:none;" src="Images/04.jpg"  width="600px" height="288px" alt="" />
+            </div>
+    
+    </div>
+    
+        <!-- End copy -->
+
+</div>         
+
+

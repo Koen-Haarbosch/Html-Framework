@@ -1,0 +1,356 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	/*----------------------------------------------------------------------------
+		Yahoo Reset (updated: 17-01-2011)
+		Latest: http://developer.yahoo.com/yui/reset/
+	----------------------------------------------------------------------------*/
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+		margin:0;
+		padding:0;
+	}
+	table {
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+	fieldset,img { 
+		border:0;
+	}
+	address,caption,cite,code,dfn,em,/*strong,*/th,var {
+		font-style:normal;
+		font-weight:normal;
+	}
+	ol,ul {
+		list-style:none;
+	}
+	caption,th {
+		text-align:left;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-size:100%;
+		font-weight:normal;
+	}
+	q:before,q:after {
+		content:'';
+	}
+	abbr,acronym { border:0;
+	}
+	/*--[end: CSS Reset]----------------------------------------------------------*/
+	
+	
+	
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+	
+	a:hover, a:active { outline: none; }
+	a, a:active, a:visited { color:#000; text-decoration: underline; }
+	a:hover { color:#000; text-decoration: none; }
+	
+	html { overflow-y: scroll; }
+	
+	body {
+		font:62.5% Helvetica, Arial, Sans-Serif;
+		background: #FFFFFF;
+	}
+	
+	.clear { clear: both; height: 1px; font-size: 1px; border: none; background: transparent; }
+	
+	#wrapper {
+		width: 995px;
+		margin: 0 auto 0 auto; 
+		text-align: left;
+	}
+	
+	
+	/*----------------------------------------------------------------------------
+		Font-size
+	----------------------------------------------------------------------------*/
+	
+	#header,
+	#nav,
+	#column-left,
+	#column-center,
+	#column-right,
+	#footer,
+	#tooltip { 
+		font-size: 1.2em;
+	}
+	
+	h1 {
+		font-size:2em;
+	}	
+	
+	h2 {
+		font-size:1.8em;
+	}
+	
+	h3 {
+		font-size:1.6em;
+	}
+	
+	h4 { 
+		font-size:1.4em;
+	} 
+	h5 { 
+		font-size:1.2em;
+	}
+	
+	h6 {
+		font-size:1.0em;
+	}
+	
+	/*--[end: Font-size]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Header
+	----------------------------------------------------------------------------*/
+	#header {
+		float: left;
+		width: 975px;
+		height: 40px;
+		margin: 10px 0 5px 0;
+	}
+	#header h1 {
+		float: left;	
+	}
+	
+		/*----------------------------------------------------------------------------
+			Site Wide Menu
+		----------------------------------------------------------------------------*/
+		
+		ul#site-wide-nav {
+			float: right;
+		}
+		ul#site-wide-nav li {
+			float:left;
+			padding: 0 0 0 10px;
+		}
+		ul#site-wide-nav li a {
+			color: #ccc;
+		}
+		
+		/*--[end: Site Wide Menu]---------------------------------------------------------*/
+	
+	
+	/*--[end: Header]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Navigation
+	----------------------------------------------------------------------------*/
+	
+	#nav {
+		float: left;
+		width: 995px;
+	}
+		/* Mainmenu */
+		ul.horizontal {
+			position:relative;
+			z-index: 999;
+		}
+			ul.horizontal li {
+				float:left;
+				position:relative;
+				padding: 10px 20px 10px 0;			
+			}
+			ul.horizontal li a {
+				color: #ff6600;
+				text-decoration: none;
+			}
+			ul.horizontal li a:hover {
+				color: #999;
+				text-decoration: underline;
+			}
+			ul.horizontal li a.active {
+				color: #900;	
+			}
+			ul.horizontal li:hover ul, ul.horizontal li.hover ul {
+				display:block;
+			}
+		/* Submenu */
+		ul.horizontal ul{
+			display:none;
+			position:absolute;
+			top:30px;
+			left:0px;
+			width:125px;
+		}
+			ul.horizontal ul li {
+				width:125px;
+				background:#fff;
+			}
+			
+	/*--[end: Navigation]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Columns
+	----------------------------------------------------------------------------*/
+	
+	#column-container{
+		float: left;
+		width: 995px;
+		margin: 20px 0 0 0;
+	}
+		#column-left {
+			float: left;
+			width: 200px;
+		}
+		#column-center {
+			float: left;
+			width: 455px;
+			color: #333333;
+			margin: 0 40px 0 40px;
+		}
+		#column-right {
+			float: left;
+			width: 260px;
+		}
+		
+	/*--[end: Columns]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Footer
+	----------------------------------------------------------------------------*/
+	
+	#footer {
+		float: left;
+		width: 995px;
+		margin: 30px 0 20px 0;
+	}
+	
+	/*--[end: Footer]---------------------------------------------------------*/
+	
+	
+	/*--[end: Base CSS]---------------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Basic Content
+	----------------------------------------------------------------------------*/
+	
+	#column-center li {
+		margin:0 0 .5em 2em;
+		padding:0;
+		display:list-item;
+		list-style-position:outside;	
+	}
+	#column-center ul li { list-style: disc; }
+	#column-center ul li ul li { list-style: circle; }
+	#column-center ol li { list-style:decimal; }
+	#column-center ul ul, #column-center ol ol {margin:5px 0 0 0;}
+	
+	#column-center strong { font-weight: bold;}
+	#column-center a { color: #F60;}
+	#column-center h1 {margin-bottom:.5em;}	
+	#column-center h2 {margin-bottom:.5142em;padding-top:.2em;}	
+	#column-center h3 {margin-bottom:.7em;padding-top:.3em;}
+	#column-center h4 {margin-bottom:.6em;}
+	#column-center h5,#column-center h6 {margin-bottom:.5em;}
+	
+	#column-center p, #column-center blockquote, #column-center ul, #column-center ol, #column-center dl, #column-center form, #column-center table, #column-center pre{ line-height:inherit; margin:0 0 1.5em 0; }
+	
+	#column-center table{width:100%;border-collapse:collapse;}
+	#column-center th, #column-center td{text-align:left; padding:.5em 1em;line-height:1.5em;}		
+	#column-center th{background:#eee;}
+	#column-center td{border-bottom:1px solid #eee;}
+	#column-center caption{font-style:italic;color:#777;margin:.5em 0;}	
+	
+	#column-center pre, #column-center code, #column-center samp, #column-center kbd, #column-center var{font:100% mono-space,monospace;}
+	#column-center blockquote, #column-center em{ font-style:italic;}
+	
+	/*--[end: Columns (content)]------------------------------------------------*/
+
+
+
+} /*--[end: @media screen ]------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------
+	Print Styles
+----------------------------------------------------------------------------*/
+
+@media print {
+	
+	/*----------------------------------------------------------------------------
+		Base CSS
+	----------------------------------------------------------------------------*/
+
+	html, body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin:0; padding:0; }
+
+	html, body { border: 0px;width: 100%;height: 100%;background: #fff;font: 12pt Verdana, Arial, Helvetica, "Lucida Grande", sans-serif;}
+	a, a:visited { color: #000 !important; text-decoration: underline; background: none; }
+
+	#header, #nav, #column-left, #column-right, .paging, #footer {
+		display: none !important;
+	}
+	#wrapper, #column-container, #column-center {
+		width: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		float: none !important;
+		color: #000000;
+		background: none;
+	}
+	
+	a:after { content: " (" attr(href) ")"; }  /* Displays url after link */
+	/* abbr:after { content: " (" attr(title) ")"; } Displays title after abbr */
+	/* pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }    */
+	/*	img { page-break-inside: avoid; } */
+	/* @page { margin: 0.5cm; } */
+	/*	p, h2, h3 { orphans: 3; widows: 3; } Set min text lines before page break and before page start */
+	/*	h2, h3{ page-break-after: avoid; } */
+	
+	/*----------------------------------------------------------------------------
+		Basic Content
+	----------------------------------------------------------------------------*/
+	
+	
+	#column-center li {
+		margin:0 0 .5em 2em;
+		padding:0;
+		display:list-item;
+		list-style-position:outside;	
+	}
+	#column-center ul li { list-style: disc; }
+	#column-center ul li ul li { list-style: circle; }
+	#column-center ol li { list-style:decimal; }
+	#column-center ul ul, #column-center ol ol {margin:5px 0 0 0;}
+	
+	#column-center strong { font-weight: bold;}
+	#column-center a { color: #F60;}
+	#column-center h1 {margin-bottom:.5em;}	
+	#column-center h2 {margin-bottom:.5142em;padding-top:.2em;}	
+	#column-center h3 {margin-bottom:.7em;padding-top:.3em;}
+	#column-center h4 {margin-bottom:.6em;}
+	#column-center h5,#column-center h6 {margin-bottom:.5em;}
+	
+	#column-center p, #column-center blockquote, #column-center ul, #column-center ol, #column-center dl, #column-center form, #column-center table, #column-center pre{ line-height:inherit; margin:0 0 1.5em 0; }
+	
+	#column-center table{width:100%;border-collapse:collapse;}
+	#column-center th, #column-center td{text-align:left;padding:.5em 1em;line-height:1.5em;}		
+	#column-center th{background:#eee;}
+	#column-center td{border-bottom:1px solid #eee;}
+	#column-center caption{text-align:left;font-style:italic;color:#777;margin:.5em 0;}	
+	
+	#column-center pre, #column-center code, #column-center samp, #column-center kbd, #column-center var{font:100% mono-space,monospace;}
+	#column-center blockquote, #column-center em{ font-style:italic;}
+
+	
+} /*--[end: @media print ]------------------------------------------------*/
+

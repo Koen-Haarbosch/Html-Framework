@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+<link rel="stylesheet" href="../../Styles/elements.css" media="all" />
+
+<style>
+
+    /* Start copy */
+	
+	
+	/*----------------------------------------------------------------------------
+		Flickr
+	----------------------------------------------------------------------------*/
+
+	#flickr-images {
+		float: left;
+		width: 450px;
+	}
+	
+	#flickr-images ul,
+	#flickr-images li {
+		float:left; 
+		list-style:none; 
+		display:inline-block; 
+		padding:0px; 
+		margin:0px;
+	}
+	#flickr-images li {
+	  position:relative;
+	  height:75px; 
+	  width:75px;
+	  margin:0 20px 20px 0;
+	}
+	#flickr-images li a{
+	  position:absolute;
+	}
+
+
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+	/* Start copy */
+	
+	/*------------------------------------------- 
+    FLICKR: get Flicker feed
+    ------------------------------------------- */
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=62720334@N03&lang=en-us&format=json&jsoncallback=?", displayImages);
+    function displayImages(data) {
+        var htmlString = "<ul>";
+        $.each(data.items, function (i, item) {
+            // square small teasers		   					
+            var sourceSquare = (item.media.m).replace("_m.jpg", "_s.jpg");
+            // medium teasers
+            //var sourceSquare = item.media.m;
+            htmlString += '<li><a href="' + item.link + '" target="_blank">';
+            htmlString += '<img src="' + sourceSquare + '" alt="' + item.title + '" title="' + item.title + '"/>';
+            //htmlString += item.title;
+            htmlString += '</a></li>';
+            if (i == 11) { return false; } // Show only xx images (starts at 0)
+        });
+        $('#flickr-images').append(htmlString + "</ul>");
+    }
+    /*--[end: FLICKR-feed]--------------------------- */
+	
+	/* End copy */
+
+</script>
+
+<!-- Additional Comments
+
+	Gets the last XXX images on a Flickr account.
+    The only thing to link it to a specific account is to change the ?id= in the getJSON link
+    You can simply get this id from the url of the Flickr page you want to get images from
+	
+    Used in:
+    - Jazz in Duketown
+    - De Melkfabriek Hilversum
+    
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- FLICKR FEED -->
+        <div id="flickr-images">
+            
+        </div>
+        
+        
+        <!-- End copy -->
+
+</div>         
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<!-- Start copy -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="../../Video/jwplayer.js"></script>
+
+<script>
+
+$(document).ready(function() {   
+	// ----------------------------------------------------------------------------- MOVIE 1
+	
+	
+	// START button
+	$("#play").click(function(){
+		jwplayer("movie-01").play(true);
+		jwplayer("movie-01").setVolume(100);
+	});
+	
+	// LOAD other movie
+	$("#play2").click(function(){
+		jwplayer("movie-01").load('/videos/bunny.mp4')
+		jwplayer("movie-01").play(true);
+		jwplayer("movie-01").setVolume(100);
+	});
+	
+	// PAUZE button
+	$("#pause").click(function(){
+		jwplayer("movie-01").pause();
+	});
+	
+	// BUFFER event
+	jwplayer("movie-01").onBuffer(function(event) {
+		console.log("buffer");
+		// show loading icon
+	});
+	
+	// PLAY event
+	jwplayer("movie-01").onPlay(function(event) {
+										 
+	});
+
+	// PAUZE event
+	jwplayer("movie-01").onPause(function(event) {
+
+	});
+	
+	// COMPLETE event
+	jwplayer("movie-01").onComplete(function(event) {
+		jwplayer("movie-01").stop();		
+	});
+	
+	// TIME event
+	jwplayer("movie-01").onTime(function(event) {
+		var _time = (event.duration - event.position) * 1000;
+		
+		$('#time').animate({
+			top: '-225'
+		  }, _time, 'linear', function() {
+			// Animation complete.
+		});
+
+	});
+	
+	}); // end: doc.ready
+	
+</script>
+<!-- End copy -->
+
+</head>
+
+<body>
+
+
+<!-- Additional Comments
+
+	Very advanced player.
+    Supports HTML 5 video, custom skinning, advanced api, google analytics etc.
+    
+    More info: http://www.longtailvideo.com/
+    Skinning: http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/14/skinning-the-jw-player-5
+    API reference: http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12540/javascript-api-reference  
+	Setup Wizard: http://www.longtailvideo.com/support/jw-player-setup-wizard
+    
+    Order Advanced Version (zonder/ eigen watermerk, gebruik op commerciele sites, supports advertising plugin) : http://www.longtailvideo.com/order/
+    
+    Beperkingen JW Player:
+http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/14625/html5-support#currentplayerlims
+
+    
+-->
+
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div id="movie-menu">
+        	<span id="play">Play</span>
+            <span id="pause">Pause</span>
+        </div>
+        
+        <div id="movie-01"><!-- --></div>
+		<script type="text/javascript">
+            jwplayer("movie-01").setup({
+                flashplayer: "../../Video/player.swf",
+                icons: false,
+                screencolor: "#fff",
+                file: "http://dl1.streamzilla.jet-stream.nl/bitsquad/Xenpax/who.mp4",
+                image: "Images/who.jpg",
+                height: 340,
+                width: 466
+            });
+        </script>
+        
+        
+        <!-- End copy -->
+
+</div>         
+
+
+</body>
+</html>

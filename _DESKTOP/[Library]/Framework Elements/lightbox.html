@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+
+<style>
+
+    /* Start copy */
+	
+		
+	/*----------------------------------------------------------------------------
+		Lightbox 
+	----------------------------------------------------------------------------*/
+	
+	#lightbox {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #666;
+		z-index: 99999;
+	}
+	
+	#lightbox-cont {
+		width: 800px;
+		height: 500px;
+		margin: 100px auto 0 auto; 
+		background: #f1f1f1;
+	}
+	
+	a#close-lightbox {
+		float: right;
+	}
+		
+	/*--[end: Lightbox]---------------------------------------------------------*/
+
+	    
+    /* End copy */
+
+</style>
+
+<script>
+
+	/* Start copy */
+	
+	// Close lightbox
+	$("#close-lightbox").click(function(){
+		$('#lightbox').hide();
+	});
+	
+	/* End copy */
+
+</script>
+
+<!-- Additional Comments
+
+	When implementing set display:block tot display:none in css and inline css.
+    
+    This lightbox is fixed. Which means that when scrolling a large page it will stay where it is.
+    And the page is scrolling behind the lightbox.
+    
+    This code can best be placed just after <body>.
+    When used in an other place, like here in #column-center it might be inherit styles of it's container.
+    
+    Set a transparent .png or style on #lightbox to show a transparent layer behind the #lightbox-cont
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div id="lightbox" style="display:block;">
+            <div id="lightbox-cont">
+                <a href="#" id="close-lightbox">Sluiten</a>
+            </div>
+        </div>
+        
+        <!-- End copy -->
+
+</div>         
+
+

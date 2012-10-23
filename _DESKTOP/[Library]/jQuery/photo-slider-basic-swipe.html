@@ -1,0 +1,174 @@
+
+<style>
+
+    /* Start copy */
+	
+	
+	
+	/* Easy Slider */
+	#slider-container { float: left; width: 550px; height:397px;  /* = hoogte van #slider li + ol#controls */ overflow: hidden; position: relative;}
+	#slider ul, #slider li,
+	#slider2 ul, #slider2 li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	#slider2{margin-top:1em;}
+	#slider li, #slider2 li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		width:550px;
+		height:367px;
+		margin-bottom: 30px; /* = hoogte van ol#controls */
+		overflow:hidden; 
+		}	
+		
+	#prevBtn, #nextBtn,
+	#slider1next, #slider1prev{ 
+		display:block;
+		width:17px;
+		height:13px;
+		position:absolute;
+		left:5px;
+		top:375px;
+
+		z-index:1000;
+		}	
+	#nextBtn, #slider1next{ 
+		left:528px;
+		}														
+	#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{  
+		display:block;
+		position:relative;
+		width:17px;
+		height:13px;
+		background:url(Images/Slider/btn_prev.gif) no-repeat 0 0;
+		
+		}	
+	#nextBtn a, #slider1next a{ 
+		background:url(Images/Slider/btn_next.gif) no-repeat 0 0;	
+		}	
+		
+	/* numeric controls */	
+
+	ol#controls{
+		float: left;
+		width: 327px;
+		margin:0;
+		padding:0 0 0 223px;
+		height:30px;
+		background: #b1a6d5;
+		}
+	ol#controls li{
+		margin:10px 10px 0 0; 
+		padding:0;
+		float:left;
+		list-style:none;
+		height:9px;
+		width: 9px;
+		}
+	ol#controls li a{
+		float:left;
+		height:9px;
+		width: 9px;
+		background:url(Images/Slider/bol-roze.gif) no-repeat 0 0;
+		text-indent: -9999px;
+		}
+	ol#controls li.current a{
+		background:url(Images/Slider/bol-wit.gif) no-repeat 0 0;	
+		}
+	ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+	
+/* // Easy Slider */
+
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="Scripts/easySlider1.7-swipe.js"></script>
+
+<script>
+
+// ------------------------------------------------------------------------------------------------
+// Configure/Bind jQuery Mobile
+// ------------------------------------------------------------------------------------------------
+
+$(document).bind("mobileinit", function(){
+  //apply overrides here
+  $.mobile.autoInitializePage = false;
+});
+
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+
+
+	/* Start copy */
+	
+		//----------------------------------------------------------
+		// Photo Slider
+		//----------------------------------------------------------
+		$("#slider").easySlider({
+			speed: 800,
+			pause: 2000,
+		    numeric: true,
+		    auto: false,
+		    continuous: true,
+		    nextId: "slider1next",
+		    prevId: "slider1prev",
+		    nextText: '',
+		    prevText: ''
+	    }); 
+			
+			
+
+	
+	/* End copy */
+	
+});
+
+	
+</script>
+
+<script type="text/javascript" src="Scripts/jquery.mobile-1.0b2.js"></script> <!-- Load after global ! -->
+
+
+<!-- Additional Comments
+
+	More info:
+    http://cssglobe.com/post/5780/easy-slider-17-numeric-navigation-jquery-slider
+    
+    LET OP !!!: Het hier gebruikte script: easySlider1.7.js is aangepast door Richard, zodat er pijltjes en nummers (bolletjes) tegelijk gebruikt kunnen worden.
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- Slider --> 
+        
+        <div id="slider-container"> 
+            <div id="slider"> 
+                <ul> 
+                    <li><img alt="" src="Images/Slider/02.jpg" /></li> 
+                    <li><img alt="" src="Images/Slider/03.jpg" /></li> 
+                    <li><img alt="" src="Images/Slider/04.jpg" /></li> 
+                    <li><img alt="" src="Images/Slider/05.jpg" /></li> 
+                    <li><img alt="" src="Images/Slider/06.jpg" /></li> 
+                </ul> 
+            </div> 
+        </div>
+        
+        <!-- End copy -->
+
+</div>         
+
+

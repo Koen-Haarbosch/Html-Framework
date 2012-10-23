@@ -1,0 +1,49 @@
+/*----------------------------------------------------------------------------
+	Columns (content) 
+	Css for html elements which are placed in the content containers
+	
+	Deze css word gebruikt voor de Insite Editor.
+	Dit is een copy van een deel van de .column-center styles in de global.css
+	
+----------------------------------------------------------------------------*/
+.column-center {
+	color: #333333;
+}
+.column-center li {
+	margin:0 0 0 2em;
+	padding:0;
+	display:list-item;
+	list-style-position:outside;	
+}
+.column-center ul li { list-style: disc; }
+.column-center ul li ul li { list-style: circle; }
+
+.column-center ol li { list-style:decimal; }
+
+.column-center strong { font-weight: bold;}
+.column-center a { color: #F60;}
+.column-center h1 {margin-bottom:.5em;}	
+.column-center h2 {margin-bottom:.5142em;padding-top:.2em;}	
+.column-center h3 {margin-bottom:.7em;padding-top:.3em;}
+.column-center h4 {margin-bottom:.6em;}
+.column-center h5,.column-center h6 {margin-bottom:.5em;}
+
+
+.column-center p, .column-center blockquote, .column-center ul, .column-center ol, .column-center dl, .column-center form, .column-center table, .column-center pre{
+	line-height:inherit;
+	margin:0 0 1.5em 0;
+}
+.column-center ul ul, .column-center ol ol {margin:0;}
+
+
+.column-center table{width:100%;border-collapse:collapse;}
+.column-center th, .column-center td{padding:.5em 1em;line-height:1.5em;}		
+.column-center th{background:#eee;}
+.column-center td{border-bottom:1px solid #eee;}
+.column-center caption{font-style:italic;color:#777;margin:.5em 0;}	
+
+.column-center pre, .column-center code, .column-center samp, .column-center kbd, .column-center var{font:100% mono-space,monospace;}
+
+.column-center blockquote{
+	font-style:italic;
+}

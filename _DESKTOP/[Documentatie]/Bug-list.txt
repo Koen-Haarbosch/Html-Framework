@@ -1,0 +1,6 @@
+In dit bestand kun je bugs melden waar een keer naar gekeken moet worden.
+Vermeld hierin duidelijk waar er wat fout gaat.
+Denk aan browser versie, PC/MAC
+
+Koen ( 13-4-2012 )
+- Waarom werkt Video player advanced niet in IE7 ?

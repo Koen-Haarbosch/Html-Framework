@@ -1,0 +1,180 @@
+
+<style>
+
+    /* Start copy */
+
+	div.homevisual {
+		float:left;
+		position:relative;
+		overflow: visible;
+		width:600px;
+		height:288px;
+	}
+	
+	#links {
+		position:absolute; 
+		width:100%; 
+		top:139px; 
+		left:200px; 
+		z-index:100; 
+	}
+	#links a {
+		float: left; 
+		width:20px;
+		height:20px; 
+		color:#777777;
+		text-decoration: none;
+	}
+	#links a.active, #links a:hover {
+		color: #cc0000; 
+	}
+	
+	#photos div {
+		position:absolute; 
+		top:0px; 
+		left:0px;
+		z-index:90; 
+	}
+	#photos div.visual-block { 
+		display: block; 
+		position:absolute; 
+		top:133px; 
+		left:15px;	
+		width: 260px; 
+		height: 122px; 
+		background: #fff; 
+		z-index: 9999; 
+	}	
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+
+function forceClick () {
+	// Check if next sibling is available, else show first
+	if($('#links a.active').next().length == 0) {
+		$('#links a:first').click();
+	}
+	else { 
+		$('#links a.active').next().click();
+	}
+}
+	
+$(function() {
+
+
+	/* Start copy */
+	
+	// ------------------------------------------------------------------------------------------------
+	// Photo Fade onClick : with auto loop
+	// ------------------------------------------------------------------------------------------------
+
+	$("#links a").click(function () {								 
+
+		// if clicked link is already the active link, exit function
+		if($(this).hasClass('active')){ 
+			return false;
+		}
+
+		var nextActive = $(this).attr("class");
+
+		// fadeIn nextActive with speed 400
+		$("#photos div." + nextActive).fadeIn(300);
+		
+		// wait 400 and fadeOut active
+		$("#photos div.active").delay(200).fadeOut();
+
+		$("#photos div").removeClass("active");
+		 // set new active
+		$("#photos div." + nextActive).addClass("active");
+
+		$("#links a").removeClass("active");
+		 // set 'active' to clicked link
+		 $(this).addClass("active");                   
+		
+		clearInterval(setTimer); // clear Timer
+		setIntervalTimer(); // start Timer again, so it starts with 0 again
+		
+		return false;
+	});
+
+	function setIntervalTimer(){
+		setTimer = setInterval( "forceClick()", 3000 );
+	} 
+	
+	// start Timer
+	setIntervalTimer();
+
+	// end: Photo Fade onClick
+	
+	/* End copy */
+	
+});
+
+	
+</script>
+
+<!-- Additional Comments
+
+	More info:
+    Basis is gemaakt door Richard, aangevult/ uitgebouwd door Koen
+    Gebruikt in Lefier Jaarverslag 2010
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div class="homevisual">
+                            
+            <div id="links">
+                <a href="#" class="show01 active">1</a>
+                <a href="#" class="show02">2</a>
+                <a href="#" class="show03">3</a>
+                <a href="#" class="show04">4</a>
+            </div>
+    
+            <div id="photos">
+                <div class="show01 active">
+                    <img src="Images/01.jpg" width="600px" height="288px" alt="" />
+                    <div class="visual-block">
+                        <a href="#">Lees verder 1</a>
+                    </div>
+                </div>
+                <div class="show02" style="display:none;">
+                    <img src="Images/02.jpg" width="600px" height="288px" alt="" />
+                     <div class="visual-block">
+                        <a href="#">Lees verder 2</a>
+                    </div>
+                </div>
+                <div class="show03" style="display:none;">
+                    <img src="Images/03.jpg"  width="600px" height="288px" alt="" />
+                     <div class="visual-block">
+                        <a href="#">Lees verder 3</a>
+                    </div>
+                </div>
+                <div class="show04" style="display:none;">
+                    <img src="Images/04.jpg"  width="600px" height="288px" alt="" />
+                     <div class="visual-block">
+                        <a href="#">Lees verder 4</a>
+                    </div>
+                </div>
+               
+            </div>
+    
+    </div>
+    
+        <!-- End copy -->
+
+</div>         
+
+

@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+
+<style>
+
+    /* Start copy */
+	
+		/*----------------------------------------------------------------------------
+			Facet Navigation
+		----------------------------------------------------------------------------*/
+		
+		div.facet-container         {display:block;clear:both;width:200px;padding:0;margin:0 0 10px 0;overflow:hidden;background:#EEE;}
+		h2.facet-list-title         {display:block;float:left;clear:both;width:170px;margin:0;padding:5px 20px 5px 10px;font-size:100%;position:relative;color:#000;background:#DDD;min-height:15px;}
+		ul.facet-list               {display:block;float:left;clear:both;width:100%; padding:0;margin:0;list-style-type:none;background:transparent;}
+		ul.facet-list li            {display:block;float:left;clear:both;width:100%; padding:2px 0;margin:0;list-style-type:none;}
+		ul.facet-list li.selected   {font-weight:bold;color:#000;}
+		ul.facet-list li a          {text-decoration:none;color:#000;width:165px;float:left;color:#000;line-height:1.2em;margin:0 0 0 10px;padding:3px 0;}
+		ul.facet-list li a:hover    {text-decoration:underline;}
+		ul.facet-list .checkbox     {float:left;width:14px;position:relative;top:1px;left:5px}
+		ul.facet-list span          {color:#000;font-size:90%;}
+		
+		/* subfacetlist */
+		ul.facet-list ul				{list-style-type: none;padding:0;margin:0;display:block;width:100%;clear:both;float:left;left:-10px;position:relative;}
+		ul.facet-list ul li				{padding:0px;width:208px;}
+		ul.facet-list ul li.selected	{font-weight: normal; /*background: #FFF;*/ }
+		ul.facet-list ul .checkbox		{float:left;width:14px;margin-left: 34px; }
+		ul.facet-list li li a           {width: 138px; float: left; font-weight: normal;  }
+		ul.facet-list li li a:hover     {text-decoration: underline; }
+		ul.facet-list li a span         {color: #757575; }
+		
+		ul.facet-list li a.empty        {color: #999; cursor: default !important; }
+		ul.facet-list li a.empty:hover  {text-decoration: none; color: #999; cursor: default; }
+		ul.facet-list li a.empty span   {color: #999; font-size: 86%; }
+		
+		/* Facetlist met labels */
+		ul.facet-list li label				{text-decoration:none;width:165px;float:left;color:#000;line-height:1.2em;margin:0;padding:0;}
+		ul.facet-list li label:hover		{text-decoration:underline;}
+		ul.facet-list li li label           {width: 138px; float: left; font-weight: normal;  }
+		ul.facet-list li li label:hover     {text-decoration: underline; }
+		ul.facet-list li label span         {color: #757575; }
+		ul.facet-list li label.empty        {color: #999; cursor: default !important; }
+		ul.facet-list li label.empty:hover  {text-decoration: none; color: #999; cursor: default; }
+		ul.facet-list li label.empty span   {color: #999; font-size: 86%; }
+	
+		/*--[end: Facet Navigation]------------------------------------------------*/
+	
+    
+    /* End copy */
+
+</style>
+
+<script>
+
+	/* Start copy */
+	
+	/* End copy */
+
+</script>
+
+<!-- Additional Comments
+
+	This code is the code used in the Annual Reports.
+    This code is made by Peter van Gennep.
+	
+-->
+
+<div id="column-left">
+              
+        <!-- Start copy -->
+        
+        <div class="facet-container">
+            <fieldset>
+            <h2 class="facet-list-title">Sturing en verantwoording over twee regels</h2>
+            <ul class="clearfix facet-list">
+                <li><input type="checkbox" id="box1" value="" class="checkbox" /><a href="/" class="inline"><label for="">Facetwaarde <span>(218)</span></label></a></li>
+                <li><input type="checkbox" id="box2" value="" class="checkbox" /><a href="/"><label for="">Facetwaarde die over twee regels loopt<span></span></label></a></li>
+                <li class="selected"><input type="checkbox" checked="checked" id="box3" value="" class="checkbox" /><a href="/"><label for="">Facetwaarde <span>(7)</span></label></a></li>
+                <li><input type="checkbox" id="box4" value="" class="checkbox" /><a href="/"><label for="">Facetwaarde <span>(218)</span></label></a></li>
+                <li><input type="checkbox" disabled="disabled" id="box5" value="" class="checkbox" /><a href="/" class="empty"><label for="">Facetwaarde <span>(22)</span></label></a></li>
+                <li><input type="checkbox" disabled="disabled" id="box6" value="" class="checkbox" /><a href="/" class="empty"><label for="">Facetwaarde <span>(49)</span></label></a></li>
+            </ul>
+            </fieldset>
+        </div><!-- end: .facet-container -->
+                
+        <!-- End copy -->
+
+</div>         
+
+

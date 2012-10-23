@@ -1,0 +1,61 @@
+
+<!-- Styles Lightbox -->
+<link rel="stylesheet" type="text/css" href="Styles/jquery.lightbox-0.5.css" media="screen" />
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<!-- Scripts Lightbox -->        
+<script type="text/javascript" src="Scripts/jquery.lightbox-0.5.pack.js"></script>
+
+<script type="text/javascript">
+
+	// ------------------------------------------------------------------------------------------------
+	// Document Ready
+	// ------------------------------------------------------------------------------------------------
+	$(function() {
+	// Set Lightbox
+     $('#lightbox a').lightBox();
+	
+});
+</script>
+                                    
+<!-- Additional Comments
+
+	More info:
+    http://leandrovieira.com/projects/jquery/lightbox/
+    
+    HTML used here is the same as in the Fancybox.
+    This lightbox is also easy to use with the Wordpress Gallery, which automaticaly has output where with a link containing a href to the large image.
+    
+    Compare with Fancybox:
+    - Css file < 7kb
+    - Script files < 9kb, < 11kb (when including mousewheel)
+    - No autoscale available
+    - No mousewheel available
+    - no need for a rel tag to group images
+    
+    
+    LET OP !!!:
+    All images used with lightbox are in the root Images map.<br />
+	Because the .js files are referencing to these files. And we want to keep them in original state.
+    
+    
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- Lightbox --> 
+        
+            <div id="lightbox"> 
+                <a rel="group" href="Images/1_b.jpg" title=""><img alt="" src="Images/1_s.jpg" /></a>
+                <a rel="group" href="Images/2_b.jpg" title=""><img alt="" src="Images/2_s.jpg" /></a>
+                <a rel="group" href="Images/3_b.jpg" title=""><img alt="" src="Images/3_s.jpg" /></a> 
+            </div> 
+        
+        <!-- End copy -->
+
+</div>         
+
+

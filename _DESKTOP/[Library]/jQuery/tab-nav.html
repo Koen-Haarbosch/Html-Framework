@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+
+<style>
+
+    /* Start copy */
+	
+		/*----------------------------------------------------------------------------
+			Tab Nav
+		----------------------------------------------------------------------------*/
+		
+		.tab-nav {
+			float: left;
+			width: 100%;
+		}
+		
+		.tab-container {
+			float: left;
+			width: 100%;
+		}
+		
+		.tab-container a {
+			float: left;
+			background: #ccc;	
+			padding: 10px;
+		}
+		
+		.tab-container a.active {
+			background: #666;	
+		}
+		
+		.tab-content-container {
+			float: left;
+			width: 100%;
+		}
+		
+		.tab-content-container .tab-content {
+			display: block;
+			float: left;
+			width: 100%;
+			padding: 10px;
+			margin: 0 0 5px 0;
+			background: #f1f1f1;
+		}
+		.tab-content-container .tab-content.active { display:block; background:#666;}
+		
+		/*--[end: Tab Nav]------------------------------------------------*/
+
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+
+<script type="text/javascript">
+
+	// ------------------------------------------------------------------------------------------------
+	// Document Ready
+	// ------------------------------------------------------------------------------------------------
+	$(function() {
+
+		//----------------------------------------------------------
+		// Tab Navigation
+		//----------------------------------------------------------
+		$('.tab-content').hide();
+		$('.tab-content:first').show();
+		
+		$.each($(".tab-container a"), function(key, value) { 
+			$(this).click(function(event){
+				event.preventDefault();
+				$(".tab-container a").removeClass("active");
+				$(this).addClass("active");				   
+				$(".tab-content").removeClass("active");
+				$(".tab-content").hide(); /* Remove when animation is not needed */
+				var setNthChild = key + 1;
+				$(".tab-content:nth-child("+setNthChild+")").show(); /* Remove when animation is not needed */
+				$(".tab-content:nth-child("+setNthChild+")").addClass("active");
+			});
+		});
+
+	});
+</script>
+
+
+<!-- Additional Comments
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <div class="tab-nav" id="tab-nav-01">
+            <div class="tab-container">
+                <a href="" title="" class="active">Koopwoningen</a>
+                <a href="" title="">Nieuwbouw</a>
+                <a href="" title="">Bedrijfspanden</a>
+            </div><!-- end: .tab-container -->
+            <div class="tab-content-container">
+                <div class="tab-content active">Content tab 1</div>
+                <div class="tab-content">Content tab 2</div>
+                <div class="tab-content">Content tab 3</div>
+            </div><!-- end: .tab-content-container -->
+        </div><!-- end: .tab-nav -->
+        
+        <!-- End copy -->
+
+</div>         
+
+

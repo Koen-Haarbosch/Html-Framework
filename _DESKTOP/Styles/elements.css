@@ -1,0 +1,242 @@
+/*----------------------------------------------------------------------------
+	Made by Bit Squad
+------------------------------------------------------------------------------ */
+
+/*----------------------------------------------------------------------------
+	Contains all styles for non-global elements
+------------------------------------------------------------------------------ */
+
+@media screen {	
+	
+	/*----------------------------------------------------------------------------
+		Attachments 
+	----------------------------------------------------------------------------*/
+	
+	ul.attachments {
+		width: inherit;
+	}
+	
+	ul.attachments li {
+		list-style: none!important;
+		margin-left: 0!important;
+	}
+
+	ul.attachments li a { background:url(../Images/sprite-icons.gif) no-repeat; padding: 0 0 2px 20px; }
+	ul.attachments li.avi a { background-position:0px 0px;}
+	ul.attachments li.doc a, ul.attachments li.docx a, ul.attachments li.word a { background-position:0px -96px; }
+	ul.attachments li.bmp a, ul.attachments li.gif a, ul.attachments li.jpg a, ul.attachments li.jpeg a { background-position:0px -48px; }
+	ul.attachments li.mdb a { background-position:0px -144px; }
+	ul.attachments li.mp3 a { background-position:0px -192px; }
+	ul.attachments li.pdf a { background-position:0px -242px; }
+	ul.attachments li.png a { background-position:0px -48px; }
+	ul.attachments li.pps a, ul.attachments li.ppt a, ul.attachments li.pptx a { background-position:0px -290px; }
+	ul.attachments li.pub a { background-position:0px -338px; }
+	ul.attachments li.txt a { background-position:0px -386px; }
+	ul.attachments li.wav a, ul.attachments li.wmv a { background-position:0px 0px; }
+	ul.attachments li.xls a, ul.attachments li.xlsx a { background-position:0px -434px; }
+	ul.attachments li.zip a { background-position:0px -482px; }
+	
+	/*--[end: Attachments]------------------------------------------------*/
+
+
+	/*----------------------------------------------------------------------------
+		Lists
+		Basic Datalist styles
+	----------------------------------------------------------------------------*/
+	
+	#column-center dl {
+		float: left;
+		width: 100%;
+		padding: 0 0 10px 0;
+		margin: 0 0 10px 0;
+	}
+	
+	#column-center dl dt {
+		font-weight: bold;	
+	}
+	#column-center dl dd {
+		padding: 3px 0 3px 0;	
+	}
+	#column-center dl dd  a {
+		padding: 0 0 0 15px;
+		background: url(../Images/arrow-right.gif) no-repeat 5px 5px;
+	}
+	
+	/*--[end: Lists]------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		List 1 - Based on basic list
+	----------------------------------------------------------------------------*/
+
+	#column-center dl.list {
+		border-bottom: solid 1px #ccc;
+	}
+	
+	/*--[end: List 1]------------------------------------------------*/
+
+
+
+	/*----------------------------------------------------------------------------
+		Basic Paging 
+	----------------------------------------------------------------------------*/
+	
+	.paging {
+		width: inherit;
+		text-align: center;
+	}
+	.paging a {
+		margin-right: 10px;
+	}
+	.paging a:hover {
+		color: #000000;
+	}
+	.paging a.active {
+		color: #ccc;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	
+	/*--[end: Basic Paging]------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Search Form 
+	----------------------------------------------------------------------------*/
+	
+	#search {
+		float: left;
+		width: 100%;
+		margin: 5px 0 0 0;
+	}
+	#search input {
+		float: left;
+		width: 150px;
+		height: 16px;
+		line-height: 16px;
+		padding: 2px;
+		color: #999;
+		border-top: solid 2px #808080;
+		border-right: solid 1px #d4d0c8;
+		border-bottom: solid 1px #d4d0c8;
+		border-left: solid 2px #808080;
+	}
+	#search a {
+		float: left;
+		width: 23px;
+		height: 23px;
+		background: #808080 url(../Images/arrow-right.gif) no-repeat 5px center;
+	
+	}
+	#search a:hover {
+		background: #808080 url(../Images/arrow-right.gif) no-repeat 5px center;
+	}
+	
+	/*--[end: Search Form]------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Forms 
+	----------------------------------------------------------------------------*/
+	/*
+	fieldset.forms{
+	
+	}
+		fieldset.forms legend{
+			font-weight:bold;
+		}
+		fieldset.forms label{
+			font-weight:bold;
+		}
+	
+	.forms .text-field{
+		display: block;
+		margin: 0 0 10px 0;
+	}
+	
+	.forms .text-field label {
+		display: block;
+	}
+	
+	.forms .text-field input {
+		display: block;
+		width: 400px;
+	}
+	*/
+	/* 2 kolommen */
+	/*
+	fieldset.forms.2-columns div{ 
+		width:50%;
+		float:left;
+	}
+	
+	.2-columns .text-field{
+		float: left;
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+	
+	.2-columns .text-field label {
+		float: left;
+		width: 25%;
+	}
+	
+	.2-columns .text-field input {
+		float: left;
+		width: 70%;
+	}
+	*/
+	
+	/* Feedback messages */
+	p.note, p.success, p.error{display:block;}
+	p.error{color:#900;}
+	p.success{color:#060;}
+	p.note{font-weight:bold;}
+	
+	
+	/*--[end: Forms]------------------------------------------------*/
+	
+	
+	/*----------------------------------------------------------------------------
+		Error page
+	----------------------------------------------------------------------------*/
+		
+		body.error #column-center {
+			float: left;
+			width: 995px;
+			color: #333333;
+			margin: 0;
+		}
+
+	
+	/*--[end: Basic Paging]------------------------------------------------*/
+
+
+	
+	/*----------------------------------------------------------------------------
+		Styles for Javascript generated content 
+	----------------------------------------------------------------------------*/
+	
+		/*----------------------------------------------------------------------------
+			Tooltip
+		----------------------------------------------------------------------------*/
+		
+		#tooltip{ 
+			display: none; 
+			background: #f1f1f1; 
+			-moz-border-radius:6px; 
+			border: 1px solid #ccc; 
+			text-align: left; 
+			width: auto; 
+			position: absolute; 
+			padding: 4px; 
+			z-index: 1000; 
+		}
+		
+		/*--[end: Tooltip]------------------------------------------------*/
+		
+	/*--[end: Styles for Javascript generated content]------------------------------------------------*/
+
+
+
+} /*--[end: @media screen ]------------------------------------------------*/

@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+<link rel="stylesheet" href="../../Styles/elements.css" media="all" />
+
+<style>
+
+    /* Start copy */
+
+	#twitter-feed {
+		float: left;
+		width: 305px;
+	}
+	.jta-tweet-text { display: block; }
+	.jta-tweet-timestamp a, .jta-tweet-inreplyto a { color:#999; }
+
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.jtweetsanywhere-1.2.1.min.js"></script> 
+
+<script>
+
+$(document).ready(function () {
+
+	/* Start copy */
+	
+	
+            // ------------------------------------------------------------------------------------------------
+			// Twitter-feed : get latest Twitter feed(s)
+			// ------------------------------------------------------------------------------------------------
+       
+            $('#twitter-feed').jTweetsAnywhere({
+                username: 'jazzinduketown',
+                count: 4
+            });
+			
+			/*--[end: Twitter-feed]--------------------------- */
+
+
+	
+	/* End copy */
+	
+});  // end: document.ready
+
+</script>
+
+<!-- Additional Comments
+	
+    Change the username to get the images of the right Twitter account
+
+	More info;
+    - http://thomasbillenstein.com/jTweetsAnywhere/
+    
+    Used in:
+    - Jazz in Duketown
+    - Melkfabriek Hilversum
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- TWITTER FEED -->
+        <div id="twitter-feed">
+
+        </div> 
+        
+        
+        <!-- End copy -->
+
+</div>         
+
+

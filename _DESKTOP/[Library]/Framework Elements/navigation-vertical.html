@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+<link rel="stylesheet" href="../../Styles/elements.css" media="all" />
+
+<style>
+
+    /* Start copy */
+	
+	/*----------------------------------------------------------------------------
+		Navigation
+	----------------------------------------------------------------------------*/
+
+	
+	#nav {
+		float: left;
+		width: 200px;
+	}
+		/* Mainmenu */
+		 ul.vertical {
+		}
+			ul.vertical li {
+				float:left;
+				position: relative;
+			}
+			ul.vertical li a {
+				float:left;
+				width: 200px;
+				color: #ff6600;
+				text-decoration: none;
+			}
+			ul.vertical li a:hover {
+				color: #999;
+				text-decoration: underline;
+			}
+			ul.vertical li a.active {
+				color: #900;	
+			}
+				ul.vertical li:first-child {
+					border-left:0px;
+				}
+			ul.vertical li:hover > ul, ul.vertical li.active > ul{
+				display:block;
+			}
+		/* Submenu */
+		ul.vertical ul{
+			display:none;
+			position: absolute;
+			top:0px;
+			left:200px;
+			width:125px;
+		}
+			ul.vertical ul li {
+				width:125px;
+				background:#fff;
+			}
+					
+	/*--[end: Navigation]---------------------------------------------------------*/
+
+    
+    /* End copy */
+
+</style>
+
+<script>
+
+</script>
+
+<!-- Additional Comments
+	
+-->
+
+<div id="column-left">
+              
+        <!-- Start copy -->
+        
+        <div id="nav">
+            <ul class="vertical">
+                <li><a href="#" title="">Menu 1</a></li>
+                <li><a href="#" title="">Menu 2</a>
+                    <ul>
+                        <li><a href="#" title="">Submenu 1</a></li>
+                        <li><a href="#" title="">Submenu 2</a></li>
+                        <li><a href="#" title="">Submenu 3</a></li>
+                        <li><a href="#" title="">Submenu 4</a></li>
+                    </ul>
+                </li>
+              <li><a href="#" title="" class="active">Menu 3 active</a></li>
+              <li><a href="#" title="" >Menu 4</a>
+              		<ul>
+                        <li><a href="#" title="">Submenu 1</a></li>
+                        <li><a href="#" title="">Submenu 2</a></li>
+                        <li><a href="#" title="">Submenu 3</a></li>
+                        <li><a href="#" title="">Submenu 4</a></li>
+                    </ul>
+              </li>
+            </ul>        
+        </div><!-- end: #nav -->
+
+        
+        
+        <!-- End copy -->
+
+</div>         
+
+

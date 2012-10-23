@@ -1,0 +1,10 @@
+# Alle robots
+User-agent: *
+# Mogen de voglende pagina's of mappen niet bezoeken
+Disallow: /Flash
+Disallow: /Images
+Disallow: /Scripts
+Disallow: /Styles
+Disallow: /Fonts
+Disallow: /downloadAttachment.aspx
+

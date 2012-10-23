@@ -1,0 +1,259 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="Scripts/projekktor-1.0.17r55.min.js"></script>
+<script type="text/javascript" src="Scripts/easySlider1.7.js"></script><!-- !!! This plugin is special customized for this project -->
+
+<style>
+
+    /* Start copy */
+	
+		/*----------------------------------------------------------------------------
+		Video Slider (Easy Slider)
+	----------------------------------------------------------------------------*/
+	
+		#slider-container { 
+			float: left; 
+			width: 250px; 
+			height: 176px;  /* = hoogte van #slider li + ol#controls */ 
+			margin: 20px 0 0 20px;
+			overflow: hidden; 
+			position: relative;
+			border: solid 5px #fff;
+		}
+		
+		#slider {
+			height: 140px!important;	
+		}
+		
+		
+		#slider > div, 
+		#slider > span,
+		#slider2 > div, 
+		#slider2 > span {
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		
+		#slider2 {
+			margin-top:1em;
+		}
+		
+		#slider > span, #slider2 > span { 
+			position: relative;
+			/* 
+				define width and height of list item (slide)
+				entire slider area will adjust according to the parameters provided here
+			*/ 
+			width:239px;
+			height:140px;
+			margin-bottom: 32px; /* = hoogte van ol#controls */
+			overflow:hidden; 
+		}	
+		
+		#slider span > h6 {
+
+			position: absolute;
+			z-index: 200;
+			top: 105px;
+			left: 0;
+			width: 250px;
+			height: 25px;
+			line-height: 25px;
+			color: #fff;
+			font-size: 1.2em;
+			text-align: center;
+			background: #f32b24;
+		}
+		#slider span > video {
+			position: absolute;
+			z-index: 100;
+		}
+		
+		#prevBtn, #nextBtn,
+		#slider1next, #slider1prev{ 
+			display:block;
+			width:17px;
+			height:13px;
+			position:absolute;
+			left:5px;
+			top:147px;
+			z-index:1000;
+			}	
+		#nextBtn, #slider1next{ 
+			left:223px;
+			}														
+		#prevBtn > a, #nextBtn > a,
+		#slider1next > a, #slider1prev > a {  
+			display:block;
+			position:relative;
+			width:17px;
+			height:13px;
+			margin: 3px 0 0 0;
+			background:url(../Images/Slider/btn_prev.png) no-repeat 0 0;
+			
+			}	
+		#nextBtn a, #slider1next a { 
+			background:url(../Images/Slider/btn_next.png) no-repeat 0 0;	
+			}	
+			
+		/* numeric controls */	
+	
+		ol#controls {
+			position: relative;
+			width: 250px;
+			margin:0 auto 0 auto;
+			/*padding:0 0 0 223px;*/
+			padding: 0;
+			height:34px;
+			border-top: solid 5px #fff;
+			background: #83898c;
+		}
+		ol#controls > li {
+			margin: 5px 0 0 0; 
+			padding:0;
+			float:left;
+			list-style:none;
+			height:17px;
+			width: 17px;
+		}
+		ol#controls > li > a {
+			float: left;
+			height: 11px;
+			width: 11px;
+			/*background:url(../Images/Slider/bol-roze.gif) no-repeat 0 0;*/
+			text-indent: -9999px;
+			-webkit-border-radius: 999px;
+			-moz-border-radius: 999px;
+			border-radius: 999px;
+			background: #cdd0d1;
+		}
+		ol#controls > li.current > a {
+			width: 12px;
+			height: 12px;
+			border: 3px solid #fff;
+			background: #f32b24;
+		}
+		ol#controls > li > a:focus, #prevBtn > a:focus, #nextBtn > a:focus{outline:none;}
+		
+		
+		
+		
+	/*--[end: Video Slider]------------------------------------------------*/
+
+	    
+    /* End copy */
+
+</style>
+
+<script>
+
+	
+	
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+		   
+	/* Start copy */
+	
+		// ------------------------------------------------------------------------------------------------
+		// Projekktor Video Player
+		// ------------------------------------------------------------------------------------------------
+				
+		//projekktor('.projekktor'); // instantiation
+	
+		projekktor('.projekktor',{
+	
+			playerFlashMP4: '../Video/jarisplayer.swf'
+	
+		}); // instantiation
+	
+		var player = projekktor('#video01');
+								
+								
+		/*--[end: Projekktor Video Player]--------------------------- */
+								
+								
+		//----------------------------------------------------------
+		// Photo Slider
+		//----------------------------------------------------------
+		
+		var paddingControls = 82;
+		
+		$("#slider").easySlider({
+			speed: 800,
+			pause: 2000,
+			numeric: true,
+			auto: false,
+			continuous: true,
+			nextId: "slider1next",
+			prevId: "slider1prev",
+			nextText: '',
+			prevText: ''
+		}); 
+	
+		/* Set new padding-left so controls are centered */
+		$('ol#controls').css('padding-left', paddingControls);
+		
+	
+	/* End copy */
+	
+});
+	
+
+
+</script>
+
+<!-- Additional Comments
+	
+    Slider is op basis van Easy Slider
+    
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <aside id="video">
+            <section>
+                <h5>Video</h5>
+                 
+                 <div id="bg"> 
+                 <div id="slider-container"> 
+                    <div id="slider"> 
+                        <div id="cont"> 
+                            <span class="vid">
+                                 <video id="video01" class="projekktor" poster="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/temp-video.jpg" title="" width="240" height="140" controls>
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_x264.mp4" type="video/mp4" />
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_VP8.webm" type="video/mp4" />
+                                </video>
+                            </span> 
+
+                            <span class="vid">
+                                <video id="video02" class="projekktor" poster="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/temp-video.jpg" title="" width="240" height="140" controls>
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_x264.mp4" type="video/mp4" />
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_VP8.webm" type="video/mp4" />
+                                </video>
+                            </span> 
+
+                            <span class="vid">
+                                 <video id="video03" class="projekktor" poster="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/temp-video.jpg" title="" width="240" height="140" controls>
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_x264.mp4" type="video/mp4" />
+                                  <source src="http://dl1.streamzilla.jet-stream.nl/bitsquad/HOV/2011_2_9_HOV veghel_VP8.webm" type="video/mp4" />
+                                </video>
+                            </span> 
+                        </div> 
+                    </div> 
+                </div>
+                </div>
+            </section>
+      </aside>
+        
+        
+        <!-- End copy -->
+
+</div>         
+
+

@@ -1,0 +1,119 @@
+
+<style>
+
+    /* Start copy */
+
+	.accordeon dt { 
+		float: left;
+		width: 100%;
+		margin-top:3px;
+		color:#000;
+		text-align: left;
+		background: #f3f3f3;
+		cursor:pointer;
+	}
+	.accordeon dt p { 
+		font-weight: normal;
+	}
+	.accordeon dt:hover, .accordeon dt.active { 
+		background: #ccc;
+	}
+	.accordeon dd { 
+		float: left;
+		width: 100%;
+		margin:0;
+		background: #f3f3f3;
+	}
+
+	    
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script>
+
+// ------------------------------------------------------------------------------------------------
+// Document Ready
+// ------------------------------------------------------------------------------------------------
+$(function() {
+
+
+	/* Start copy */
+	
+		//----------------------------------------------------------
+		// ACCORDEON
+		//----------------------------------------------------------
+		$('.accordeon dd').hide();
+		$('.accordeon dd:first').show();
+		 
+		$('.accordeon dt').click(function() {
+						
+			$('.accordeon dt').removeClass('active');
+			$('.accordeon dd').slideUp('normal');
+	   
+			if($(this).next().is(':hidden') == true) {
+				$(this).addClass('active');
+				$(this).next().slideDown('normal');
+			 } 
+			  
+		 });
+	
+	/* End copy */
+	
+});
+
+	
+</script>
+
+<!-- Additional Comments
+	
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- Accordeon -->
+
+                <dl class="accordeon">
+                
+                    <dt class="active">
+                    	<h3>Titel</h3>
+                        <p>Korte tekst</p>
+                    </dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    
+                   <dt>
+                    	<h3>Titel</h3>
+                        <p>Korte tekst</p>
+                    </dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    
+                    <dt>
+                    	<h3>Titel</h3>
+                        <p>Korte tekst</p>
+                    </dt> 
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd> 
+                    
+                    <dt>
+                    	<h3>Titel</h3>
+                        <p>Korte tekst</p>
+                    </dt>  
+                    <dd>
+                        <p>Content komt hier</p>
+                    </dd>
+                </dl> 
+        
+        <!-- End copy -->
+
+</div>         
+
+

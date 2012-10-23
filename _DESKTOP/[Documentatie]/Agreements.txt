@@ -1,0 +1,194 @@
+Het framework bevat een basis opzet van bewezen html/css/js en daarbij een basis mapstructuur.
+
+Ook bevat het een [Library] met daarin veel gebruikte elementen die, afhangkelijk van je project, toegevoegd zouden kunnen worden aan de basis.
+Deze map is opgesplits in de map Framework Elements, waar elementen in staan die alleen bestaan uit html/css.
+Verder zijn er mappen (jQuery, Social Media en Video Players) die wat meer functionele elementen bevatten.
+
+
+[Documentatie]
+Change-list.txt		:	Bevat een lijst met alle bijgewerkte punten
+Ideas-list.txt		:	Bevat een lijst met ideeen om het framework mee uit te breiden of suggesties voor wijzigingen in het framework
+Bug-list.txt		:	Bevat een lijst met bugs, dus dingen die echt fout gaan
+Various.txt			:	Lijst van diversen, zou eigenlijk niet thuishoren in framework
+Agreements.txt		:	Lijst met afspraken m.b.t. het framework en de algemene werkwijze m.b.t. html/css/js
+
+
+- Houd je zoveel mogelijk aan de map structuur. Zie je noodzaak daar toch veranderingen in te brengen meld dit dan even in Ideas-list.txt
+- Volgorde CSS zoveel mogelijk gelijk houden aan volgorde HTML
+- z-index binnen de site moet liggen tussen 1-1000, hoger is gereserveerd voor Insite Editing etc.
+- benamingen altijd in het engels
+
+- Opzet van de html is altijd met losse images. Later worden alle images die samengevoegd kunnen worden in een Sprite samengevoegd. Een sprite is altijd een .png bestand
+
+
+- scripts: altijd eerst volledig uitschrijven, later nette functions maken:
+// ------------------------------------------------------------------------------------------------
+// Function Example
+// ------------------------------------------------------------------------------------------------
+// _var1:			explain _var1
+// _var2:			explain _var2
+// _var3:			explain _var3
+// $var4:			Gebruik een $ vooraf als je variabele een jQuery object (o.a. DOM object) bevat
+
+var example = function(_var1,_var2,_var3) {
+
+} // end: Example
+
+
+Paul Irish - jQuery Anti-Patterns for Performance:
+- Cache DOM referenties je meer dan 1 keer uitvoerd op in een variabele.
+- Cache length tijdens een loop
+- append niet in een loop, maar buiten de loop. Doe dit door boven de loop een variabele aan te maken en deze onder de loop te gebruike in append. In de loop vul je de variabele
+- Gebruik Object literal
+- Gebruik om een DOM object te benaderen nooit een selector string, maar
+	Dus:
+	var amrs = $('#container').find('div.robotarm');
+	
+	En niet:
+	var arms = $('div.robotarm', '#container');
+	var arms = $('#container div.robotarm');
+	
+- Als je bewerkingen doet op een DOM object gebruik dan .detach() om het object van de DOM los te koppelen en .append() om het object na de bewerkingen weer in de DOM te voegen.
+
+- Leer de minder bekende methodes: map(), slice(), stop(), (de)queue(), prevAll(), pushStack(), inArray(), etc.
+
+- Ook al krijg je van jQuery geen foutmelding als je dingen doet op niet bestaande elementen, ga er niet vanuit dat je dit moet gebruiken. Op deze maniet gaat performance wel slechter omdat verschillende functies worden uitgevoerd voordat hij ziet dat het element niet bestaat.
+
+- Declareer variabelen met 1 var :
+
+	var arm = false, 
+		legg = true,
+		head = 'large';
+
+
+
+Awfull Parts:
+- Gebruik geen global vars:
+	- Gebruik geen var statments buiten een functie: var foo = value
+	- Voeg niet direct variabelen toe aan global object (in webbrowsers : window): window.foo = value
+	- Gebruik nooit variabelen zonder declaratie: foo = value
+	
+- Scope
+	- Declareer alle variabelen altijd bovenin elke functie
+
+- Semicolon Insertion
+	- Gebruik { altijd op het einde van een regel. Dit kan 1 bug voorkomen.
+		Dus:
+		return {
+			status: true
+		}
+		
+		En niet:
+		return
+		{
+			status: true
+		}
+
+- Reserved word
+	- Gebruik nooit reserved words
+
+- Er zijn verschillende operators, methodes en functies die niet altijd de waarde terug geven die je zou verwachten.
+	Denk aan: typeof, parseInt, NaN (===, typeof, ...), hasOwnProperty
+	Voor meer info hierover zie 'Javascript - The good parts'	
+
+
+The Bad Parts
+
+- Equality operators
+	- Gebruik nooit == of !=, maar altijd === of !===
+
+- Probeer de with statement niet te gebruiken
+
+- Gebruik switch niet, omdat een bug is dat fall true voorkomt
+
+- Probeer eval niet te gebruiken
+
+- Probeer continue (om naar de top in een loop te springen) niet te gebruiken, meestal word je code beter als je hem refactured om continue te verwijderen.
+
+- Gebruik geen block-less Statments, dit om leesbaarheid te bevorderen.
+	Dus:
+	if (ok) {
+		t = true;
+	}
+	
+	En niet:
+	if (ok) t=true;
+	
+- Gebruik ++ en -- niet om waardes op te plussen of te minnen.
+
+- Gebruik voor functies function expression i.p.v. function statement
+	Dus:
+	var foo = function() {};
+	
+	En niet:
+	function foo() {};
+	
+- Gebruik geen new Boolean, new Number of new String
+	Voorkom ook het gebruik van new Object en new Array. Maar gebruik {} en []
+
+- Gebruik de void operator niet.
+
+- Typ global vars altijd in HOOFDLETTERS
+
+- Gebruik geen code over 2 regels met de ' aan de regeleinde
+
+- Gebruik geen ++ (x++) om iets op te hogen, maar gebruik x += 1
+
+- Declareer variabelen altijd bovenin de functie
+- Roep functies altijd pas aan nadat ze gedeclareerd zijn
+- Ben consequent in je stijl: spatie gebruik, tab gebruik
+
+
+
+Hanteer zoveel mogelijk de DRY (Dont's Repeat Yourself) methode.
+Dus als je code lijkt door te kopieren en op enkele punten aanpast t.o.v. andere code 
+dan zou dat beter moeten kunnen.
+
+- Verwijder alle console.log etc. uit je code. IE kan hierop fout gaan.
+
+
+- functies staan altijd buiten de doc.ready ??? Kan dat
+
+Maak van DOM elements die je vaak gebruikt een variabele:
+var theWindow        = $(window),
+	$bg              = $("#bg"),
+    aspectRatio      = $bg.width() / $bg.height();
+	
+	
+	
+	
+- html: van belangrijke classes en id's aangeven waar deze worden afgesloten:
+<div id="example">                    
+	example
+</div><!-- end: #example -->
+
+<div class="example">                    
+	example
+</div><!-- end: .example -->
+
+
+.css bestanden voor live gang altijd samenvoegen/minimizen. Naamgeving is [bestandsnaam]-min.css --> http://www.minifycss.com/css-compressor/
+.js bestanden (mits mogelijk) voor live gang altijd samenvoegen/minimizen. Naamgeving is [bestandsnaam]-min.js
+alle images in een batch verkleinen zonder kwaliteitsverlies: http://www.smushit.com
+
+
+
+
+
+
+
+---------------------------------
+Favicon
+---------------------------------
+Tutorial info:
+http://www.photoshopsupport.com/tutorials/jennifer/favicon.html
+
+Download:
+http://www.telegraphics.com.au/sw/
+http://www.telegraphics.com.au/svn/icoformat/trunk/dist/README.html
+
+Install
+- 64-bit Windows (Vista/Windows 7):
+- Restart before installing;
+- put plugin in C:\Program Files (x86)\Adobe\Photoshop CS\Plug-Ins\File Formats.
+If you are running on a 64-bit Windows system and are using Photoshop CS4, download the 64-bit version of the plugin and put it in C:\Program Files\Adobe\Adobe Photoshop CS4 (64 Bit)\Plug-ins\File Formats.

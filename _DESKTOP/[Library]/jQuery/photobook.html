@@ -1,0 +1,492 @@
+<link rel="stylesheet" href="../../Styles/global.css" media="screen" />
+
+<!-- Styles Fancybox -->
+<link rel="stylesheet" type="text/css" href="Styles/jquery.fancybox-1.3.4.css" media="screen" />
+
+<style>
+
+    /* Start copy */
+	
+		
+		/* --------------------------------------------- // -------- Photobook */
+	
+		.nav-photobook {
+			float: left;
+			margin-bottom: 20px;
+		}
+		
+		.nav-photobook a {
+			cursor: pointer;
+			text-decoration: none;
+			border-bottom: solid 3px #f1f1f1;
+			margin-right: 10px;
+			padding: 0 3px 2px 3px;
+		}
+		
+		.nav-photobook a.active {
+			color:#666666;
+		}
+		
+		.day-photobook {
+			width: 556px;
+			float: left; 
+			background: #fff;
+		}
+		
+		.day-photobook a.link {
+			float: left;
+			width: 175px;
+			height: 250px;
+			margin: 0 10px 10px 0;
+			overflow: hidden;
+			background: #fff;
+			text-decoration:none;
+			border-bottom: 3px dotted #007DC5;
+		}
+		
+		.day-photobook a span.img {
+			float: left;
+			width: 175px;
+			height: 175px;
+			overflow:hidden;
+			clear: both;
+			text-align: center;
+			background: #f1f1f1;
+	
+		}
+		
+		.day-photobook a span.img span {
+			width: 175px;
+			height: 175px;
+			overflow:hidden;
+			display:table-cell;
+			vertical-align:middle;
+		}
+		
+		.day-photobook a img {
+			vertical-align:middle;
+			border:none;
+		}
+		
+		.day-photobook a span.photo-title {
+			display: inline-block;
+			width: 175px;
+			margin-top: 5px;
+			text-align: center;
+			clear: both;
+		}
+		
+		.day-photobook a span.photographer {
+			display: inline-block;
+			width: 175px;
+			text-align: center;
+			clear: both;
+		}
+		
+		.pagination {
+			float: left;
+			width: 100%;
+		}
+		
+		.pagination a {
+			cursor: pointer;
+			text-decoration: none;
+			border-bottom: solid 3px #f1f1f1;
+			margin-right: 10px;
+			padding: 0 3px 2px 3px;
+		}
+		
+		.pagination a:hover {
+			color: #000000;
+			border-bottom: solid 3px #666666;
+		}
+		
+		.pagination a.previous {
+			float: left;
+		}
+		
+		.pagination a.next {
+			float: right;
+		}
+		
+		.pagination a.inactive {
+			color: #ccc; 
+			cursor: auto;
+			text-decoration: none;
+		}
+		
+		.pagination a:hover.inactive {
+			border-bottom: solid 3px #f1f1f1;
+		}
+
+    /* End copy */
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.fancybox-1.3.4.pack.js"></script>
+
+<script type="text/javascript">
+
+	// ------------------------------------------------------------------------------------------------
+	// Document Ready
+	// ------------------------------------------------------------------------------------------------
+	$(function() { 
+		 
+		var $photoElements = $('.day-photobook a');
+		
+		$($photoElements).fancybox({
+			'transitionIn'		: 'none',
+			'transitionOut'		: 'none',
+			'titlePosition' 	: 'over'
+		});
+		
+		
+		// Handle main navigation
+		$('.nav-photobook a').click(function(event){
+			event.preventDefault();
+			var thisTitle = $(this).attr('title');
+			$('.day-photobook').hide();
+			$('#' + thisTitle).show();
+			
+			$('.nav-photobook a').removeClass('active');
+			$(this).addClass('active');
+			
+			// Set pagination for selected day
+			paging(thisTitle);
+		
+		});
+		
+		// Loop true all photos and extract information from image name
+		$photoElements.each(function(){
+									 
+			var $photo = $(this);
+			
+			// Get Artist and Photographer from img name.
+			// And set to correct span
+			var title = $photo.attr('title').replace(' - ', '-').replace('.jpg', '').replace('.jpeg', '');
+			var splitTitle = title.split('-');  
+			$photo.attr('title', splitTitle[0])
+			$photo.find('span.photo-title').append(splitTitle[0]);
+			$photo.find('span.photographer').append(splitTitle[1]);
+			
+			// Set Source for small image
+			/*
+			Live versie:
+			var hrefSmallImage =  $photo.attr('href').replace('strD=vr', 'strD=vr/small').replace('strD=za', 'strD=za/small').replace('strD=zo', 'strD=zo/small').replace('strD=ma', 'strD=ma/small');
+			*/
+			
+			var hrefSmallImage =  $photo.attr('href').replace('/vr/', '/vr/small/').replace('/za/', '/za/small/').replace('/zo/', '/zo/small/').replace('/ma/', '/ma/small/');
+			
+			$photo.find('img').attr('src',hrefSmallImage);
+		
+		});
+        
+        // Set pagination on page load
+        paging('vrijdag');
+		
+	});
+	
+	//----------------------------------------------------------
+	// Paging
+	//----------------------------------------------------------
+	
+	function go_to_page(page_num, getDay){
+	
+		// Get the number of items shown per page
+		var show_per_page = parseInt($('#show_per_page').val());
+		
+		// Get the element number where to start the slice from
+		start_from = page_num * show_per_page;
+		
+		// Get the element number where to end the slice
+		end_on = start_from + show_per_page;
+		
+		// Hide all children elements of content div, get specific items and show them
+		$('#' + getDay + '-cont').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+		
+		/* Get the page link that has longdesc attribute of the current page and add active_page class to it
+		and remove that class from previously active page link*/
+		$('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+		
+		// Update the current page input field
+		$('#current_page').val(page_num);
+		
+    }
+
+
+	function paging(day){
+		
+		// How much items per page to show
+		var show_per_page = 3;
+		var $container = $('#' + day + '-cont');
+		// Getting the amount of elements inside content div
+		var number_of_items = $container.children().size();
+		// Calculate the number of pages we are going to have
+		var number_of_pages = Math.ceil(number_of_items/show_per_page);
+		
+		// Set the value of our hidden input fields
+		$('#current_page').val(0);
+		$('#show_per_page').val(show_per_page);
+	
+		// Now when we got all we need for the navigation let's make it '
+		var navigation_html = '<a class="inactive previous previous-' + day +'">Vorige</a>';
+		var current_link = 0;
+		if(number_of_pages === 1){
+			navigation_html += '<a class="next inactive next-' + day +'">Next</a>';
+		} else {
+			navigation_html += '<a class="next next-' + day +'">Next</a>';
+		}
+		
+		$('#pagination-' + day).html(navigation_html);
+	
+		// Add active_page class to the first page link
+		$('.pagination-' + day + ' .page_link:first').addClass('active_page');
+	
+		// Hide all the elements inside content div
+		$container.children().css('display', 'none');
+	
+		// And show the first n (show_per_page) elements
+		$container.children().slice(0, show_per_page).css('display', 'block');
+		
+					// Handle click on previous button
+					$(".previous-" + day).live("click", function(){ 
+					
+						if($(this).hasClass('inactive')){
+							return
+						} else {
+						
+							$('.pagination a').removeClass('inactive');
+	
+							cur = parseInt($('#current_page').val());
+							new_page = cur - 1;
+							
+							if(cur !== 0){
+								go_to_page(new_page, day);
+							} 
+							
+							if(cur === 1){
+								$(this).addClass('inactive');
+							}
+						}
+					}); 
+					
+					// Handle click on next button
+					$(".next-" + day).live("click", function(){ 
+					
+						if($(this).hasClass('inactive')){
+							return
+						} else {
+							$('.pagination a').removeClass('inactive');
+	
+							cur = parseInt($('#current_page').val());
+							new_page = cur + 1;
+	
+							if(cur !== (number_of_pages - 1)){
+								go_to_page(new_page, day);
+							} 
+							if(cur === (number_of_pages -2)){
+								$(this).addClass('inactive');
+							}
+						}
+					});  
+					
+	// Hide intro text and paging if there are photo's available
+	var days = ['vrijdag', 'zaterdag', 'zondag', 'maandag'];
+	
+	$.each(days, function(key, value) { 
+		if ($('#' + value + '-cont').children('a').size() === 0 ){
+			$('#' + value + '-cont').prev().show();
+			$('#pagination-' + value).hide();
+		}
+	});
+                
+}   
+</script>
+
+
+<!-- Additional Comments
+	
+    Used in: Jazz in Duketown
+    
+    This is a one page photobook, where all small images will be loaded on the first page load.
+    The javascript extracts information from the image file name to add to the page content as meta data.
+    
+    The idea is created to give a customer a fast tool to fill there photobook.
+    Where the customer can simply upload the images on a FTP server.
+   	On the FTP server the customer needs to upload the small and the large version of the image.
+    By naming these images as indicated the customer van create content for 2 metadata content fields.
+    
+    Keep in mind that with a lot of images there may be a performance issue when loading all small teasers.
+    
+    Possible improvements:
+    - create a plugin from the paging code
+    - make it more dynamic
+    - Create more DRY code (Don't Repeat Yourself). Mainly for the Html part
+    
+-->
+
+<div id="column-center">
+              
+     <!-- Start copy -->
+        
+    <div class="nav-photobook">
+        <a href="" title="vrijdag" class="active">Vrijdag</a>
+        <a href="" title="zaterdag">Zaterdag</a>
+        <a href="" title="zondag">Zondag</a>
+        <a href="" title="maandag">Maandag</a>
+    </div>
+
+	<!-- the input fields that will hold the variables we will use -->
+	<input id='current_page' type='hidden' />
+	<input id='show_per_page' type='hidden' />
+	
+                <div class="photobook">
+                
+                    <div id="vrijdag" class="day-photobook">
+                        <h2>Vrijdag</h2>
+                        <p style="display:none;">Binnenkort staan hier de foto's van zaterdag online.</p>
+                        <div id="vrijdag-cont">
+                        
+                            	<!-- html to repeat for each photo -->
+                                <a class="link" rel="vrijdag" href="Images/Photobook/vr/Chaka Khan - NSJ.jpg" title="Chaka Khan - NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="vrijdag" href="Images/Photobook/vr/Gregory Porter-NSJ.jpg" title="Gregory Porter-NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="vrijdag" href="Images/Photobook/vr/Herbie Hancock-NSJ.jpg" title="Herbie Hancock-NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="vrijdag" href="Images/Photobook/vr/Herbie Hancock-NSJ.jpg" title="Herbie Hancock-NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                        </div>
+                        <div id="pagination-vrijdag" class="pagination"></div>
+                    </div>
+
+                    <div id="zaterdag" class="day-photobook" style="display:none;">
+                        <h2>Zaterdag</h2>
+                        <p style="display:none;">Binnenkort staan hier de foto's van zaterdag online.</p>
+                        <div id="zaterdag-cont"> 
+                            
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="zaterdag" href="Images/Photobook/za/Katie Malue - Peter de Jong.jpg" title="Katie Malue - Peter de Jong.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="zaterdag" href="Images/Photobook/za/Latin Jazz - JID.jpg" title="Latin Jazz - JID.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="zaterdag" href="Images/Photobook/za/Ramon Valle - Peter de Jong.jpg" title="Ramon Valle - Peter de Jong.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                        </div>
+                        <div id="pagination-zaterdag" class="pagination"></div>
+                    </div>
+
+                    <div id="zondag" class="day-photobook" style="display:none;">
+                        <h2>Zondag</h2>
+                        <p style="display:none;">Binnenkort staan hier de foto's van zaterdag online.</p>
+                        <div id="zondag-cont"> 
+                           
+                            <!-- html to repeat for each photo -->
+                                <a class="link" rel="zondag" href="Images/Photobook/zo/Katie Malue - Peter de Jong.jpg" title="Katie Malue - Peter de Jong.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="zondag" href="Images/Photobook/zo/Latin Jazz - JID.jpg" title="Latin Jazz - JID.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="zondag" href="Images/Photobook/zo/Ramon Valle - Peter de Jong.jpg" title="Ramon Valle - Peter de Jong.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                        </div>
+                        <div id="pagination-zondag" class="pagination"></div>
+                    </div>
+
+                    <div id="maandag" class="day-photobook" style="display:none;">
+                        <h2>Maandag</h2>
+                        <p style="display:none;">Binnenkort staan hier de foto's van zaterdag online.</p>
+                        <div id="maandag-cont">  
+                        
+                           		<!-- html to repeat for each photo -->
+                                <a class="link" rel="maandag" href="Images/Photobook/ma/Chaka Khan - NSJ.jpg" title="Chaka Khan - NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="maandag" href="Images/Photobook/ma/Gregory Porter-NSJ.jpg" title="Gregory Porter-NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                                <!-- html to repeat for each photo -->
+                                <a class="link" rel="maandag" href="Images/Photobook/ma/Herbie Hancock-NSJ.jpg" title="Herbie Hancock-NSJ.jpg">
+                	                <span class="img"><span><img alt="" src="" /></span></span>
+                                    <span class="photo-title"></span>
+                                    <span class="photographer">Fotograaf: </span>
+                                </a>
+                                <!-- end repeat -->
+                                
+                        </div>
+                        <div id="pagination-maandag" class="pagination"></div>
+                    </div>
+                
+                </div>
+        
+        <!-- End copy -->
+
+</div>         
+
+

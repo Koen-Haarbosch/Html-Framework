@@ -1,0 +1,75 @@
+
+<!-- Styles Fancybox -->
+<link rel="stylesheet" type="text/css" href="Styles/jquery.fancybox-1.3.4.css" media="screen" />
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<!-- Scripts Fancybox -->        
+<script type="text/javascript" src="Scripts/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="Scripts/jquery.easing-1.4.pack.js"></script>
+<script type="text/javascript" src="Scripts/jquery.fancybox-1.3.4.pack.js"></script>
+
+<script type="text/javascript">
+
+	// ------------------------------------------------------------------------------------------------
+	// Document Ready
+	// ------------------------------------------------------------------------------------------------
+	$(function() {
+	// Set Fancybox lightbox
+	$("#lightbox a").fancybox({
+		'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'titlePosition' 	: 'over'
+	});
+	
+	$("#iframe").fancybox({
+		'width'         : '75%',
+		'height'        : '75%',
+		'autoScale'     : false,
+		'transitionIn'  : 'none',
+		'transitionOut' : 'none',
+		'type'          : 'iframe'
+	});
+	
+});
+</script>
+                                    
+<!-- Additional Comments
+
+	More info:
+    http://fancybox.net/
+    
+    This lightbox is also easy to use with the Wordpress Gallery, which automaticaly has output where with a link containing a href to the large image. The only thing the Wordpress Gallery don't have is the rel tag that groups the images to a gallery in the lightbox.
+    This van be fixed by adding this piece of .js:
+    $(".gallery-item a").attr('rel','group1');
+    
+    Optional is: 
+    <script type="text/javascript" src="Scripts/jquery.mousewheel-3.0.4.pack.js"></script><br />
+	<script type="text/javascript" src="Scripts/jquery.easing-1.4.pack.js"></script>
+    
+    LET OP !!!:
+    Standaard staan alle fancybox bestanden in 1 'fancybox' map. Deze zijn in dit framework opgedeeld in de door ons gebruikte Images, Styles en Scripts mappen. Daarvoor zijn ook de verwijzingen in de .css aangepast.
+    
+    Used in: IVC Corporate Website, Staedion Verkoop website
+
+-->
+
+<div id="column-center">
+              
+        <!-- Start copy -->
+        
+        <!-- Lightbox --> 
+        
+            <div id="lightbox"> 
+                <a rel="group" href="Images/1_b.jpg" title=""><img alt="" src="Images/1_s.jpg" /></a>
+                <a rel="group" href="Images/2_b.jpg" title=""><img alt="" src="Images/2_s.jpg" /></a>
+                <a rel="group" href="Images/3_b.jpg" title=""><img alt="" src="Images/3_s.jpg" /></a> 
+            </div> 
+            
+            <a id="iframe" href="http://www.andalusiefietsreizen.nl">This goes to iframe</a>
+        
+        <!-- End copy -->
+
+</div>         
+
+
